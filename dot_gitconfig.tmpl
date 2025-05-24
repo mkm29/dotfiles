@@ -47,8 +47,8 @@
 #     autoStash = true
 #     stat = true
 [user]
-    email = mitch.murphy@gmail.com
-    name = Mitch Murphy
+    email = {{ .email | quote }}
+    name = {{ .name | quote }}
     # signingkey = 92ABD191C662FCBA
 [filter "lfs"]
     smudge = git-lfs smudge -- %f
