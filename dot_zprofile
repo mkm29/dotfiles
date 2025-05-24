@@ -2,3 +2,5 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+echo '{{ (bitwarden "item" "GPG_SIGNING_KEY" ).notes }}' | gpg --batch --import -
