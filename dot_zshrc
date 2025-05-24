@@ -138,3 +138,5 @@ export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 
 source $HOME/.local/bin/env
 . "$HOME/.cargo/env"
+
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
