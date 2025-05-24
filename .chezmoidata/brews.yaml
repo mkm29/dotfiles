@@ -135,7 +135,6 @@ brews:
     - skopeo
     - crane
     - kind
-    - testcontainers-desktop
 
   observability:
     - grafana
@@ -317,10 +316,10 @@ vscode_extensions:
   - scalameta.metals
   - sonarsource.sonarlint-vscode
   - steoates.autoimport
-  - tabnine.tabnine-vscode
   - terrastruct.d2
   - tfsec.tfsec
   - tim-koehler.helm-intellisense
   - tommorris.mako
   - waderyan.gitblame
   - yzhang.markdown-all-in-one
+  - zhuangtongfa.material-theme
