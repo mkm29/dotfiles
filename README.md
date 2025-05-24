@@ -30,8 +30,9 @@ To set up this environment on a new machine:
 
    Update fields such as:
 
-   - `email` – used for git config
-   - `class` – set to either `work` or `personal` to tailor the installation
+   - `email` – used for Git config
+   - `name` - used for Git config
+   - `type` – set to either `work` or `personal` to tailor the installation
 
 4. **Apply the configuration and initialize shell environment**
 
@@ -57,5 +58,10 @@ You can toggle between `work` and `personal` setups by updating the `class` valu
 
 ## 📎 Tips
 
-- **1Password integration**: Ensure `op` is authenticated before applying secrets.
+- **bitwarden integration**:
+  - Install the [Bitwarden CLI](https://bitwarden.com/help/cli/)
+  - Before apply:
+    - `bw login`
+    - `bw unlock`
+    - `export BW_SESSION=...`
 - **Update configs**: Use `chezmoi diff`, `chezmoi edit`, and `chezmoi apply` to manage updates cleanly.
