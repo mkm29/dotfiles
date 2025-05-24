@@ -47,9 +47,9 @@
 #     autoStash = true
 #     stat = true
 [user]
-    email = {{ .email | quote }}
-    name = {{ .name | quote }}
-    # signingkey = 92ABD191C662FCBA
+    email = {{ .git.email | quote }}
+    name = {{ .git.name | quote }}
+    signingkey = {{ .git.signingKey | quote }}
 [filter "lfs"]
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
