@@ -1,0 +1,23 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+brew bundle --file=/dev/stdin <<EOF
+{{- range .taps }}
+tap {{ .name | quote }}
+{{- end }}
+
+{{- range $group, $packages := .brews }}
+  {{- range $packages }}
+brew {{ . | quote }}
+  {{- end }}
+{{- end }}
+
+{{- range .casks }}
+cask {{ . | quote }}
+{{- end }}
+
+{{- range .vscode_extensions }}
+vscode {{ . | quote }}
+{{- end }}
+EOF
+{{- end -}}

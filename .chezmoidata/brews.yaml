@@ -1,0 +1,327 @@
+taps:
+  - name: ai-christianson/ra-aid
+  - name: anchore/grype
+  - name: atomicjar/tap
+  - name: common-fate/granted
+  - name: defenseunicorns/tap
+  - name: derailed/k9s
+  - name: devantler-tech/formulas
+  - name: encoredev/tap
+  - name: epk/epk
+  - name: felixkratz/formulae
+  - name: flux-subsystem-argo/tap
+  - name: fluxcd/tap
+  - name: grafana/grafana
+  - name: hashicorp/tap
+  - name: hcavarsan/kftray
+  - name: hidetatz/tap
+  - name: jenkins-x/jx
+  - name: jorgelbg/tap
+  - name: localstack/tap
+  - name: minio/stable
+  - name: nikitabobko/tap
+  - name: norwoodj/tap
+  - name: oven-sh/bun
+  - name: pyroscope-io/brew
+  - name: rancherfederal/tap
+  - name: robscott/tap
+  - name: siderolabs/tap
+  - name: simnalamburt/x
+  - name: slp/krunkit
+  - name: ubuntu/microk8s
+  - name: weaveworks/tap
+  - name: yulibaozi/tap
+
+brews:
+  base_tools:
+    - act
+    - bash
+    - coreutils
+    - curl
+    - direnv
+    - git-lfs
+    - jq
+    - wget
+    - tree
+    - grep
+    - gawk
+    - unzip
+    - fd
+    - lsd
+    - thefuck
+    - bat
+    - tmux
+    - zoxide
+    - zlib
+    - zstd
+    - xz
+    - openssl@3
+    - pinentry
+    - pinentry-mac
+
+  dev_languages:
+    - openjdk@11
+    - openjdk@17
+    - go
+    - node
+    - typescript
+    - rust
+    - scala
+    - sbt
+    - ruby-build
+    - rbenv
+    - rbenv-default-gems
+    - rbenv-gemset
+    - python
+    - pyenv
+    - pdm
+    - bun
+    - nvm
+    - deno
+
+  k8s_and_cloud:
+    - awscli
+    - azure-cli
+    - oci-cli
+    - kind
+    - kubectl-cnpg
+    - kube-ps1
+    - kubecolor
+    - kubie
+    - kustomize
+    - helm
+    - helmfile
+    - terraform-docs
+    - tfenv
+    - tflint
+    - tfsec
+    - opentofu
+    - terragrunt
+    - terrascan
+    - juju
+    - linkerd
+    - velero
+    - flux
+    - eksctl
+    - localstack-cli
+    - microk8s
+    - talosctl
+    - hauler
+    - epinio
+
+  security_tools:
+    - age
+    - gnupg
+    - gnupg@1.4
+    - opensc
+    - pkcs11-tools
+    - yubico-piv-tool
+    - ykman
+    - ykpers
+    - sops
+    - cosign
+    - checkov
+    - grype
+    - syft
+
+  infra_and_testing:
+    - docker
+    - docker-compose
+    - docker-buildx
+    - docker-credential-helper
+    - lima
+    - colima
+    - qemu
+    - skopeo
+    - crane
+    - kind
+    - testcontainers-desktop
+
+  observability:
+    - grafana
+    - alloy
+    - mimirtool
+    - logcli
+    - pyroscope
+
+  image_video:
+    - ffmpeg
+    - libass
+    - openjpeg
+    - leptonica
+    - libtiff
+    - jpeg-xl
+    - jpeg
+    - webp
+    - aom
+    - pango
+    - librsvg
+
+  infra_misc:
+    - bazel
+    - cmake
+    - protobuf
+    - openssl@3
+    - curl
+    - openshift-cli
+    - conftest
+    - jsonnet-bundler
+    - just
+    - chezmoi
+    - yq
+    - yamllint
+    - yaml-language-server
+
+  ai_tools:
+    - ollama
+
+  build_release:
+    - goreleaser
+    - golangci-lint
+    - packer
+
+  system_utils:
+    - neofetch
+    - fastfetch
+    - lolcat
+    - figlet
+    - superfile
+    - sponge
+    - ponysay
+    - nushell
+    - magic-wormhole
+
+  network_tools:
+    - unbound
+    - sshuttle
+    - socat
+    - telnet
+    - nmap
+
+  shell_plugins:
+    - zsh-autosuggestions
+    - zsh-completions
+    - zsh-history-substring-search
+    - zsh-syntax-highlighting
+    - powerlevel10k
+    - spaceship
+    - zplug
+
+  fb_libs:
+    - folly
+    - fizz
+    - wangle
+    - fbthrift
+    - fb303
+    - edencommon
+    - mvfst
+
+  databases:
+    - cassandra
+    - postgresql@16
+
+  ai_christianson:
+    - ra-aid
+
+  defenseunicorns:
+    - uds
+    - zarf
+
+  misc_taps:
+    - granted
+    - k9s
+    - ksail
+    - sketchybar
+    - flamingo
+    - helm-docs
+    - krunkit
+    - kube-capacity
+    - pinentry-touchid
+    - kftray
+
+casks:
+  - 1password-cli
+  - aerospace
+  - alacritty
+  - fig
+  - font-fira-code
+  - font-fira-code-nerd-font
+  - font-hack-nerd-font
+  - font-inconsolata-for-powerline
+  - font-jetbrains-mono-nerd-font
+  - font-menlo-for-powerline
+  - font-monoid-nerd-font
+  - font-sf-mono-nerd-font
+  - font-source-code-pro
+  - git-credential-manager
+  - kubecontext
+  - macfuse
+  - multipass
+  - podman-desktop
+  - session-manager-plugin
+  - testcontainers-desktop
+  - wezterm
+
+vscode_extensions:
+  - 4ops.terraform
+  - akamud.vscode-theme-onedark
+  - anchoreinc.grype-vscode
+  - buildwithlayer.alloy-integration-expert-j7mji
+  - cval.pastel-theme
+  - danielsanmedium.dscodegpt
+  - dbaeumer.vscode-eslint
+  - docker.docker
+  - dracula-theme.theme-dracula
+  - enkia.tokyo-night
+  - esbenp.prettier-vscode
+  - fwcd.kotlin
+  - github.copilot
+  - github.copilot-chat
+  - gitlab.gitlab-workflow
+  - golang.go
+  - google.geminicodeassist
+  - googlecloudtools.cloudcode
+  - grafana.grafana-alloy
+  - hashicorp.terraform
+  - inercia.vscode-k3d
+  - joffreykern.markdown-toc
+  - koihik.vscode-lua-format
+  - ludoloops.ayutokyo
+  - mechatroner.rainbow-csv
+  - mgmcdermott.vscode-language-babel
+  - ms-azuretools.vscode-containers
+  - ms-kubernetes-tools.vscode-kubernetes-tools
+  - ms-python.black-formatter
+  - ms-python.debugpy
+  - ms-python.isort
+  - ms-python.python
+  - ms-python.vscode-pylance
+  - ms-toolsai.jupyter
+  - ms-toolsai.jupyter-keymap
+  - ms-toolsai.jupyter-renderers
+  - ms-toolsai.vscode-jupyter-cell-tags
+  - ms-toolsai.vscode-jupyter-slideshow
+  - ms-vscode-remote.remote-containers
+  - ms-vscode-remote.remote-ssh
+  - ms-vscode-remote.remote-ssh-edit
+  - ms-vscode.makefile-tools
+  - ms-vscode.powershell
+  - ms-vscode.remote-explorer
+  - octref.vetur
+  - openai.chatgpt
+  - pkief.material-icon-theme
+  - redhat.vscode-yaml
+  - ryuta46.multi-command
+  - sanjulaganepola.github-local-actions
+  - scala-lang.scala
+  - scalameta.metals
+  - sonarsource.sonarlint-vscode
+  - steoates.autoimport
+  - tabnine.tabnine-vscode
+  - terrastruct.d2
+  - tfsec.tfsec
+  - tim-koehler.helm-intellisense
+  - tommorris.mako
+  - waderyan.gitblame
+  - yzhang.markdown-all-in-one
+  - zhuangtongfa.material-theme
