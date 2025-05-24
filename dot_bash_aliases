@@ -1,0 +1,13 @@
+alias brewr="arch -x86_64 brew"
+alias intel="arch -x86_64"
+alias code=code-insiders
+alias k=kubectl
+alias tf=terraform
+alias nerdctl="lima nerdctl"
+alias python=python3
+alias pip=pip3
+alias cat='bat --paging=never'
+alias vim=nvim
+alias vi=nvim
+alias ls=lsd
+alias pinentry='pinentry-mac'
