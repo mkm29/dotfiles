@@ -1,9 +1,9 @@
 klock
 ai
 aws-auth
-kubectl-blame
-kubectl-capture
-kubectl-cilium
+blame
+capture
+cilium
 clog
 cnp-viz
 cnpg
@@ -31,7 +31,7 @@ outdated
 plogs
 pod-lens
 rbac-view
-krelay
+relay
 sshd
 ssm-secret
 tap
