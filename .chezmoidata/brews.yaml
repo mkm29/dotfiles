@@ -31,6 +31,7 @@ taps:
   - name: ubuntu/microk8s
   - name: weaveworks/tap
   - name: yulibaozi/tap
+  - name: kcl-lang/tap/kcl
 
 brews:
   base_tools:
