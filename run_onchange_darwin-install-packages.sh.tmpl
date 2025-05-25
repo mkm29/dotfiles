@@ -20,4 +20,9 @@ cask {{ . | quote }}
 vscode {{ . | quote }}
 {{- end }}
 EOF
+
+# install krew plugins
+if [ -f $HOME/.krew.txt ]; then
+  kubectl krew install < $HOME/.krew.txt
+fi
 {{- end -}}
