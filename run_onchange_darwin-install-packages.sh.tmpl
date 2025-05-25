@@ -21,22 +21,18 @@ vscode {{ . | quote }}
 {{- end }}
 EOF
 
-# install krew plugins
-if [ -f $HOME/.krew.txt ]; then
-  #kubectl krew install < $HOME/.krew.txt
-  echo "Reconciling krew plugins"
-  while read -r plugin; do
-    if ! kubectl krew list | grep -q "$plugin"; then
-      echo "Installing krew plugin: $plugin"
-      kubectl krew install "$plugin" 1>&2>/dev/null
-      if [ $? -ne 0 ]; then
-        echo "Failed to install krew plugin: $plugin"
-      else
-        echo "Successfully installed krew plugin: $plugin"
-      fi
-    else
-      echo "Krew plugin $plugin is already installed."
-    fi
-  done < $HOME/.krew.txt
+# Install Krew plugins
+echo "Installing Krew plugins for architecture: {{ .chezmoi.arch }}"
+
+{{- range .krew_plugins }}
+  {{- if has .chezmoi.arch .architectures }}
+if ! kubectl krew list | grep -q {{ .name }}; then
+  echo "Installing krew plugin: {{ .name }}"
+  kubectl krew install {{ .name }} || echo "Failed to install krew plugin: {{ .name }}"
+else
+  echo "Krew plugin {{ .name }} is already installed."
 fi
+  {{- end }}
+{{- end }}
+
 {{- end -}}
