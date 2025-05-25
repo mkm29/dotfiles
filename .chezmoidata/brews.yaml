@@ -108,6 +108,7 @@ brews:
     - talosctl
     - hauler
     - epinio
+    - cmctl
 
   security_tools:
     - age
