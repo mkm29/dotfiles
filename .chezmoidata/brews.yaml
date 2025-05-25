@@ -31,7 +31,6 @@ taps:
   - name: ubuntu/microk8s
   - name: weaveworks/tap
   - name: yulibaozi/tap
-  - name: kcl-lang/tap
 
 brews:
   base_tools:
@@ -110,7 +109,7 @@ brews:
     - hauler
     - epinio
     - cmctl
-    - kcl
+    - kcl-lang/tap/kcl
 
   security_tools:
     - age
