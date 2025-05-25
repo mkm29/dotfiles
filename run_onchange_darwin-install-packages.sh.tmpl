@@ -1,3 +1,4 @@
+{{- $arch := .chezmoi.arch -}}
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
@@ -25,7 +26,7 @@ EOF
 echo "Installing Krew plugins for architecture: {{ .chezmoi.arch }}"
 
 {{- range .krew_plugins }}
-  {{- if has .chezmoi.arch .architectures }}
+  {{- if has $arch .architectures }}
 if ! kubectl krew list | grep -q {{ .name }}; then
   echo "Installing krew plugin: {{ .name }}"
   kubectl krew install {{ .name }} || echo "Failed to install krew plugin: {{ .name }}"
