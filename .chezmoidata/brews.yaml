@@ -1,142 +1,267 @@
 taps:
   - name: ai-christianson/ra-aid
+    description: Provides the RA-AID tool, an LLM-powered assistant for rapid assessments and ATO workflows
   - name: anchore/grype
-  - name: atomicjar/tap
+    description: Official tap for Anchore's Grype, a vulnerability scanner for container images and filesystems
   - name: common-fate/granted
+    description: Tap for Granted, a CLI tool for managing cloud access and assuming IAM roles
   - name: defenseunicorns/tap
+    description: Defense Unicorns tools including Zarf and UDS for secure software delivery and deployment
   - name: derailed/k9s
+    description: Tap for K9s, a terminal UI to interact with your Kubernetes clusters
   - name: devantler-tech/formulas
+    description: Tools and utilities for DevAntler developer workflows and automation
   - name: encoredev/tap
+    description: Tap for Encore, a backend framework for rapid Go development with built-in infrastructure
   - name: epk/epk
+    description: Nerd Fonts
   - name: felixkratz/formulae
+    description: Homebrew formulas for macOS status bar customization and productivity tools like SketchyBar
   - name: flux-subsystem-argo/tap
+    description: Flux Subsystem for Argo project plugins and controllers
   - name: fluxcd/tap
+    description: FluxCD official tap for GitOps tools such as `flux` and `source-controller`
   - name: grafana/grafana
+    description: Official Grafana tap for tools like Grafana, Alloy, and Mimir CLI
   - name: hashicorp/tap
+    description: Official HashiCorp tap for tools like Terraform, Vault, Consul, and Boundary
   - name: hcavarsan/kftray
+    description: Tap for KFTray, a Keycloak login tray application for macOS
   - name: hidetatz/tap
+    description: Personal tap with utilities and CLIs by hidetatz, including custom tools like ksail
   - name: jenkins-x/jx
+    description: Official Jenkins X CLI tap for Kubernetes-native CI/CD
   - name: jorgelbg/tap
+    description: Tap containing helpful macOS CLI utilities like `pinentry-touchid`
   - name: localstack/tap
+    description: Tap for LocalStack CLI tools for testing AWS services locally
   - name: minio/stable
+    description: Official MinIO tap for high-performance, S3-compatible object storage
   - name: nikitabobko/tap
+    description: Tap containing terminal and shell enhancements such as `flamingo`
   - name: norwoodj/tap
+    description: Tap containing `helm-docs`, a tool to generate Helm chart documentation automatically
   - name: oven-sh/bun
+    description: Tap for Bun, a fast all-in-one JavaScript runtime like Node.js
   - name: pyroscope-io/brew
+    description: Pyroscope and Phlare observability tools for profiling applications
   - name: rancherfederal/tap
+    description: Tap for Rancher Federal tools like `epinio` for lightweight Kubernetes application deployment
   - name: robscott/tap
+    description: Tap for Gateway API and Kubernetes-related tooling
   - name: siderolabs/tap
+    description: Tap for Talos Linux and related tools like `talosctl`
   - name: simnalamburt/x
+    description: Tap providing utilities for macOS such as `thefuck` and other enhancements
   - name: slp/krunkit
+    description: Tap for `krunkit`, a container runtime setup utility using libkrun for Podman VMs
   - name: ubuntu/microk8s
+    description: Canonical's tap for MicroK8s, a lightweight Kubernetes distribution
   - name: weaveworks/tap
+    description: Tap for Weave GitOps and other related Kubernetes automation tools
   - name: yulibaozi/tap
+    description: Personal tap for custom utilities and experiments by yulibaozi
 
 brews:
   base_tools:
-    - act
-    - bash
-    - coreutils
-    - curl
-    - direnv
-    - git-lfs
-    - jq
-    - wget
-    - tree
-    - grep
-    - gawk
-    - unzip
-    - fd
-    - lsd
-    - thefuck
-    - bat
-    - tmux
-    - zoxide
-    - zlib
-    - zstd
-    - xz
-    - openssl@3
-    - pinentry
-    - pinentry-mac
+    - name: act
+      description: Run your GitHub Actions locally using Docker containers.
+    - name: bash
+      description: Bourne-Again SHell, a UNIX command interpreter.
+    - name: coreutils
+      description: GNU File, Shell, and Text utilities.
+    - name: curl
+      description: Command-line tool for transferring data with URL syntax.
+    - name: direnv
+      description: Shell extension that loads/unloads environment variables based on the current directory.
+    - name: git-lfs
+      description: Git extension for versioning large files.
+    - name: jq
+      description: Lightweight and flexible command-line JSON processor.
+    - name: wget
+      description: Internet file retriever supporting HTTP, HTTPS, and FTP protocols.
+    - name: tree
+      description: Recursive directory listing command that produces a depth-indented listing of files.
+    - name: grep
+      description: Search for patterns within files using regular expressions.
+    - name: gawk
+      description: GNU implementation of AWK, a programming language for pattern scanning and processing.
+    - name: unzip
+      description: Utility for extracting compressed files in .zip format.
+    - name: fd
+      description: Simple, fast, and user-friendly alternative to 'find'.
+    - name: lsd
+      description: Modern replacement for 'ls' with additional features like icons and colors.
+    - name: thefuck
+      description: Corrects errors in previous console commands automatically.
+    - name: bat
+      description: Clone of 'cat' with syntax highlighting and Git integration.
+    - name: tmux
+      description: Terminal multiplexer enabling multiple sessions in one terminal.
+    - name: zoxide
+      description: Smarter cd command, remembers your most used directories.
+    - name: zlib
+      description: Compression library implementing the deflate compression method.
+    - name: zstd
+      description: Fast lossless compression algorithm, targeting real-time compression scenarios.
+    - name: xz
+      description: General-purpose data compression with high compression ratio.
+    - name: openssl@3
+      description: Cryptography and SSL/TLS toolkit.
+    - name: pinentry
+      description: Collection of passphrase entry dialogs which is required for GnuPG.
+    - name: pinentry-mac
+      description: Mac-specific version of pinentry for GnuPG passphrase entry.
 
   dev_languages:
-    - openjdk@11
-    - openjdk@17
-    - go
-    - node
-    - typescript
-    - rust
-    - scala
-    - sbt
-    - ruby-build
-    - rbenv
-    - rbenv-default-gems
-    - rbenv-gemset
-    - python
-    - pyenv
-    - pdm
-    - bun
-    - nvm
-    - deno
+    - name: openjdk@11
+      description: Development kit for the Java programming language.
+    - name: openjdk@17
+      description: Development kit for the Java programming language.
+    - name: go
+      description: Open source programming language to build simple, reliable, and efficient software.
+    - name: node
+      description: Platform built on V8 to build network applications.
+    - name: typescript
+      description: Language for application-scale JavaScript development.
+    - name: rust
+      description: Safe, concurrent, practical programming language.
+    - name: scala
+      description: JVM-based programming language.
+    - name: sbt
+      description: Build tool for Scala projects.
+    - name: ruby-build
+      description: Plugin for rbenv that provides an `rbenv install` command to compile and install different versions of Ruby.
+    - name: rbenv
+      description: Manage multiple Ruby environments.
+    - name: rbenv-default-gems
+      description: Automatically install a list of gems every time you install a new Ruby version with rbenv.
+    - name: rbenv-gemset
+      description: Manage gemsets for rbenv.
+    - name: python
+      description: Interpreted, interactive, object-oriented programming language.
+    - name: pyenv
+      description: Simple Python version management.
+    - name: pdm
+      description: Python package and dependency manager supporting the PEP 582 standard.
+    - name: bun
+      description: Fast all-in-one JavaScript runtime like Node or Deno.
+    - name: nvm
+      description: Node Version Manager - Simple bash script to manage multiple active node.js versions.
+    - name: deno
+      description: A secure runtime for JavaScript and TypeScript.
 
   k8s_and_cloud:
-    - awscli
-    - azure-cli
-    - oci-cli
-    - kind
-    - kubectl-cnpg
-    - kube-ps1
-    - kubecolor
-    - kubie
-    - kustomize
-    - helm
-    - helmfile
-    - terraform-docs
-    - tfenv
-    - tflint
-    - tfsec
-    - opentofu
-    - terragrunt
-    - terrascan
-    - juju
-    - linkerd
-    - velero
-    - flux
-    - eksctl
-    - localstack-cli
-    - microk8s
-    - talosctl
-    - hauler
-    - epinio
-    - cmctl
-    - kcl-lang/tap/kcl
+    - name: awscli
+      description: Official Amazon AWS command-line interface.
+    - name: azure-cli
+      description: Microsoft Azure CLI 2.0.
+    - name: oci-cli
+      description: Oracle Cloud Infrastructure CLI tool for managing cloud resources.
+    - name: kind
+      description: Run local Kubernetes cluster in Docker.
+    - name: kubectl-cnpg
+      description: CloudNativePG plugin for kubectl.
+    - name: kube-ps1
+      description: Kubernetes prompt info for bash and zsh.
+    - name: kubecolor
+      description: Colorize your kubectl output.
+    - name: kubie
+      description: Alternative to kubectx and kubens with more features.
+    - name: kustomize
+      description: Customize Kubernetes YAML configurations.
+    - name: helm
+      description: Kubernetes package manager.
+    - name: helmfile
+      description: Deploy Kubernetes Helm charts declaratively.
+    - name: terraform-docs
+      description: Generate documentation from Terraform modules.
+    - name: tfenv
+      description: Terraform version manager.
+    - name: tflint
+      description: Terraform linter for detecting errors and style issues.
+    - name: tfsec
+      description: Static analysis security scanner for Terraform code.
+    - name: opentofu
+      description: Open-source alternative to Terraform.
+    - name: terragrunt
+      description: Thin wrapper for Terraform for managing configurations.
+    - name: terrascan
+      description: Detect compliance and security violations across Infrastructure as Code.
+    - name: juju
+      description: Model-driven application deployment and operations tool.
+    - name: linkerd
+      description: Ultralight, security-first service mesh for Kubernetes.
+    - name: velero
+      description: Backup and migrate Kubernetes resources and persistent volumes.
+    - name: flux
+      description: Continuous delivery solution for Kubernetes.
+    - name: eksctl
+      description: CLI tool for creating clusters on EKS.
+    - name: localstack-cli
+      description: CLI for LocalStack, a local AWS cloud stack.
+    - name: microk8s
+      description: Lightweight Kubernetes for workstations and appliances.
+    - name: talosctl
+      description: CLI for managing Talos Linux clusters.
+    - name: hauler
+      description: Tool for packaging and distributing OCI artifacts.
+    - name: epinio
+      description: Platform for deploying applications to Kubernetes.
+    - name: cmctl
+      description: CLI for interacting with cert-manager.
+    - name: kcl-lang/tap/kcl
+      description: KCL is a constraint-based record and functional language.
 
   security_tools:
-    - age
-    - gnupg
-    - gnupg@1.4
-    - opensc
-    - pkcs11-tools
-    - yubico-piv-tool
-    - ykman
-    - ykpers
-    - sops
-    - cosign
-    - checkov
-    - grype
-    - syft
+    - name: age
+      description: Simple, modern, secure file encryption tool.
+    - name: gnupg
+      description: GNU Pretty Good Privacy (PGP) package for secure communication.
+    - name: gnupg@1.4
+      description: Legacy version of GnuPG for compatibility with older systems.
+    - name: opensc
+      description: Tools and libraries for smart cards.
+    - name: pkcs11-tools
+      description: Tools to manage objects on PKCS#11 cryptographic tokens.
+    - name: yubico-piv-tool
+      description: Command-line tool for the YubiKey PIV application.
+    - name: ykman
+      description: Tool for managing your YubiKey configuration.
+    - name: ykpers
+      description: YubiKey personalization library and tool.
+    - name: sops
+      description: Editor of encrypted files.
+    - name: cosign
+      description: Container Signing, Verification and Storage in an OCI registry.
+    - name: checkov
+      description: Static code analysis tool for infrastructure-as-code.
+    - name: grype
+      description: Vulnerability scanner for container images and filesystems.
+    - name: syft
+      description: CLI tool and library for generating a Software Bill of Materials from container images and filesystems.
 
   infra_and_testing:
-    - docker
-    - docker-compose
-    - docker-buildx
-    - docker-credential-helper
-    - lima
-    - colima
-    - qemu
-    - skopeo
-    - crane
-    - kind
+    - name: docker
+      description: Pack, ship and run any application as a lightweight container.
+    - name: docker-compose
+      description: Define and run multi-container applications with Docker.
+    - name: docker-buildx
+      description: Docker CLI plugin for extended build capabilities with BuildKit.
+    - name: docker-credential-helper
+      description: Platform keystore credential helper for Docker.
+    - name: lima
+      description: Linux virtual machines, typically on macOS, for container development.
+    - name: colima
+      description: Container runtimes on macOS (and Linux) with minimal setup.
+    - name: qemu
+      description: Generic machine emulator and virtualizer.
+    - name: skopeo
+      description: Command-line utility that performs various operations on container images and image repositories.
+    - name: crane
+      description: Tool for interacting with remote images and registries.
+    - name: kind
+      description: Run local Kubernetes clusters using Docker container nodes.
 
   observability:
     - grafana
@@ -146,122 +271,214 @@ brews:
     - pyroscope
 
   image_video:
-    - ffmpeg
-    - libass
-    - openjpeg
-    - leptonica
-    - libtiff
-    - jpeg-xl
-    - jpeg
-    - webp
-    - aom
-    - pango
-    - librsvg
+    - name: ffmpeg
+      description: Play, record, convert, and stream audio and video.
+    - name: libass
+      description: Subtitle renderer for the ASS/SSA subtitle format.
+    - name: openjpeg
+      description: Library for JPEG-2000 image manipulation.
+    - name: leptonica
+      description: Image processing and image analysis library.
+    - name: libtiff
+      description: TIFF library and utilities.
+    - name: jpeg-xl
+      description: New file format for still image compression.
+    - name: jpeg
+      description: Image manipulation library.
+    - name: webp
+      description: Image format providing lossless and lossy compression for web images.
+    - name: aom
+      description: Alliance for Open Media AV1 codec library.
+    - name: pango
+      description: Library for layout and rendering of internationalized text.
+    - name: librsvg
+      description: Library to render SVG files using Cairo.
 
   infra_misc:
-    - bazel
-    - cmake
-    - protobuf
-    - openssl@3
-    - curl
-    - openshift-cli
-    - conftest
-    - jsonnet-bundler
-    - just
-    - chezmoi
-    - yq
-    - yamllint
-    - yaml-language-server
+    - name: bazel
+      description: Google's own build tool.
+    - name: cmake
+      description: Cross-platform make.
+    - name: protobuf
+      description: Protocol buffers (Google's data interchange format).
+    - name: openssl@3
+      description: Cryptography and SSL/TLS Toolkit.
+    - name: curl
+      description: Get a file from an HTTP, HTTPS or FTP server.
+    - name: openshift-cli
+      description: OpenShift command-line interface tools.
+    - name: conftest
+      description: Test your configuration files using Open Policy Agent.
+    - name: jsonnet-bundler
+      description: Package manager for Jsonnet.
+    - name: just
+      description: Command runner similar to Make, but simpler and more flexible.
+    - name: chezmoi
+      description: Manage your dotfiles across multiple machines, securely.
+    - name: yq
+      description: Portable command-line YAML processor.
+    - name: yamllint
+      description: Linter for YAML files.
+    - name: yaml-language-server
+      description: Language server for YAML files, with built-in Kubernetes and Kustomize support.
 
   ai_tools:
-    - ollama
+    - name: ollama
+      description: Create, run, and share large language models (LLMs). [Source](https://formulae.brew.sh/formula/ollama)
 
   build_release:
-    - goreleaser
-    - golangci-lint
-    - packer
+    - name: goreleaser
+      description: Deliver Go binaries as fast and easily as possible. [Source](https://formulae.brew.sh/formula/goreleaser)
+    - name: golangci-lint
+      description: Fast linters runner for Go. [Source](https://formulae.brew.sh/formula/golangci-lint)
+    - name: packer
+      description: Tool for creating identical machine images for multiple platforms. [Source](https://formulae.brew.sh/formula/packer)
 
   system_utils:
-    - neofetch
-    - fastfetch
-    - lolcat
-    - figlet
-    - superfile
-    - sponge
-    - ponysay
-    - nushell
-    - magic-wormhole
+    - name: neofetch
+      description: Fast, highly customizable system info script. [Source](https://formulae.brew.sh/formula/neofetch)
+    - name: fastfetch
+      description: Neofetch-like tool for fetching system information and displaying it prettily. [Source](https://formulae.brew.sh/formula/fastfetch)
+    - name: lolcat
+      description: Rainbows and unicorns in your console! [Source](https://formulae.brew.sh/formula/lolcat)
+    - name: figlet
+      description: Banner-like program prints strings as ASCII art. [Source](https://formulae.brew.sh/formula/figlet)
+    - name: superfile
+      description: Tool for manipulating files and directories.
+    - name: sponge
+      description: Soak up standard input and write to a file.
+    - name: ponysay
+      description: Cowsay reimplemented with ponies.
+    - name: nushell
+      description: New type of shell focused on structured data.
+    - name: magic-wormhole
+      description: Securely transfer data between computers.
 
   network_tools:
-    - unbound
-    - sshuttle
-    - socat
-    - telnet
-    - nmap
+    - name: unbound
+      description: Validating, recursive, and caching DNS resolver.
+    - name: sshuttle
+      description: Transparent proxy server that works as a poor man's VPN.
+    - name: socat
+      description: Multipurpose relay for bidirectional data transfer.
+    - name: telnet
+      description: User interface to the TELNET protocol.
+    - name: nmap
+      description: Port scanning utility for large networks.
 
   shell_plugins:
-    - zsh-autosuggestions
-    - zsh-completions
-    - zsh-history-substring-search
-    - zsh-syntax-highlighting
-    - powerlevel10k
-    - spaceship
-    - zplug
+    - name: zsh-autosuggestions
+      description: Fish-like fast/unobtrusive autosuggestions for zsh .
+    - name: zsh-completions
+      description: Additional completion definitions for zsh .
+    - name: zsh-history-substring-search
+      description: Zsh port of Fish shell's history search .
+    - name: zsh-syntax-highlighting
+      description: Fish shell like syntax highlighting for zsh .
+    - name: powerlevel10k
+      description: A Zsh theme emphasizing speed, flexibility, and out-of-the-box experience .
+    - name: spaceship
+      description: Zsh prompt for Astronauts .
+    - name: zplug
+      description: Next-generation plugin manager for zsh .
 
   fb_libs:
-    - folly
-    - fizz
-    - wangle
-    - fbthrift
-    - fb303
-    - edencommon
-    - mvfst
+    - name: folly
+      description: An open-source C++ library developed and used at Facebook.
+    - name: fizz
+      description: A TLS 1.3 implementation in C++.
+    - name: wangle
+      description: A C++ library providing a set of common client/server abstractions.
+    - name: fbthrift
+      description: Facebook's implementation of the Thrift framework.
+    - name: fb303
+      description: A core set of Thrift services for monitoring and introspection.
+    - name: edencommon
+      description: Common libraries and utilities for Facebook's Eden filesystem.
+    - name: mvfst
+      description: An implementation of the QUIC transport protocol.
 
   databases:
-    - cassandra
-    - postgresql@16
+    - name: cassandra
+      description: A highly scalable open-source NoSQL database system.
+    - name: postgresql@16
+      description: The world's most advanced open-source relational database.
 
   ai_christianson:
-    - ra-aid
+    - name: ra-aid
+      description: A tool for assisting with reverse engineering tasks.
 
   defenseunicorns:
-    - uds
-    - zarf
+    - name: uds
+      description: Unified Development System for secure software delivery.
+    - name: zarf
+      description: A tool for packaging and deploying applications in air-gapped environments.
 
   misc_taps:
-    - granted
-    - k9s
-    - ksail
-    - sketchybar
-    - flamingo
-    - helm-docs
-    - krunkit
-    - kube-capacity
-    - pinentry-touchid
-    - kftray
+    - name: granted
+      description: A CLI tool for managing access to cloud accounts.
+    - name: k9s
+      description: A terminal-based UI to interact with your Kubernetes clusters.
+    - name: ksail
+      description: A tool for managing Kubernetes configurations.
+    - name: sketchybar
+      description: A highly customizable status bar for macOS.
+    - name: flamingo
+      description: A tool for managing and deploying applications.
+    - name: helm-docs
+      description: Automatically generate documentation for your Helm charts.
+    - name: krunkit
+      description: A toolkit for managing Kubernetes resources.
+    - name: kube-capacity
+      description: A simple CLI that provides an overview of resource requests, limits, and utilization in a Kubernetes cluster.
+    - name: pinentry-touchid
+      description: A pinentry program that allows GPG to use Touch ID on macOS.
+    - name: kftray
+      description: A system tray application for managing Kubernetes contexts.
 
 casks:
-  - 1password-cli
-  - aerospace
-  - alacritty
-  - fig
-  - font-fira-code
-  - font-fira-code-nerd-font
-  - font-hack-nerd-font
-  - font-inconsolata-for-powerline
-  - font-jetbrains-mono-nerd-font
-  - font-menlo-for-powerline
-  - font-monoid-nerd-font
-  - font-sf-mono-nerd-font
-  - font-source-code-pro
-  - git-credential-manager
-  - kubecontext
-  - macfuse
-  - multipass
-  - podman-desktop
-  - session-manager-plugin
-  - testcontainers-desktop
-  - wezterm
+  - name: 1password-cli
+    description: Command-line interface for 1Password, allowing secure access to your vaults and secrets. [Source](https://formulae.brew.sh/cask/1password-cli)
+  - name: aerospace
+    description: i3-like tiling window manager for macOS, enhancing productivity through keyboard-driven window management. [Source](https://github.com/nikitabobko/AeroSpace)
+  - name: alacritty
+    description: GPU-accelerated terminal emulator focused on performance and simplicity. [Source](https://formulae.brew.sh/cask/alacritty)
+  - name: fig
+    description: Enhances your terminal with autocomplete, documentation, and more. [Source](https://formulae.brew.sh/cask/fig)
+  - name: font-fira-code
+    description: Monospaced font with programming ligatures, designed for developers. [Source](https://formulae.brew.sh/cask/font-fira-code)
+  - name: font-fira-code-nerd-font
+    description: Fira Code font patched with Nerd Fonts for additional glyphs and icons. [Source](https://formulae.brew.sh/cask/font-fira-code-nerd-font)
+  - name: font-hack-nerd-font
+    description: Hack font patched with Nerd Fonts, providing a wide range of developer-friendly glyphs.
+  - name: font-inconsolata-for-powerline
+    description: Inconsolata font customized for Powerline, suitable for terminal and code editors. [Source](https://formulae.brew.sh/cask/font-inconsolata-for-powerline)
+  - name: font-jetbrains-mono-nerd-font
+    description: JetBrains Mono font enhanced with Nerd Fonts, offering ligatures and extra symbols.
+  - name: font-menlo-for-powerline
+    description: Menlo font modified for Powerline, ideal for terminal applications.
+  - name: font-monoid-nerd-font
+    description: Monoid font patched with Nerd Fonts, optimized for coding environments.
+  - name: font-sf-mono-nerd-font
+    description: SF Mono font enhanced with Nerd Fonts, providing additional icons and symbols.
+  - name: font-source-code-pro
+    description: Adobe's monospaced font designed for coding, offering clarity and readability.
+  - name: git-credential-manager
+    description: Secure Git credential storage for Windows, macOS, and Linux.
+  - name: kubecontext
+    description: Tool for managing and switching between Kubernetes contexts.
+  - name: macfuse
+    description: macOS kernel extension for extending file system support.
+  - name: multipass
+    description: Lightweight VM manager for running Ubuntu instances.
+  - name: podman-desktop
+    description: GUI for managing containers and Kubernetes clusters using Podman.
+  - name: session-manager-plugin
+    description: AWS Session Manager plugin for starting sessions with the AWS CLI.
+  - name: testcontainers-desktop
+    description: Desktop application for managing Testcontainers environments.
+  - name: wezterm
+    description: GPU-accelerated terminal emulator and multiplexer.
 
 vscode_extensions:
   - 4ops.terraform

@@ -9,12 +9,12 @@ tap {{ .name | quote }}
 
 {{- range $group, $packages := .brews }}
   {{- range $packages }}
-brew {{ . | quote }}
+brew {{ .name | quote }}
   {{- end }}
 {{- end }}
 
 {{- range .casks }}
-cask {{ . | quote }}
+cask {{ .name | quote }}
 {{- end }}
 
 {{- range .vscode_extensions }}
