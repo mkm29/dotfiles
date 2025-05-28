@@ -140,6 +140,8 @@ brews:
       description: A secure runtime for JavaScript and TypeScript.
     - name: scalac
       description: Compliler for the Scala programming language.
+    - name: scala
+      description: Scala programming language
 
   k8s_and_cloud:
     - name: awscli
@@ -320,6 +322,8 @@ brews:
   ai_tools:
     - name: ollama
       description: Create, run, and share large language models (LLMs). [Source](https://formulae.brew.sh/formula/ollama)
+    - name: ra-aid
+      description: A tool for assisting with reverse engineering tasks.
 
   build_release:
     - name: goreleaser
@@ -400,10 +404,6 @@ brews:
       description: A highly scalable open-source NoSQL database system.
     - name: postgresql@16
       description: The world's most advanced open-source relational database.
-
-  ai_christianson:
-    - name: ra-aid
-      description: A tool for assisting with reverse engineering tasks.
 
   defenseunicorns:
     - name: uds
