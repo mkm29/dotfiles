@@ -244,8 +244,8 @@ brews:
       description: Linux virtual machines, typically on macOS, for container development.
     - name: colima
       description: Container runtimes on macOS (and Linux) with minimal setup.
-    - name: qemu
-      description: Generic machine emulator and virtualizer.
+    # - name: qemu
+    #   description: Generic machine emulator and virtualizer.
     - name: skopeo
       description: Command-line utility that performs various operations on container images and image repositories.
     - name: crane
@@ -254,11 +254,16 @@ brews:
       description: Run local Kubernetes clusters using Docker container nodes.
 
   observability:
-    - grafana
-    - alloy
-    - mimirtool
-    - logcli
-    - pyroscope
+    - name: grafana
+      description: Gorgeous metric visualizations and dashboards for timeseries databases
+    - name: grafana-alloy
+      description: OpenTelemetry Collector distribution with programmable pipelines
+    - name: mimirtool
+      description: CLI for interacting with Grafana Mimir
+    - name: logcli
+      description: Run LogQL queries against a Loki server
+    - name: pyroscope-io/brew/pyroscope
+      description: Grafana Pyroscope is a continuous profiling platform designed to surface performance insights from your applications
 
   image_video:
     - name: ffmpeg
@@ -343,6 +348,8 @@ brews:
       description: New type of shell focused on structured data.
     - name: magic-wormhole
       description: Securely transfer data between computers.
+    - name: tldr
+      description: Simplified and community-driven man pages
 
   network_tools:
     - name: unbound
@@ -433,8 +440,6 @@ casks:
     description: i3-like tiling window manager for macOS, enhancing productivity through keyboard-driven window management. [Source](https://github.com/nikitabobko/AeroSpace)
   - name: alacritty
     description: GPU-accelerated terminal emulator focused on performance and simplicity. [Source](https://formulae.brew.sh/cask/alacritty)
-  - name: fig
-    description: Enhances your terminal with autocomplete, documentation, and more. [Source](https://formulae.brew.sh/cask/fig)
   - name: font-fira-code
     description: Monospaced font with programming ligatures, designed for developers. [Source](https://formulae.brew.sh/cask/font-fira-code)
   - name: font-fira-code-nerd-font
