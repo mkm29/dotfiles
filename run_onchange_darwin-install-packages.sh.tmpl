@@ -8,17 +8,17 @@ tap {{ .name | quote }}
 {{- end }}
 
 {{- range $group, $packages := .brews }}
-{{- printf "******** Group: %s" $group }}
   {{- range $pkg := $packages }}
+    {{- if kindIs "map" $pkg }}
+brew install {{ index $pkg "name" }}
+    {{- else }}
 brew install {{ $pkg }}
+    {{- end }}
   {{- end }}
 {{- end }}
 
-{{- range $group, $packages := .casks }}
-{{- printf "******** Group: %s" $group }}
-  {{- range $pkg := $packages }}
-brew install {{ $pkg }}
-  {{- end }}
+{{- range $package := .casks }}
+brew install {{ $package.name }}
 {{- end }}
 
 {{- range .vscode_extensions }}
