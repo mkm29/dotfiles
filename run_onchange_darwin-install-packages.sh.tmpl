@@ -10,15 +10,15 @@ tap {{ .name | quote }}
 {{- range $group, $packages := .brews }}
   {{- range $pkg := $packages }}
     {{- if kindIs "map" $pkg }}
-brew install {{ index $pkg "name" }}
+brew {{ quote (index $pkg "name") }}
     {{- else }}
-brew install {{ $pkg }}
+brew {{ quote $pkg }}
     {{- end }}
   {{- end }}
 {{- end }}
 
 {{- range $package := .casks }}
-brew install {{ $package.name }}
+cask {{ quote $package.name }}
 {{- end }}
 
 {{- range .vscode_extensions }}
