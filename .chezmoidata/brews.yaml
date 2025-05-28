@@ -138,8 +138,6 @@ brews:
       description: Node Version Manager - Simple bash script to manage multiple active node.js versions.
     - name: deno
       description: A secure runtime for JavaScript and TypeScript.
-    - name: scalac
-      description: Compliler for the Scala programming language.
     - name: scala
       description: Scala programming language
 
