@@ -7,6 +7,20 @@ brew bundle --file=/dev/stdin <<EOF
 tap {{ .name | quote }}
 {{- end }}
 
+{{- range $group, $packages := .brews }}
+{{- printf "******** Group: %s" $group }}
+  {{- range $pkg := $packages }}
+brew install {{ $pkg }}
+  {{- end }}
+{{- end }}
+
+{{- range $group, $packages := .casks }}
+{{- printf "******** Group: %s" $group }}
+  {{- range $pkg := $packages }}
+brew install {{ $pkg }}
+  {{- end }}
+{{- end }}
+
 {{- range .vscode_extensions }}
 vscode {{ . | quote }}
 {{- end }}
