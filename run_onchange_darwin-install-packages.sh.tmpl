@@ -6,17 +6,12 @@ brew bundle --file=/dev/stdin <<EOF
 {{- range .taps }}
 tap {{ .name | quote }}
 {{- end }}
-/*
+
 {{- range $group, $packages := .brews }}
   {{- range $packages }}
 brew {{ .name | quote }}
   {{- end }}
 {{- end }}
-
-{{- range .casks }}
-cask {{ .name | quote }}
-{{- end }}
-*/
 
 {{- range .vscode_extensions }}
 vscode {{ . | quote }}
