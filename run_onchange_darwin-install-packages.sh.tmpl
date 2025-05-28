@@ -7,12 +7,6 @@ brew bundle --file=/dev/stdin <<EOF
 tap {{ .name | quote }}
 {{- end }}
 
-{{- range $group, $packages := .brews }}
-  {{- range $packages }}
-brew {{ .name | quote }}
-  {{- end }}
-{{- end }}
-
 {{- range .vscode_extensions }}
 vscode {{ . | quote }}
 {{- end }}
