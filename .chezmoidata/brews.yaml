@@ -29,8 +29,6 @@ taps:
     description: Tap for KFTray, a Keycloak login tray application for macOS
   - name: hidetatz/tap
     description: Personal tap with utilities and CLIs by hidetatz, including custom tools like ksail
-  - name: jenkins-x/jx
-    description: Official Jenkins X CLI tap for Kubernetes-native CI/CD
   - name: jorgelbg/tap
     description: Tap containing helpful macOS CLI utilities like `pinentry-touchid`
   - name: localstack/tap
@@ -38,7 +36,7 @@ taps:
   - name: minio/stable
     description: Official MinIO tap for high-performance, S3-compatible object storage
   - name: nikitabobko/tap
-    description: Tap containing terminal and shell enhancements such as `flamingo`
+    description: Tap containing `aerospace` tiling window
   - name: norwoodj/tap
     description: Tap containing `helm-docs`, a tool to generate Helm chart documentation automatically
   - name: oven-sh/bun
@@ -59,8 +57,6 @@ taps:
     description: Canonical's tap for MicroK8s, a lightweight Kubernetes distribution
   - name: weaveworks/tap
     description: Tap for Weave GitOps and other related Kubernetes automation tools
-  - name: yulibaozi/tap
-    description: Personal tap for custom utilities and experiments by yulibaozi
 
 brews:
   base_tools:
@@ -138,18 +134,14 @@ brews:
       description: Automatically install a list of gems every time you install a new Ruby version with rbenv.
     - name: rbenv-gemset
       description: Manage gemsets for rbenv.
-    - name: python
-      description: Interpreted, interactive, object-oriented programming language.
-    - name: pyenv
-      description: Simple Python version management.
-    - name: pdm
-      description: Python package and dependency manager supporting the PEP 582 standard.
     - name: bun
       description: Fast all-in-one JavaScript runtime like Node or Deno.
     - name: nvm
       description: Node Version Manager - Simple bash script to manage multiple active node.js versions.
     - name: deno
       description: A secure runtime for JavaScript and TypeScript.
+    - name: scalac
+      description: Compliler for the Scala programming language.
 
   k8s_and_cloud:
     - name: awscli
