@@ -122,8 +122,6 @@ brews:
       description: Language for application-scale JavaScript development.
     - name: rust
       description: Safe, concurrent, practical programming language.
-    - name: scala
-      description: JVM-based programming language.
     - name: sbt
       description: Build tool for Scala projects.
     - name: ruby-build
