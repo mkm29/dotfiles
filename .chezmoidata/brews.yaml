@@ -322,6 +322,9 @@ brews:
       description: Create, run, and share large language models (LLMs). [Source](https://formulae.brew.sh/formula/ollama)
     - name: ra-aid
       description: A tool for assisting with reverse engineering tasks.
+    - name: amazon-q
+      description: Amazon Q CLI brings IDE-style autocomplete and agentic capabilities to your terminal.
+
 
   build_release:
     - name: goreleaser
