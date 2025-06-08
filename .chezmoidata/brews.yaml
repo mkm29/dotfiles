@@ -232,6 +232,8 @@ brews:
       description: Vulnerability scanner for container images and filesystems.
     - name: syft
       description: CLI tool and library for generating a Software Bill of Materials from container images and filesystems.
+    - name: gopass
+      description: The slightly more awesome standard UNIX password manager for teams, implemented in Go.
 
   infra_and_testing:
     - name: docker
