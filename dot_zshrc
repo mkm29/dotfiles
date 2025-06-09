@@ -134,3 +134,5 @@ if [ -f "$HOME/.local/bin/env" ]; then source "$HOME/.local/bin/env"; fi
 # Load Rust environment
 if [ -f "$HOME/.cargo/env" ]; then source "$HOME/.cargo/env"; fi
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
+export TERM=xterm-256color
