@@ -37,8 +37,6 @@ fi
 
 # go, brew paths
 export PATH="$HOME/go/bin:$HOMEBREW_PREFIX/bin:$PATH"
-# Initialize Starship prompt
-eval "$(starship init zsh)"
 
 # Enable persistent history
 HISTFILE=~/.zsh_history
@@ -94,8 +92,6 @@ export CPPFLAGS="-I$(brew --prefix tcl-tk)/include"
 export PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig"
 export PATH="$(brew --prefix tcl-tk)/bin:$PATH"
 
-# Jenv configuration
-export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
