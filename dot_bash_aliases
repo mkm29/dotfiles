@@ -1,6 +1,5 @@
 alias brewr="arch -x86_64 brew"
 alias intel="arch -x86_64"
-alias code=code-insiders
 alias k=kubectl
 alias tf=terraform
 alias nerdctl="lima nerdctl"
