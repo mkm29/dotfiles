@@ -110,6 +110,14 @@ brews:
       description: Mac-specific version of pinentry for GnuPG passphrase entry.
     - name: powerlevel10k
       description: A fast and highly customizable Zsh theme emphasizing speed, flexibility, and out-of-the-box experience.
+    - name: ripgrep
+      description: Line-oriented search tool that recursively searches your current directory for a regex pattern.
+    - name: fd
+      description: Simple, fast, and user-friendly alternative to 'find'.
+    - name: fzf
+      description: Command-line fuzzy finder, useful for searching files and directories interactively.
+    - name: xclip
+      description: Command-line interface to X selections (clipboard) for copying and pasting text.
 
   dev_languages:
     - name: openjdk@11
@@ -337,7 +345,7 @@ brews:
       description: Deliver Go binaries as fast and easily as possible. [Source](https://formulae.brew.sh/formula/goreleaser)
     - name: golangci-lint
       description: Fast linters runner for Go. [Source](https://formulae.brew.sh/formula/golangci-lint)
-    - name: packer
+    - name: hashicorp/tap/packer
       description: Tool for creating identical machine images for multiple platforms. [Source](https://formulae.brew.sh/formula/packer)
 
   system_utils:
@@ -437,8 +445,6 @@ brews:
       description: A simple CLI that provides an overview of resource requests, limits, and utilization in a Kubernetes cluster.
     - name: pinentry-touchid
       description: A pinentry program that allows GPG to use Touch ID on macOS.
-    - name: kftray
-      description: A system tray application for managing Kubernetes contexts.
 
 casks:
   - name: 1password-cli
@@ -477,10 +483,9 @@ casks:
     description: GUI for managing containers and Kubernetes clusters using Podman.
   - name: session-manager-plugin
     description: AWS Session Manager plugin for starting sessions with the AWS CLI.
-  - name: testcontainers-desktop
-    description: Desktop application for managing Testcontainers environments.
-  - name: wezterm
-    description: GPU-accelerated terminal emulator and multiplexer.
+  # - name: kftray
+  #   note: Use either kftray or kftui, not both.
+  #   description: A system tray application for managing Kubernetes contexts.
 
 vscode_extensions:
   - 4ops.terraform
