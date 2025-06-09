@@ -133,8 +133,6 @@ if [ -d '$HOME/Developer/google-cloud-sdk/bin' ]; then export PATH="$PATH:$HOME/
 if [ -f '$HOME/Developer/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/Developer/google-cloud-sdk/completion.zsh.inc'; fi
 
 source $HOME/.zshenv
-# Added by Windsurf
-export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 
 if [ -f "$HOME/.local/bin/env" ]; then source "$HOME/.local/bin/env"; fi
 # Load Rust environment
