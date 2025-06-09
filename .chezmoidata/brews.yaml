@@ -108,6 +108,8 @@ brews:
       description: Collection of passphrase entry dialogs which is required for GnuPG.
     - name: pinentry-mac
       description: Mac-specific version of pinentry for GnuPG passphrase entry.
+    - name: powerlevel10k
+      description: A fast and highly customizable Zsh theme emphasizing speed, flexibility, and out-of-the-box experience.
 
   dev_languages:
     - name: openjdk@11
