@@ -371,6 +371,8 @@ brews:
       description: Simplified and community-driven man pages
     - name: neovim
       description: Vim-fork focused on extensibility and usability.
+    - name: zsh-autosuggestions
+      description: Fish-like fast/unobstrusive autosuggestions for zsh.
 
   network_tools:
     - name: unbound
