@@ -20,7 +20,7 @@ export GNUPGHOME=$HOME/.gnupg
 export KUBECTL_KUBERC=true
 export GRANTED_ENABLE_AUTO_REASSUME=true
 export CONTAINERS_MACHINE_PROVIDER=libkrun
-{{ if eq .chezmoi.data.type "personal" -}}
+{{ if eq .chezmoi.class "personal" -}}
 export BITWARDEN_EMAIL=mitch.murphy@gmail.com
 # export GEM_HOME=$HOME/.gem
 # export PATH=$GEM_HOME/bin:$PATH
