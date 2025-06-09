@@ -6,7 +6,6 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Which plugins would you like to load?
 plugins=(
-    zsh-autosuggestions
     git
     docker
     kubectl
@@ -20,6 +19,8 @@ plugins=(
     direnv
     1password
 )
+
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Load Homebrew completions
 export HOMEBREW_PREFIX=$(/opt/homebrew/bin/brew --prefix)
