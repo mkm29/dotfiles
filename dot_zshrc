@@ -20,8 +20,6 @@ plugins=(
     1password
 )
 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 # Load Homebrew completions
 export HOMEBREW_PREFIX=$(/opt/homebrew/bin/brew --prefix)
 fpath=("$HOMEBREW_PREFIX/share/zsh/site-functions" "$HOME/.docker/completions" $fpath)
