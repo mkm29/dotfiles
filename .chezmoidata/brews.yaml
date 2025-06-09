@@ -363,8 +363,8 @@ brews:
       description: Soak up standard input and write to a file.
     - name: ponysay
       description: Cowsay reimplemented with ponies.
-    - name: nushell
-      description: New type of shell focused on structured data.
+    # - name: nushell
+    #   description: New type of shell focused on structured data.
     - name: magic-wormhole
       description: Securely transfer data between computers.
     - name: tldr
@@ -377,6 +377,9 @@ brews:
       description: Shell extension that loads/unloads environment variables based on the current directory.
     - name: tmux
       description: Terminal multiplexer that allows multiple terminal sessions to be accessed and controlled from a single window.
+    - name: ghostty
+      description: A fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.
+
 
   network_tools:
     - name: unbound
