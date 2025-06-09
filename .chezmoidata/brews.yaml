@@ -373,6 +373,8 @@ brews:
       description: Vim-fork focused on extensibility and usability.
     - name: zsh-autosuggestions
       description: Fish-like fast/unobstrusive autosuggestions for zsh.
+    - name: direnv
+      description: Shell extension that loads/unloads environment variables based on the current directory.
 
   network_tools:
     - name: unbound

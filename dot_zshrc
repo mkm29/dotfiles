@@ -92,7 +92,6 @@ export CPPFLAGS="-I$(brew --prefix tcl-tk)/include"
 export PKG_CONFIG_PATH="$(brew --prefix tcl-tk)/lib/pkgconfig"
 export PATH="$(brew --prefix tcl-tk)/bin:$PATH"
 
-eval "$(jenv init -)"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # OpenSSL configuration
