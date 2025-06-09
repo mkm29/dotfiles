@@ -369,6 +369,8 @@ brews:
       description: Securely transfer data between computers.
     - name: tldr
       description: Simplified and community-driven man pages
+    - name: neovim
+      description: Vim-fork focused on extensibility and usability.
 
   network_tools:
     - name: unbound
