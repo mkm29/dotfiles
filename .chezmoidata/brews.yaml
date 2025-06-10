@@ -122,6 +122,13 @@ brews:
       description: Command-line interface to X selections (clipboard) for copying and pasting text.
     - name: pkgx
       description: Run anything from Homebrew without installing it, using a temporary environment.
+    - name: neovide
+      description: A graphical user interface for Neovim, providing a modern and responsive experience.
+    - name: lazygit
+      description: Simple terminal UI for git commands, making it easier to manage repositories.
+    - name: lazydocker
+      description: Simple terminal UI for Docker, providing an easy way to manage containers and images.
+
 
   dev_languages:
     - name: openjdk@11
@@ -158,6 +165,8 @@ brews:
   k8s_and_cloud:
     - name: awscli
       description: Official Amazon AWS command-line interface.
+    - name: google-cloud-sdk
+      description: Google Cloud Platform command-line interface.
     - name: azure-cli
       description: Microsoft Azure CLI 2.0.
     - name: oci-cli
@@ -381,9 +390,19 @@ brews:
       description: Shell extension that loads/unloads environment variables based on the current directory.
     - name: tmux
       description: Terminal multiplexer that allows multiple terminal sessions to be accessed and controlled from a single window.
+    - name: gnu-sed
+      description: GNU version of the stream editor `sed`, which is used to parse and transform text.
+    - name: shellcheck
+      description: Shell script static analysis tool that helps catch common mistakes and improve script quality.
+    - name: hadolint
+      description: Dockerfile linter that helps you build best practice Docker images.
+    - name: tree-sitter
+      description: Parser generator tool and an incremental parsing library.
 #    - name: ghostty
 #      description: A fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.
 
+    - name: sesh
+      description: CLI that helps you create and manage tmux sessions quickly and easily using zoxide.
 
   network_tools:
     - name: unbound
@@ -496,6 +515,12 @@ casks:
     description: GUI for managing containers and Kubernetes clusters using Podman.
   - name: session-manager-plugin
     description: AWS Session Manager plugin for starting sessions with the AWS CLI.
+  - name: podman
+    description: Tool for managing OCI containers and pods, similar to Docker but daemonless.
+  - name: podman-compose
+    description: Compose specification for Podman, allowing multi-container applications to be defined and run.
+  - name: gitify
+    description: GitHub notifications and activity feed for your desktop.
   # - name: kftray
   #   note: Use either kftray or kftui, not both.
   #   description: A system tray application for managing Kubernetes contexts.

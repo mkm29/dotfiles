@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ ! command -v helm &> /dev/null ]; then
+    echo "Helm is not installed."
+    exit 1
+else
+    echo "Helm is installed, proceeding with plugin installation."
+    
+    # Install Helm plugins
+    helm plugin install https://github.com/idsulik/helm-cel
+fi
