@@ -398,6 +398,8 @@ brews:
       description: Dockerfile linter that helps you build best practice Docker images.
     - name: tree-sitter
       description: Parser generator tool and an incremental parsing library.
+    - name: podman-compose
+      description: Docker Compose implementation for Podman, allowing you to define and run multi-container applications.
 #    - name: ghostty
 #      description: A fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.
 
@@ -515,10 +517,8 @@ casks:
     description: GUI for managing containers and Kubernetes clusters using Podman.
   - name: session-manager-plugin
     description: AWS Session Manager plugin for starting sessions with the AWS CLI.
-  - name: podman
-    description: Tool for managing OCI containers and pods, similar to Docker but daemonless.
-  - name: podman-compose
-    description: Compose specification for Podman, allowing multi-container applications to be defined and run.
+  - name: google-cloud-sdk
+    description: Google Cloud Platform command-line interface, providing tools for managing GCP resources.
   - name: gitify
     description: GitHub notifications and activity feed for your desktop.
   # - name: kftray
