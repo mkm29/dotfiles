@@ -120,6 +120,8 @@ brews:
       description: Command-line fuzzy finder, useful for searching files and directories interactively.
     - name: xclip
       description: Command-line interface to X selections (clipboard) for copying and pasting text.
+    - name: pkgx
+      description: Run anything from Homebrew without installing it, using a temporary environment.
 
   dev_languages:
     - name: openjdk@11
