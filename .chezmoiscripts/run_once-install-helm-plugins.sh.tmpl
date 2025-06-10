@@ -4,10 +4,11 @@ if [ ! command -v helm &> /dev/null ]; then
     echo "Helm is not installed."
     exit 1
 else
-{{ range $plugin := .helm.plugins }}
+{{ range $plugin := .helm.plugins -}}
     echo "Helm is installed, proceeding with plugin installation."
     
     # Install Helm plugins
     echo "Installing Helm plugin: {{ $plugin.name }}"
     helm plugin install {{ $plugin.repository }} --version {{ $plugin.version }}
+{{ end -}}
 fi
