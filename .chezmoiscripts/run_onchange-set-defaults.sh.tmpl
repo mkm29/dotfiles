@@ -1,3 +1,4 @@
+{{ if eq .chezmoi.os "darwin" -}}
 #!/bin/sh -ex
 
 # Based on
@@ -14,3 +15,4 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 # Disable .DS_Store files on network volumes and USB drives
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+{{ end -}}
