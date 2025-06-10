@@ -86,7 +86,9 @@ brews:
       description: Utility for extracting compressed files in .zip format.
     - name: fd
       description: Simple, fast, and user-friendly alternative to 'find'.
-    - name: lsd
+#    - name: lsd
+#      description: Modern replacement for 'ls' with additional features like icons and colors.
+    - name: eza
       description: Modern replacement for 'ls' with additional features like icons and colors.
     - name: thefuck
       description: Corrects errors in previous console commands automatically.
