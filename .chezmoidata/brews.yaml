@@ -35,8 +35,8 @@ taps:
     description: Tap for LocalStack CLI tools for testing AWS services locally
   - name: minio/stable
     description: Official MinIO tap for high-performance, S3-compatible object storage
-  - name: nikitabobko/tap
-    description: Tap containing `aerospace` tiling window
+#  - name: nikitabobko/tap
+#    description: Tap containing `aerospace` tiling window
   - name: norwoodj/tap
     description: Tap containing `helm-docs`, a tool to generate Helm chart documentation automatically
   - name: oven-sh/bun
@@ -460,10 +460,10 @@ brews:
 casks:
   - name: 1password-cli
     description: Command-line interface for 1Password, allowing secure access to your vaults and secrets. [Source](https://formulae.brew.sh/cask/1password-cli)
-  - name: aerospace
-    description: i3-like tiling window manager for macOS, enhancing productivity through keyboard-driven window management. [Source](https://github.com/nikitabobko/AeroSpace)
-  - name: alacritty
-    description: GPU-accelerated terminal emulator focused on performance and simplicity. [Source](https://formulae.brew.sh/cask/alacritty)
+#  - name: aerospace
+#    description: i3-like tiling window manager for macOS, enhancing productivity through keyboard-driven window management. [Source](https://github.com/nikitabobko/AeroSpace)
+#  - name: alacritty
+#    description: GPU-accelerated terminal emulator focused on performance and simplicity. [Source](https://formulae.brew.sh/cask/alacritty)
   - name: font-fira-code
     description: Monospaced font with programming ligatures, designed for developers. [Source](https://formulae.brew.sh/cask/font-fira-code)
   - name: font-fira-code-nerd-font
@@ -484,8 +484,6 @@ casks:
     description: Adobe's monospaced font designed for coding, offering clarity and readability.
   - name: git-credential-manager
     description: Secure Git credential storage for Windows, macOS, and Linux.
-  - name: kubecontext
-    description: Tool for managing and switching between Kubernetes contexts.
   - name: macfuse
     description: macOS kernel extension for extending file system support.
   - name: multipass
