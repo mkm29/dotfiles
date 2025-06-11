@@ -25,7 +25,7 @@ else
 	    echo "Plugin {{ $plugin.name }} is already installed."
     else
 	    echo "Installing plugin {{ $plugin.name }} from repository {{ $plugin.repository }} with version {{ $plugin.version }}"
-        helm plugin install {{ $plugin.repository }} --version {{ $plugin.version }}
+#        helm plugin install {{ $plugin.repository }} --version {{ $plugin.version }}
     fi
     {{- end }}
     {{- end }}
