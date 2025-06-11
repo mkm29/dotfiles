@@ -34,12 +34,12 @@ taps:
     description: Tap containing helpful macOS CLI utilities like `pinentry-touchid`
   - name: localstack/tap
     description: Tap for LocalStack CLI tools for testing AWS services locally
-  - name: minio/stable
-    description: Official MinIO tap for high-performance, S3-compatible object storage
+#  - name: minio/stable
+#    description: Official MinIO tap for high-performance, S3-compatible object storage
 #  - name: nikitabobko/tap
 #    description: Tap containing `aerospace` tiling window
-  - name: norwoodj/tap
-    description: Tap containing `helm-docs`, a tool to generate Helm chart documentation automatically
+#  - name: norwoodj/tap
+#    description: Tap containing `helm-docs`, a tool to generate Helm chart documentation automatically
   - name: oven-sh/bun
     description: Tap for Bun, a fast all-in-one JavaScript runtime like Node.js
   - name: pyroscope-io/brew
@@ -48,16 +48,16 @@ taps:
     description: Tap for Rancher Federal tools like `epinio` for lightweight Kubernetes application deployment
   - name: robscott/tap
     description: Tap for Gateway API and Kubernetes-related tooling
-  - name: siderolabs/tap
-    description: Tap for Talos Linux and related tools like `talosctl`
+#  - name: siderolabs/tap
+#    description: Tap for Talos Linux and related tools like `talosctl`
   - name: simnalamburt/x
     description: Tap providing utilities for macOS such as `thefuck` and other enhancements
   - name: slp/krunkit
     description: Tap for `krunkit`, a container runtime setup utility using libkrun for Podman VMs
   - name: ubuntu/microk8s
     description: Canonical's tap for MicroK8s, a lightweight Kubernetes distribution
-  - name: weaveworks/tap
-    description: Tap for Weave GitOps and other related Kubernetes automation tools
+#  - name: weaveworks/tap
+#    description: Tap for Weave GitOps and other related Kubernetes automation tools
 
 brews:
   base_tools:
