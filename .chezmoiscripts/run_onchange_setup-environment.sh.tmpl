@@ -35,7 +35,7 @@ fi
 # install trdl
 if [[ -z "$(command -v trdl)" ]]; then
   echo "Installing trdl..."
-  curl -sSL -o $HOME/.local/bin/trdl "https://tuf.trdl.dev/targets/releases/0.11.0/linux-arm64/bin/trdl"
+  curl -sSL -o $HOME/.local/bin/trdl "https://tuf.trdl.dev/targets/releases/0.11.0/darwin-arm64/bin/trdl"
   chmod +x $HOME/.local/bin/trdl
 else
   echo "trdl is already installed"
