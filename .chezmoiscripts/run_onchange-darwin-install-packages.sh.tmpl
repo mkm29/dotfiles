@@ -41,18 +41,15 @@ fi
 {{- end }}
 
 {{- if .python_packages }}
-mkdir -p $HOME/uv
-uv venv $HOME/uv/.venv || echo "Failed to create virtual environment at /opt/uv/.venv"
 # Install Python packages
 {{- range $pkg := .python_packages }}
-# check if uv is installed
-if command -v uv &> /dev/null; then
-  echo "Installing Python package: {{ $pkg.name }} using uv"
+if command -v pipx &> /dev/null; then
+  echo "Installing Python package: {{ $pkg.name }} using pipx\n"
   {{- if hasKey $pkg "extra" }}
   {{- $extra := $pkg.extra | join "," -}}
-  uv pip install --system "{{ $pkg.name }}[{{ $extra }}]" || echo "Failed to install Python package: {{ $pkg }}"
+  pipx install --system "{{ $pkg.name }}[{{ $extra }}]" || echo "Failed to install Python package: {{ $pkg }}"
   {{- else }}
-  uv pip install --system {{ $pkg.name }} || echo "Failed to install Python package: {{ $pkg }}"
+  pipx install --system {{ $pkg.name }} || echo "Failed to install Python package: {{ $pkg }}"
   {{- end }}
 fi
 {{- end }}
