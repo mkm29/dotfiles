@@ -35,7 +35,7 @@ fi
 # install trdl
 if [[ -z "$(command -v trdl)" ]]; then
   echo "Installing trdl..."
-  curl -sSL -o $HOME/.local/bin "https://tuf.trdl.dev/targets/releases/0.11.0/linux-amd64/bin/trdl"
+  curl -sSL -o $HOME/.local/bin/trdl "https://tuf.trdl.dev/targets/releases/0.11.0/linux-amd64/bin/trdl"
 else
   echo "trdl is already installed"
 fi
@@ -43,7 +43,7 @@ fi
 # install werf
 if [[ -z "$(command -v werf)" ]]; then
   echo "Installing werf..."
-  curl -sSL https://werf.io/install.sh | bash -s -- --version 2 --channel stable
+  curl -sSL https://werf.io/install.sh | bash -s -- --version 2 --channel stable --yes
 else
   echo "werf is already installed"
 fi
