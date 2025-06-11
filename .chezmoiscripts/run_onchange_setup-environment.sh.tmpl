@@ -4,14 +4,28 @@
 echo "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-echo "Installing k3d..."
-curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
+if [[ -z "$(command -v k3d)" ]]; then
+  echo "k3d is not installed, installing..."
+  curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
+else
+  echo "k3d is already installed"
+fi
 
-echo "Installing kftui..."
-bash <(curl -s https://raw.githubusercontent.com/hcavarsan/kftray/main/hacks/kftui_installer.sh)
+# install kftui
+if [[ -z "$(command -v kftui)" ]]; then
+  echo "kftui is not installed, installing..."
+  bash <(curl -s https://raw.githubusercontent.com/hcavarsan/kftray/main/hacks/kftui_installer.sh)
+else
+  echo "kftui is already installed"
+fi
 
-echo "Installing Atuin..."
-curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+# install atuin
+if [[ -z "$(command -v atuin)" ]]; then
+  echo "Installing atuin..."
+  curl -s https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh | sh
+else
+  echo "atuin is already installed"
+fi
 
 # install werf
 if [[ -z "$(command -v werf)" ]]; then
