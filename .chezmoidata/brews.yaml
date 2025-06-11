@@ -409,6 +409,8 @@ brews:
       description: CLI that helps you create and manage tmux sessions quickly and easily using zoxide.
     - name: pre-commit
       description: Framework for managing and maintaining multi-language pre-commit hooks.
+    - name: starship
+      description: A modern, extensible, and fast terminal for macOS that supports multiple shells and plugins.
 
   network_tools:
     - name: unbound

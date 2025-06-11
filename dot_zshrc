@@ -140,3 +140,5 @@ export PATH="/opt/homebrew/sbin:$PATH"
 if [ -f "$HOME/.atuin/bin/env" ]; then
   source "$HOME/.atuin/bin/env"
 fi
+
+eval "$(starship init zsh)"
