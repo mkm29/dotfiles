@@ -6,11 +6,24 @@ if [ ! command -v helm &> /dev/null ]; then
 else
     echo "Helm is installed, proceeding with plugin installation."
 
+    echo "Adding Helm repositories..."
+    # Check if Helm repositories are defined
+    {{- if .helm.repositories -}}
+    {{- range $repo := .helm.repositories -}}
+    if helm repo list | grep -q "{{ $repo.name }}"; then
+	echo "Repository {{ $repo.name }} is already added."
+    else
+	echo "Adding repository {{ $repo.name }} from URL {{ $repo.url }}"
+	helm repo add {{ $repo.name }} {{ $repo.url }} --force-update
+    fi
+    {{- end -}}
+    {{- else -}}
+    fi
+    {{- end -}}
+    {{- end -}}
+
     # Check if Helm plugins are defined
-    {{- if not .helm.plugins }}
-    echo "No Helm plugins defined."
-    exit 0
-    {{- end }}
+{{- if .helm.plugins -}}
 {{ range $plugin := .helm.plugins -}}
     # Install Helm plugins
     if helm plugin list | grep -q "{{ $plugin.name }}"; then
@@ -19,4 +32,5 @@ else
 	echo "Installing plugin {{ $plugin.name }} from repository {{ $plugin.repository }} with version {{ $plugin.version }}"
     fi
 {{ end -}}
+{{- end -}}
 fi
