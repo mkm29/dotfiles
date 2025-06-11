@@ -2,8 +2,8 @@
 taps:
   - name: ai-christianson/ra-aid
     description: Provides the RA-AID tool, an LLM-powered assistant for rapid assessments and ATO workflows
-  - name: anchore/grype
-    description: Official tap for Anchore's Grype, a vulnerability scanner for container images and filesystems
+#  - name: anchore/grype
+#    description: Official tap for Anchore's Grype, a vulnerability scanner for container images and filesystems
   - name: common-fate/granted
     description: Tap for Granted, a CLI tool for managing cloud access and assuming IAM roles
   - name: defenseunicorns/tap
@@ -28,8 +28,8 @@ taps:
 #    description: Official HashiCorp tap for tools like Terraform, Vault, Consul, and Boundary
   - name: hcavarsan/kftray
     description: Tap for KFTray, a Keycloak login tray application for macOS
-  - name: hidetatz/tap
-    description: Personal tap with utilities and CLIs by hidetatz, including custom tools like ksail
+#  - name: hidetatz/tap
+#    description: Personal tap with utilities and CLIs by hidetatz, including custom tools like ksail
   - name: jorgelbg/tap
     description: Tap containing helpful macOS CLI utilities like `pinentry-touchid`
   - name: localstack/tap
@@ -50,8 +50,8 @@ taps:
     description: Tap for Gateway API and Kubernetes-related tooling
 #  - name: siderolabs/tap
 #    description: Tap for Talos Linux and related tools like `talosctl`
-  - name: simnalamburt/x
-    description: Tap providing utilities for macOS such as `thefuck` and other enhancements
+#  - name: simnalamburt/x
+#    description: Tap providing utilities for macOS such as `thefuck` and other enhancements
   - name: slp/krunkit
     description: Tap for `krunkit`, a container runtime setup utility using libkrun for Podman VMs
   - name: ubuntu/microk8s
@@ -234,7 +234,7 @@ brews:
       description: KCL is a constraint-based record and functional language.
     - name: oras
       description: OCI Registry client for managing artifacts.
-    - name: norwoodj/tap/helm-docs
+    - name: helm-docs
       description: Automatically generate documentation for your Helm charts.
 
   security_tools:
