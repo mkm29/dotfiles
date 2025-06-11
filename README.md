@@ -35,9 +35,13 @@ To set up this environment on a new machine:
       type: personal # set to either `work` or `personal` to tailor the installation
       hostname: my-hostname
       git: # Used for ~/.gitconfig
-         email: <name@email.com>
-         name: <First Last>
-         signingKey: 1234ABC567DEF
+         users: # Support for multiple Git users
+            - email: <name@email.com>
+              name: <First Last>
+              signingKey: 1234ABC567DEF
+            - email: <work@company.com>
+              name: <Work Name>
+              signingKey: 5678DEF901ABC
    ```
 
    You can also configure default behaviors (edit, Git, etc.) as so:
@@ -213,7 +217,7 @@ You can toggle between `work` and `personal` setups by updating the `type` value
 - **Shell**: Zsh with Oh-My-Zsh, Starship prompt, zoxide, fzf
 - **Editor**: Neovim (Kickstart.nvim with LSP, treesitter, debugging)
 - **Terminals**: Ghostty with custom configuration
-- **Version Control**: Git with GPG signing, delta for diffs
+- **Version Control**: Git with GPG signing, delta for diffs, support for multiple user identities
 - **Programming Languages**: 
   - Go with development tools (gopls, goimports, godoc, gorename)
   - Python with pipx for isolated package installations
@@ -246,6 +250,7 @@ You can toggle between `work` and `personal` setups by updating the `type` value
 - **Update configs**: Use `chezmoi diff` to preview, `chezmoi edit` to modify, and `chezmoi apply` to apply changes
 - **Add new files**: Use `chezmoi add <file>` to start managing a file with chezmoi
 - **Debugging**: Run scripts manually from `.chezmoiscripts/` to troubleshoot issues
+- **Multiple Git identities**: Configure multiple Git users in `chezmoi.yaml` under `data.git.users` array
 - **Adding packages**: Edit the appropriate file in `.chezmoidata/`:
   - **Homebrew packages**: Add to `packages.yaml` under the appropriate `brews` category
   - **Go tools**: Add to `packages.yaml` under `go_tools` with full import path and version
