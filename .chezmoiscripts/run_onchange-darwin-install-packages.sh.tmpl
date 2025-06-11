@@ -44,12 +44,13 @@ fi
 # Install Python packages
 {{- range $pkg := .python_packages }}
 if command -v pipx &> /dev/null; then
-  echo "Installing Python package: {{ $pkg.name }} using pipx\n"
   {{- if hasKey $pkg "extra" }}
   {{- $extra := $pkg.extra | join "," -}}
-  pipx install --system "{{ $pkg.name }}[{{ $extra }}]" || echo "Failed to install Python package: {{ $pkg }}"
+  echo "Installing Python package with extras: {{ $pkg.name }}[{{ $extra }}]"
+  pipx install --system-site-packages "{{ $pkg.name }}[{{ $extra }}]" || echo "Failed to install Python package: {{ $pkg }}"
   {{- else }}
-  pipx install --system {{ $pkg.name }} || echo "Failed to install Python package: {{ $pkg }}"
+  echo "Installing Python package: {{ $pkg.name }}"
+  pipx install --system-site-packages {{ $pkg.name }} || echo "Failed to install Python package: {{ $pkg }}"
   {{- end }}
 fi
 {{- end }}
