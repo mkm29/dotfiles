@@ -1,3 +1,5 @@
+alias code=code-insiders
+alias h=helm
 alias brewr="arch -x86_64 brew"
 alias intel="arch -x86_64"
 alias k=kubectl
