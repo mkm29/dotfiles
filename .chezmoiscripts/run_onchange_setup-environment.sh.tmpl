@@ -50,4 +50,12 @@ else
   echo "helmsman is already installed"
 fi
 
+# install d2
+if [[ -z "$(command -v d2)" ]]; then
+  echo "Installing d2..."
+  curl -sSL https://raw.githubusercontent.com/terrastruct/d2/main/install.sh | sh
+else
+  echo "d2 is already installed"
+fi
+
 {{ end -}}
