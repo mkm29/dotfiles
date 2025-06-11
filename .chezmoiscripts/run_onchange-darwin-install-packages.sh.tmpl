@@ -45,10 +45,10 @@ fi
 {{- range $pkg := .python_packages }}
 # check if uv is installed
 if command -v uv &> /dev/null; then
-  echo "Installing Python package: {{ $pkg }} using uv"
+  echo "Installing Python package: {{ $pkg.name }} using uv"
   {{- if hasKey $pkg "extra" }}
   {{- $extra := $pkg.extra | join "," -}}
-  uv pip install --system {{ $pkg.name }}[{{ $extra }}] || echo "Failed to install Python package: {{ $pkg }}"
+  uv pip install --system "{{ $pkg.name }}[{{ $extra }}]" || echo "Failed to install Python package: {{ $pkg }}"
   {{- else }}
   uv pip install --system {{ $pkg.name }} || echo "Failed to install Python package: {{ $pkg }}"
   {{- end }}
