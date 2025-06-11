@@ -192,6 +192,30 @@ graph TD
     - `vscode_extensions`: VS Code extension IDs
     - `python_packages`: Python tools with versions and optional extras
     - `go_tools`: Go packages with import paths and versions
+    ```yaml
+    taps:
+      - name: <TAP_NAME>
+        description: <TAP_DESCRIPTION>
+    brews:
+      group:
+        - name: <BREW_NAME>
+          description: <BREW_DESCRIPTION>
+    casks:
+      - name: <CASK_NAME>
+        description: <CASK_DESCRIPTION>
+    vscode_extensions:
+      - <EXTENSION_NAME>
+    python_packages:
+      - name: <PACKAGE_NAME>
+        version: <PACKAGE_VERSION>
+        description: <PACKAGE_DESCRIPTION>
+        extras:
+          - <OPTIONAL_EXTRA>
+      go_tools:
+        - name: <TOOL_NAME>
+          version: <TOOL_VERSION>
+          description: <TOOL_DESCRIPTION>
+    ```
   - `krew.yaml`: kubectl plugins
     - Lists plugins with supported architectures (amd64, arm64)
   - `helm.yaml`: Helm configuration
