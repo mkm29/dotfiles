@@ -419,6 +419,8 @@ brews:
       description: Linux virtual machines, typically on macOS, for container development.
     - name: lima-additional-guestagents
       description: Additional guest agents for Lima VMs, enhancing functionality and integration with host systems.
+    - name: dnsmasq
+      description: Lightweight DNS forwarder and DHCP server, useful for local network setups.
 
   network_tools:
     - name: unbound
