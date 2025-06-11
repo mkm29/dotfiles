@@ -417,6 +417,8 @@ brews:
       description: Generic machine emulator and virtualizer, useful for running virtual machines and emulating different architectures.
     - name: lima
       description: Linux virtual machines, typically on macOS, for container development.
+    - name: lima-additional-guestagents
+      description: Additional guest agents for Lima VMs, enhancing functionality and integration with host systems.
 
   network_tools:
     - name: unbound
