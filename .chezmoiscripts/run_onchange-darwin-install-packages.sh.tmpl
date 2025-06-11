@@ -41,8 +41,8 @@ fi
 {{- end }}
 
 {{- if .python_packages }}
-mkdir -p /opt/uv
-uv venv /opt/uv/.venv || echo "Failed to create virtual environment at /opt/uv/.venv"
+mkdir -p $HOME/uv
+uv venv $HOME/uv/.venv || echo "Failed to create virtual environment at /opt/uv/.venv"
 # Install Python packages
 {{- range $pkg := .python_packages }}
 # check if uv is installed
