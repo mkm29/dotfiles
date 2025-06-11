@@ -411,7 +411,8 @@ brews:
       description: Docker Compose implementation for Podman, allowing you to define and run multi-container applications.
 #    - name: ghostty
 #      description: A fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.
-
+    - name: universal-ctags
+      description: Maintained fork of Exuberant Ctags, a tool to generate an index (or tag) file of names found in source and header files.
     - name: sesh
       description: CLI that helps you create and manage tmux sessions quickly and easily using zoxide.
     - name: pre-commit
@@ -610,6 +611,28 @@ python_packages:
       - saml
       - fuzzy
       - console
+  - name: pynvim
+    description: Python client for Neovim, allowing you to write plugins and scripts in Python.
+    version: "0.5.2"
+  - name: python-lsp-server
+    description: Language server for Python, providing IDE-like features such as code completion and diagnostics.
+    version: "1.12.2"
+  - name: pydantic
+    description: Data validation and settings management using Python type annotations.
+    version: "2.11.5"
+  - name: numpy
+    description: Fundamental package for scientific computing with Python, providing support for large multi-dimensional arrays and matrices.
+    version: "2.3.0"
+  - name: pydantic-settings
+    description: Pydantic extension for settings management, allowing you to define and validate application settings.
+    version: "2.9.1"
+  - name: requests
+    description: Simple HTTP library for Python, making it easy to send HTTP requests and handle responses.
+    version: "2.32.4"
+  - name: boto3
+    description: Amazon Web Services (AWS) SDK for Python, allowing you to interact with AWS services.
+    version: "1.38.35"
+
 
 go_tools:
   - name: golang.org/x/tools/gopls
@@ -624,3 +647,39 @@ go_tools:
   - name: golang.org/x/tools/cmd/gorename
     description: Tool for renaming variables, functions, and types in Go code.
     version: "latest"
+
+node_packages:
+  - name: aws-sdk
+    description: Official AWS SDK for JavaScript, providing access to AWS services.
+    version: "2.1692.0"
+  - name: typescript
+    description: Language for application-scale JavaScript development.
+    version: "5.8.3"
+  - name: ts-node
+    description: TypeScript execution environment for Node.js, allowing you to run TypeScript files directly.
+    version: "10.9.2"
+  - name: eslint
+    description: Tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
+    version: "9.28.0"
+  - name: prettier
+    description: Code formatter that supports many languages and integrates with various editors.
+    version: "3.5.3"
+  - name: @openai/codex
+    description: OpenAI Codex SDK for interacting with the Codex API, enabling code generation and completion.
+    version: "0.1.2505172129"
+  - name: @types/node
+    description: TypeScript definitions for Node.js, providing type information for Node.js APIs.
+    version: "24.0.0"
+  - name: @anthropic-ai/claude-code
+    description: Anthropic's Claude Code SDK for interacting with the Claude AI model, enabling code generation and completion.
+    version: "1.0.19"
+  - name: @typescript-eslint/eslint-plugin
+    description: ESLint plugin for TypeScript, providing rules and configurations for TypeScript code.
+    version: "8.34.0"
+  - name: @aws-sdk/types
+    description: TypeScript definitions for AWS SDK, providing type information for AWS services.
+    version: "3.821.0"
+  - name: @aws-sdk/core
+    description: Core utilities for the AWS SDK, providing foundational functionality for AWS service clients.
+    version: "3.826.0"
+
