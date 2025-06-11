@@ -1,4 +1,4 @@
-{{ if and (eq .chezmoi.os "darwin") (not eq .type "work") -}}
+{{ if and (eq .chezmoi.os "darwin") (ne .type "work") -}}
 #!/bin/bash -ex
 
 sudo scutil --set HostName {{ .hostname }}
