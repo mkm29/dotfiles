@@ -49,7 +49,7 @@ if command -v pipx &> /dev/null; then
   {{- $extras := $pkg.extras | join "," -}}
   {{- end }}
   echo "Installing Python package with extras: {{ $pkg.name }}{{ $extras }}"
-  pipx install --system-site-packages "{{ $pkg.name }}{{ $extras }}=={{ $pkg.version }}" || echo "Failed to install Python package: {{ $pkg }}"
+  pipx install --include-deps --system-site-packages "{{ $pkg.name }}{{ $extras }}=={{ $pkg.version }}" || echo "Failed to install Python package: {{ $pkg }}"
 fi
 {{- end }}
 {{- end }}

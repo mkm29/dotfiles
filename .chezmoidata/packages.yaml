@@ -292,7 +292,7 @@ brews:
   observability:
     - name: grafana
       description: Gorgeous metric visualizations and dashboards for timeseries databases
-    - name: grafana/grafana/alloy
+    - name: grafana-alloy
       description: OpenTelemetry Collector distribution with programmable pipelines
     - name: mimirtool
       description: CLI for interacting with Grafana Mimir
@@ -641,6 +641,15 @@ python_packages:
   - name: jmespath
     description: JSON query language for Python, allowing you to extract and transform data from JSON documents.
     version: "1.0.1"
+  - name: ansible
+    description: Automation tool for managing and configuring systems, applications, and networks.
+    version: "11.6.0"
+  - name: ansible-lint
+    description: Linter for Ansible playbooks and roles, helping you catch common mistakes and enforce best practices.
+    version: "25.5.0"
+  - name: argcomplete
+    description: Bash and Zsh tab completion for Python scripts, making it easier to use command-line tools.
+    version: "3.6.2"
 
 go_tools:
   - name: golang.org/x/tools/gopls
