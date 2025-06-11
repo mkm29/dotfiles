@@ -2,7 +2,12 @@
 #!/bin/bash
 
 echo "Installing oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+if [[ -d "$HOME/.oh-my-zsh" ]]; then
+  echo "Oh My Zsh is already installed"
+else
+  echo "Oh My Zsh is not installed, installing..."
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
 
 if [[ -z "$(command -v k3d)" ]]; then
   echo "k3d is not installed, installing..."
@@ -30,8 +35,7 @@ fi
 # install werf
 if [[ -z "$(command -v werf)" ]]; then
   echo "Installing werf..."
-  curl -s https://raw.githubusercontent.com/werf/werf/master/scripts/install.sh | bash
-
+  curl -sSL https://werf.io/install.sh | bash -s -- --version 2 --channel stable
 else
   echo "werf is already installed"
 fi
