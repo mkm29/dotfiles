@@ -46,7 +46,12 @@ fi
 # check if uv is installed
 if command -v uv &> /dev/null; then
   echo "Installing Python package: {{ $pkg }} using uv"
-  uv pip install --system {{ $pkg }} || echo "Failed to install Python package: {{ $pkg }}"
+  {{- if hasKey $pkg "extra" }}
+  {{- $extra := $pkg.extra | join "," -}}
+  uv pip install --system {{ $pkg.name }}[{{ $extra }}] || echo "Failed to install Python package: {{ $pkg }}"
+  {{- else }}
+  uv pip install --system {{ $pkg.name }} || echo "Failed to install Python package: {{ $pkg }}"
+  {{- end }}
 fi
 {{- end }}
 {{- end }}
