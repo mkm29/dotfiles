@@ -92,6 +92,7 @@ graph TD
     E --> G[Install Krew Plugins]
     E --> H[Install Python Packages<br/>via pipx]
     E --> I[Install Go Tools<br/>via go install]
+    E --> M[Install Node.js Packages<br/>via npm install -g]
     
     C --> J[Read .chezmoidata/krew.yaml]
     J --> G
@@ -110,6 +111,7 @@ graph TD
     style G fill:#0288d1,stroke:#01579b,color:#fff
     style H fill:#0288d1,stroke:#01579b,color:#fff
     style I fill:#0288d1,stroke:#01579b,color:#fff
+    style M fill:#0288d1,stroke:#01579b,color:#fff
     style L fill:#0288d1,stroke:#01579b,color:#fff
 ```
 
@@ -192,30 +194,38 @@ graph TD
     - `vscode_extensions`: VS Code extension IDs
     - `python_packages`: Python tools with versions and optional extras
     - `go_tools`: Go packages with import paths and versions
-    ```yaml
-    taps:
-      - name: <TAP_NAME>
-        description: <TAP_DESCRIPTION>
-    brews:
-      group:
-        - name: <BREW_NAME>
-          description: <BREW_DESCRIPTION>
-    casks:
-      - name: <CASK_NAME>
-        description: <CASK_DESCRIPTION>
-    vscode_extensions:
-      - <EXTENSION_NAME>
-    python_packages:
-      - name: <PACKAGE_NAME>
-        version: <PACKAGE_VERSION>
-        description: <PACKAGE_DESCRIPTION>
-        extras:
-          - <OPTIONAL_EXTRA>
+    - `node_packages`: Node.js packages with names and versions
+    - File structure:
+  
+      ```yaml
+      taps:
+        - name: <TAP_NAME>
+          description: <TAP_DESCRIPTION>
+      brews:
+        group:
+          - name: <BREW_NAME>
+            description: <BREW_DESCRIPTION>
+      casks:
+        - name: <CASK_NAME>
+          description: <CASK_DESCRIPTION>
+      vscode_extensions:
+        - <EXTENSION_NAME>
+      python_packages:
+        - name: <PACKAGE_NAME>
+          version: <PACKAGE_VERSION>
+          description: <PACKAGE_DESCRIPTION>
+          extras:
+            - <OPTIONAL_EXTRA>
       go_tools:
         - name: <TOOL_NAME>
           version: <TOOL_VERSION>
           description: <TOOL_DESCRIPTION>
-    ```
+      node_packages:
+        - name: <PACKAGE_NAME>
+          version: <PACKAGE_VERSION>
+          description: <PACKAGE_DESCRIPTION>
+      ```
+
   - `krew.yaml`: kubectl plugins
     - Lists plugins with supported architectures (amd64, arm64)
   - `helm.yaml`: Helm configuration
@@ -279,5 +289,6 @@ You can toggle between `work` and `personal` setups by updating the `type` value
   - **Homebrew packages**: Add to `packages.yaml` under the appropriate `brews` category
   - **Go tools**: Add to `packages.yaml` under `go_tools` with full import path and version
   - **Python packages**: Add to `packages.yaml` under `python_packages` with name, version, and optional extras
+  - **Node.js packages**: Add to `packages.yaml` under `node_packages` with name and version
   - **kubectl plugins**: Add to `krew.yaml` with name and supported architectures
   - **Helm repos/plugins**: Add to `helm.yaml` under repositories or plugins
