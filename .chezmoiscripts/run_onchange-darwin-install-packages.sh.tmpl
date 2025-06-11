@@ -55,3 +55,18 @@ fi
 {{- end }}
 
 {{- end -}}
+
+# Install Go tools
+{{- if .go_tools }}
+echo "Installing Go tools for architecture: {{ .chezmoi.arch }}"
+
+{{- range $tool := .go_tools }}
+# check if $tool.name is in $GOPATH/bin
+if ! command -v {{ $tool.name }} &> /dev/null; then
+  echo "Installing Go tool: {{ $tool.name }}"
+  go install {{ $tool.name }}@{{ $tool.version }} || echo "Failed to install Go tool: {{ $tool.name }}"
+else
+  echo "Go tool {{ $tool.name }} is already installed."
+fi
+{{- end }}
+{{- end -}}

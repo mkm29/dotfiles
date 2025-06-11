@@ -132,6 +132,8 @@ brews:
 
 
   dev_languages:
+    - name: golangci-lint
+      description: Fast linters runner for Go.
     - name: openjdk@11
       description: Development kit for the Java programming language.
     - name: openjdk@17
@@ -608,3 +610,17 @@ python_packages:
       - saml
       - fuzzy
       - console
+
+go_tools:
+  - name: golang.org/x/tools/gopls
+    description: Language server for Go, providing IDE-like features such as code completion and diagnostics.
+    version: "latest"
+  - name: "golang.org/x/tools/cmd/godoc"
+    description: A documentation tool for Go programming language that automatically generates documentation from code comments.
+    version: "latest"
+  - name: "golang.org/x/tools/cmd/goimports"
+    description: Tool that updates your Go import lines, adding missing ones and removing unreferenced ones.
+    version: "latest"i
+  - name: golang.org/x/tools/cmd/gorename
+    description: Tool for renaming variables, functions, and types in Go code.
+    version: "latest"
