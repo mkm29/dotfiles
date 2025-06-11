@@ -54,8 +54,6 @@ fi
 {{- end }}
 {{- end }}
 
-{{- end -}}
-
 # Install Go tools
 {{ if .go_tools -}}
 echo "Installing Go tools for architecture: {{ .chezmoi.arch }}"
@@ -70,3 +68,5 @@ else
 fi
 {{ end -}}
 {{ end -}}
+
+{{- end -}}
