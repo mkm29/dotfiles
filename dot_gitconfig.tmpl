@@ -46,10 +46,12 @@
 #     autosquash = true
 #     autoStash = true
 #     stat = true
+{{ range $user := .git.users }}
 [user]
-    email = mitch.murphy@gmail.com
-    name = Mitch Murphy
-    signingkey = 5E7E2643A29C7001620DCDA003429FC2A7DD9EDA
+    email = {{ $user.email }}
+    name = {{ $user.name }}
+    signingkey = {{ $user.signingkey }}
+{{ end }}
 [filter "lfs"]
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
