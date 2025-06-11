@@ -664,22 +664,22 @@ node_packages:
   - name: prettier
     description: Code formatter that supports many languages and integrates with various editors.
     version: "3.5.3"
-  - name: @openai/codex
+  - name: "@openai/codex"
     description: OpenAI Codex SDK for interacting with the Codex API, enabling code generation and completion.
     version: "0.1.2505172129"
-  - name: @types/node
+  - name: "@types/node"
     description: TypeScript definitions for Node.js, providing type information for Node.js APIs.
     version: "24.0.0"
-  - name: @anthropic-ai/claude-code
+  - name: "@anthropic-ai/claude-code"
     description: Anthropic's Claude Code SDK for interacting with the Claude AI model, enabling code generation and completion.
     version: "1.0.19"
-  - name: @typescript-eslint/eslint-plugin
+  - name: "@typescript-eslint/eslint-plugin"
     description: ESLint plugin for TypeScript, providing rules and configurations for TypeScript code.
     version: "8.34.0"
-  - name: @aws-sdk/types
+  - name: "@aws-sdk/types"
     description: TypeScript definitions for AWS SDK, providing type information for AWS services.
     version: "3.821.0"
-  - name: @aws-sdk/core
+  - name: "@aws-sdk/core"
     description: Core utilities for the AWS SDK, providing foundational functionality for AWS service clients.
     version: "3.826.0"
 
