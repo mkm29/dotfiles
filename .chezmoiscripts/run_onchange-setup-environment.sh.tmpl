@@ -58,4 +58,12 @@ else
   echo "d2 is already installed"
 fi
 
+# install tilt
+if [[ -z "$(command -v tilt)" ]]; then
+  echo "Installing tilt..."
+  curl -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/install.sh | bash
+else
+  echo "tilt is already installed"
+fi
+
 {{ end -}}
