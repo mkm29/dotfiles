@@ -22,7 +22,7 @@ else
 
     # Check if Helm plugins are defined
 {{- if .helm.plugins -}}
-    {{ range $plugin := .helm.plugins -}}
+    {{- range $plugin := .helm.plugins -}}
     # Install Helm plugins
     if helm plugin list | grep -q "{{ $plugin.name }}"; then
 	echo "Plugin {{ $plugin.name }} is already installed."
