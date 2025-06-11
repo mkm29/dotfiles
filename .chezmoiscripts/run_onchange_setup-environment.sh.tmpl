@@ -32,6 +32,17 @@ else
   echo "atuin is already installed"
 fi
 
+# install trdl
+if [[ -z "$(command -v trdl)" ]]; then
+  echo "Installing trdl..."
+  curl -sSLO "https://tuf.trdl.dev/targets/releases/0.11.0/linux-amd64/bin/trdl" -O "https://tuf.trdl.dev/targets/signatures/0.11.0/linux-amd64/bin/trdl.sig"
+  curl -sSL https://trdl.dev/trdl-client.asc | gpg --import
+  gpg --verify trdl.sig trdl
+  install -D trdl $HOME/.local/bin/trdl
+else
+  echo "trdl is already installed"
+fi
+
 # install werf
 if [[ -z "$(command -v werf)" ]]; then
   echo "Installing werf..."
