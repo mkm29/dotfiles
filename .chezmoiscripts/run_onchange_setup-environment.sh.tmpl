@@ -13,4 +13,22 @@ bash <(curl -s https://raw.githubusercontent.com/hcavarsan/kftray/main/hacks/kft
 echo "Installing Atuin..."
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 
+# install werf
+if [[ -z "$(command -v werf)" ]]; then
+  echo "Installing werf..."
+  curl -s https://raw.githubusercontent.com/werf/werf/master/scripts/install.sh | bash
+
+else
+  echo "werf is already installed"
+fi
+
+# install helmsman
+if [[ -z "$(command -v helmsman)" ]]; then
+  echo "Installing helmsman..."
+  curl -L https://github.com/mkubaczyk/helmsman/releases/download/v4.0.1/helmsman_4.0.1_darwin_arm64.tar.gz | tar zx
+  mv helmsman ~/.local/bin/helmsman
+else
+  echo "helmsman is already installed"
+fi
+
 {{ end -}}

@@ -227,6 +227,8 @@ brews:
       description: KCL is a constraint-based record and functional language.
     - name: oras
       description: OCI Registry client for managing artifacts.
+    - name: norwoodj/tap/helm-docs
+      description: Automatically generate documentation for your Helm charts.
 
   security_tools:
     - name: age
@@ -405,6 +407,8 @@ brews:
 
     - name: sesh
       description: CLI that helps you create and manage tmux sessions quickly and easily using zoxide.
+    - name: pre-commit
+      description: Framework for managing and maintaining multi-language pre-commit hooks.
 
   network_tools:
     - name: unbound
