@@ -163,6 +163,8 @@ brews:
       description: Scala programming language
 
   k8s_and_cloud:
+    - name: werf
+      description: Tool for building, deploying, and managing applications on Kubernetes.
     - name: awscli
       description: Official Amazon AWS command-line interface.
     - name: azure-cli
