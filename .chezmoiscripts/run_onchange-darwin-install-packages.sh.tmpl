@@ -70,10 +70,10 @@ fi
 {{ end -}}
 
 # install npm packages
-{{ if .npm_packages -}}
+{{ if .node_packages -}}
 echo "Installing npm packages"
 
-{{ range $pkg := .npm_packages -}}
+{{ range $pkg := .node_packages -}}
 if ! npm list -g --depth=0 | grep -q {{ $pkg.name }}; then
   echo "Installing npm package: {{ $pkg.name }}"
   npm install -g {{ $pkg.name }}@{{ $pkg.version }} || echo "Failed to install npm package: {{ $pkg.name }}"
