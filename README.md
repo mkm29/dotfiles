@@ -71,9 +71,9 @@ graph LR
     A -->|chezmoi cd + git| C
     B -->|chezmoi add| A
     
-    style A fill:#e1f5e1
-    style B fill:#f5e1e1
-    style C fill:#e1e1f5
+    style A fill:#2e7d32,stroke:#1b5e20,color:#fff
+    style B fill:#1976d2,stroke:#0d47a1,color:#fff
+    style C fill:#7b1fa2,stroke:#4a148c,color:#fff
 ```
 
 ### Package Installation Flow
@@ -95,10 +95,18 @@ graph TD
     C --> K[Read .chezmoidata/helm.yaml]
     K --> L[Configure Helm Repos & Plugins]
     
-    style A fill:#ffe6e6
-    style E fill:#e6f3ff
-    style J fill:#e6f3ff
-    style K fill:#e6f3ff
+    style A fill:#d32f2f,stroke:#b71c1c,color:#fff
+    style B fill:#1976d2,stroke:#0d47a1,color:#fff
+    style C fill:#388e3c,stroke:#1b5e20,color:#fff
+    style D fill:#388e3c,stroke:#1b5e20,color:#fff
+    style E fill:#7b1fa2,stroke:#4a148c,color:#fff
+    style J fill:#7b1fa2,stroke:#4a148c,color:#fff
+    style K fill:#7b1fa2,stroke:#4a148c,color:#fff
+    style F fill:#0288d1,stroke:#01579b,color:#fff
+    style G fill:#0288d1,stroke:#01579b,color:#fff
+    style H fill:#0288d1,stroke:#01579b,color:#fff
+    style I fill:#0288d1,stroke:#01579b,color:#fff
+    style L fill:#0288d1,stroke:#01579b,color:#fff
 ```
 
 ### Configuration Management Lifecycle
@@ -151,9 +159,18 @@ graph TD
     J --> L
     K --> L
     
-    style A fill:#f9f9e9
-    style C fill:#e9f9e9
-    style L fill:#e9e9f9
+    style A fill:#6a1b9a,stroke:#4a148c,color:#fff
+    style B fill:#1976d2,stroke:#0d47a1,color:#fff
+    style C fill:#388e3c,stroke:#1b5e20,color:#fff
+    style D fill:#388e3c,stroke:#1b5e20,color:#fff
+    style E fill:#2e7d32,stroke:#1b5e20,color:#fff
+    style F fill:#1565c0,stroke:#0d47a1,color:#fff
+    style G fill:#1976d2,stroke:#0d47a1,color:#fff
+    style H fill:#00838f,stroke:#006064,color:#fff
+    style I fill:#00838f,stroke:#006064,color:#fff
+    style J fill:#00838f,stroke:#006064,color:#fff
+    style K fill:#00838f,stroke:#006064,color:#fff
+    style L fill:#d32f2f,stroke:#b71c1c,color:#fff
 ```
 
 ## 📁 Repository Structure
