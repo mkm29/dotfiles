@@ -136,7 +136,7 @@ graph TD
     B -->|Yes| C[Process Go Template]
     B -->|No| D[Copy As-Is]
     
-    C --> E[Replace Variables<br/>{{ .email }}, {{ .name }}]
+    C --> E[Replace Variables<br/>email, name, etc.]
     E --> F[Apply Prefix Rules]
     D --> F
     
