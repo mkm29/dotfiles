@@ -165,8 +165,6 @@ brews:
   k8s_and_cloud:
     - name: awscli
       description: Official Amazon AWS command-line interface.
-    - name: google-cloud-sdk
-      description: Google Cloud Platform command-line interface.
     - name: azure-cli
       description: Microsoft Azure CLI 2.0.
     - name: oci-cli
