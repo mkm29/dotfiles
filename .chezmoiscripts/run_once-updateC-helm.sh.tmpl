@@ -21,7 +21,7 @@ else
     echo "Installing Helm plugins..."
     {{- range $plugin := .helm.plugins }}
     # Install Helm plugins
-    if helm plugin list | grep -q "{{ $plugin.name }}"; then
+    if helm plugin list | grep "{{ $plugin.name }}"; then
 	    echo "Plugin {{ $plugin.name }} is already installed."
     else
 	    echo "Installing plugin {{ $plugin.name }} from repository {{ $plugin.repository }} with version {{ $plugin.version }}"
