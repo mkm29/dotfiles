@@ -487,6 +487,8 @@ brews:
       description: A pinentry program that allows GPG to use Touch ID on macOS.
 
 casks:
+  - name: google-cloud-sdk
+    description: Command-line interface for Google Cloud Platform, providing tools for managing GCP resources. [Source](https://formulae.brew.sh/cask/google-cloud-sdk)
   - name: 1password-cli
     description: Command-line interface for 1Password, allowing secure access to your vaults and secrets. [Source](https://formulae.brew.sh/cask/1password-cli)
 #  - name: aerospace
@@ -521,8 +523,6 @@ casks:
     description: GUI for managing containers and Kubernetes clusters using Podman.
   - name: session-manager-plugin
     description: AWS Session Manager plugin for starting sessions with the AWS CLI.
-  - name: google-cloud-sdk
-    description: Google Cloud Platform command-line interface, providing tools for managing GCP resources.
   - name: gitify
     description: GitHub notifications and activity feed for your desktop.
   # - name: kftray
