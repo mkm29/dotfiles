@@ -8,8 +8,8 @@ taps:
     description: Tap for Granted, a CLI tool for managing cloud access and assuming IAM roles
   - name: defenseunicorns/tap
     description: Defense Unicorns tools including Zarf and UDS for secure software delivery and deployment
-  - name: derailed/k9s
-    description: Tap for K9s, a terminal UI to interact with your Kubernetes clusters
+#  - name: derailed/k9s
+#    description: Tap for K9s, a terminal UI to interact with your Kubernetes clusters
   - name: devantler-tech/formulas
     description: Tools and utilities for DevAntler developer workflows and automation
   - name: encoredev/tap
@@ -18,14 +18,14 @@ taps:
     description: Nerd Fonts
   - name: felixkratz/formulae
     description: Homebrew formulas for macOS status bar customization and productivity tools like SketchyBar
-  - name: flux-subsystem-argo/tap
-    description: Flux Subsystem for Argo project plugins and controllers
-  - name: fluxcd/tap
-    description: FluxCD official tap for GitOps tools such as `flux` and `source-controller`
-  - name: grafana/grafana
-    description: Official Grafana tap for tools like Grafana, Alloy, and Mimir CLI
-  - name: hashicorp/tap
-    description: Official HashiCorp tap for tools like Terraform, Vault, Consul, and Boundary
+#  - name: flux-subsystem-argo/tap
+#    description: Flux Subsystem for Argo project plugins and controllers
+#  - name: fluxcd/tap
+#    description: FluxCD official tap for GitOps tools such as `flux` and `source-controller`
+#  - name: grafana/grafana
+#    description: Official Grafana tap for tools like Grafana, Alloy, and Mimir CLI
+#  - name: hashicorp/tap
+#    description: Official HashiCorp tap for tools like Terraform, Vault, Consul, and Boundary
   - name: hcavarsan/kftray
     description: Tap for KFTray, a Keycloak login tray application for macOS
   - name: hidetatz/tap
