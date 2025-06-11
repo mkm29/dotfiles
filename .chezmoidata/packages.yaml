@@ -620,7 +620,7 @@ go_tools:
     version: "latest"
   - name: "golang.org/x/tools/cmd/goimports"
     description: Tool that updates your Go import lines, adding missing ones and removing unreferenced ones.
-    version: "latest"i
+    version: "latest"
   - name: golang.org/x/tools/cmd/gorename
     description: Tool for renaming variables, functions, and types in Go code.
     version: "latest"
