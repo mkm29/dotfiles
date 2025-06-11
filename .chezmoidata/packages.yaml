@@ -682,4 +682,6 @@ node_packages:
   - name: "@aws-sdk/core"
     description: Core utilities for the AWS SDK, providing foundational functionality for AWS service clients.
     version: "3.826.0"
-
+  - name: vim-language-server
+    description: Language server for Vim script, providing IDE-like features such as code completion and diagnostics.
+    version: "2.3.1"
