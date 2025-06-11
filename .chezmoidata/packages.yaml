@@ -603,7 +603,8 @@ vscode_extensions:
 python_packages:
   - name: awsume
     description: AWS credentials manager that allows you to assume roles and manage profiles easily.
-    extra:
+    version: "4.5.4"
+    extras:
       - saml
       - fuzzy
       - console
