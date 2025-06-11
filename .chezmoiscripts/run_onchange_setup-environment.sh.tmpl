@@ -53,7 +53,7 @@ fi
 # install d2
 if [[ -z "$(command -v d2)" ]]; then
   echo "Installing d2..."
-  curl -sSL https://raw.githubusercontent.com/terrastruct/d2/main/install.sh | sh
+  curl -fsSL https://d2lang.com/install.sh | sh -s --
 else
   echo "d2 is already installed"
 fi
