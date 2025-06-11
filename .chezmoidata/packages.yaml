@@ -413,6 +413,10 @@ brews:
       description: Framework for managing and maintaining multi-language pre-commit hooks.
     - name: starship
       description: A modern, extensible, and fast terminal for macOS that supports multiple shells and plugins.
+    - name: qemu
+      description: Generic machine emulator and virtualizer, useful for running virtual machines and emulating different architectures.
+    - name: lima
+      description: Linux virtual machines, typically on macOS, for container development.
 
   network_tools:
     - name: unbound
