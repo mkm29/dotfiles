@@ -40,4 +40,15 @@ fi
   {{- end }}
 {{- end }}
 
+{{- if .python_packages -}}
+# Install Python packages
+{{- range $pkg := .python_packages -}}
+# check if uv is installed
+if command -v uv &> /dev/null; then
+  echo "Installing Python package: {{ $pkg }} using uv"
+  uv pip install {{ $pkg }} || echo "Failed to install Python package: {{ $pkg }}"
+fi
+{{- end -}}
+{{- end -}}
+
 {{- end -}}

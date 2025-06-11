@@ -162,6 +162,10 @@ brews:
       description: A secure runtime for JavaScript and TypeScript.
     - name: scala
       description: Scala programming language
+    - name: pipx
+      description: Python package installer that allows you to install and manage Python packages.
+    - name: uv
+      description: An extremely fast Python package and project manager, written in Rust.
 
   k8s_and_cloud:
     - name: werf
