@@ -25,3 +25,4 @@ alias pip-purge='pip list --format freeze | xargs pip uninstall -y'
 alias pip-install-reqs='ls requirements*.txt | xargs -n 1 pip install -r'
 alias poetry-install-master='pipx install --suffix=@master --force git+https://github.com/python-poetry/poetry.git'
 alias activate='source .venv/bin/activate'
+alias awsume=". awsume"

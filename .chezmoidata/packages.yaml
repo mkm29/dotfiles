@@ -1,3 +1,4 @@
+# Homebrew packages and taps for a comprehensive development environment
 taps:
   - name: ai-christianson/ra-aid
     description: Provides the RA-AID tool, an LLM-powered assistant for rapid assessments and ATO workflows
@@ -593,3 +594,12 @@ vscode_extensions:
   - waderyan.gitblame
   - yzhang.markdown-all-in-one
   - zhuangtongfa.material-theme
+
+# Python packages (use pip)
+python_packages:
+  - name: awsume
+    description: AWS credentials manager that allows you to assume roles and manage profiles easily.
+    extra:
+      - saml
+      - fuzzy
+      - console
