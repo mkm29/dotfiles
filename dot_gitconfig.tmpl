@@ -50,7 +50,7 @@
 [user]
     email = {{ $user.email }}
     name = {{ $user.name }}
-    signingkey = {{ $user.signingkey }}
+    signingkey = {{ $user.signingKey }}
 {{ end }}
 [filter "lfs"]
     smudge = git-lfs smudge -- %f
