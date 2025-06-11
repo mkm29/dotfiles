@@ -292,7 +292,7 @@ brews:
   observability:
     - name: grafana
       description: Gorgeous metric visualizations and dashboards for timeseries databases
-    - name: grafana-alloy
+    - name: grafana/grafana/alloy
       description: OpenTelemetry Collector distribution with programmable pipelines
     - name: mimirtool
       description: CLI for interacting with Grafana Mimir
