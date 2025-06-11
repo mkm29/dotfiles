@@ -371,8 +371,6 @@ brews:
       description: Tool for creating identical machine images for multiple platforms. [Source](https://formulae.brew.sh/formula/packer)
 
   system_utils:
-    - name: neofetch
-      description: Fast, highly customizable system info script. [Source](https://formulae.brew.sh/formula/neofetch)
     - name: fastfetch
       description: Neofetch-like tool for fetching system information and displaying it prettily. [Source](https://formulae.brew.sh/formula/fastfetch)
     - name: lolcat
@@ -385,12 +383,8 @@ brews:
       description: Soak up standard input and write to a file.
     - name: ponysay
       description: Cowsay reimplemented with ponies.
-    # - name: nushell
-    #   description: New type of shell focused on structured data.
     - name: magic-wormhole
       description: Securely transfer data between computers.
-    - name: tldr
-      description: Simplified and community-driven man pages
     - name: neovim
       description: Vim-fork focused on extensibility and usability.
     - name: zsh-autosuggestions
