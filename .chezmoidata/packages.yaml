@@ -233,6 +233,10 @@ brews:
       description: Automatically generate documentation for your Helm charts.
     - name: drone
       description: Continuous integration and delivery platform for automating software workflows.
+    - name: kubectx
+      description: Switch between Kubernetes contexts quickly.
+    - name: talosctl
+      description: Command-line tool for managing Talos Linux clusters.
 
   security_tools:
     - name: age
