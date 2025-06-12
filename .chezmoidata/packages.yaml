@@ -724,27 +724,9 @@ cargo_packages:
   - name: cargo-outdated
     description: Tool for checking outdated dependencies in Cargo projects.
     version: "0.17.0"
-  - name: syn
-    description: Parsing and analysis library for Rust code, providing a way to work with Rust syntax trees.
-    version: "2.0.102"
-  - name: hashbrown
-    description: A Rust port of Google's SwissTable hash map
-    version: "0.15.4"
-  - name: bitflags
-    description: A Rust library for working with bit flags, providing a convenient way to define and manipulate sets of flags.
-    version: "2.9.1"
-  - name: libc
-    description: A Rust library providing bindings to the C standard library, allowing you to use C functions and types in Rust code.
-    version: "0.2.172"
-  - name: base64
-    description: A Rust library for encoding and decoding Base64 data, providing a simple way to work with Base64-encoded strings.
-    version: "0.22.1"
-  - name: rand
-    description: A Rust library for generating random numbers and values, providing a variety of random number generators and distributions.
-    version: "0.9.1"
-  - name: serde
-    description: A framework for serializing and deserializing Rust data structures, allowing you to convert between Rust types and various data formats.
-    version: "1.0.219"
-  - name: regex-syntax
-    description: A Rust library for parsing regular expressions, providing a way to work with regex patterns and match them against strings.
-    version: "0.8.5"
+  - name: cargo-sweep
+    description: Tool for cleaning up unused dependencies in Cargo projects.
+    version: "0.7.0"
+  - name: cargo-watch
+    description: Tool for automatically running Cargo commands when files change.
+    version: "8.5.3"
