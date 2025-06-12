@@ -707,3 +707,44 @@ node_packages:
   - name: yarn
     description: Fast, reliable, and secure dependency management tool for JavaScript projects.
     version: "1.22.22"
+
+cargo_packages:
+  - name: cargo-auditable
+    description: Tool for auditing Rust dependencies for security vulnerabilities.
+    version: "v0.6.7"
+  - name: cargo-edit
+    description: Tool for managing dependencies in Cargo.toml files.
+    version: "v0.13.6"
+  - name: cargo-expand
+    description: Tool for expanding Rust macros and showing the generated code.
+    version: "v1.0.108"
+  - name: cargo-insta
+    description: Tool for snapshot testing in Rust, allowing you to compare output against stored snapshots.
+    version: "v1.43.1"
+  - name: cargo-outdated
+    description: Tool for checking outdated dependencies in Cargo projects.
+    version: "v0.17.0"
+  - name: syn
+    description: Parsing and analysis library for Rust code, providing a way to work with Rust syntax trees.
+    version: "v2.0.102"
+  - name: hashbrown
+    description: A Rust port of Google's SwissTable hash map
+    version: "v0.15.4"
+  - name: bitflags
+    description: A Rust library for working with bit flags, providing a convenient way to define and manipulate sets of flags.
+    version: "v2.9.1"
+  - name: libc
+    description: A Rust library providing bindings to the C standard library, allowing you to use C functions and types in Rust code.
+    version: "v0.2.172"
+  - name: base64
+    description: A Rust library for encoding and decoding Base64 data, providing a simple way to work with Base64-encoded strings.
+    version: "v0.22.1"
+  - name: rand
+    description: A Rust library for generating random numbers and values, providing a variety of random number generators and distributions.
+    version: "v0.9.1"
+  - name: serde
+    description: A framework for serializing and deserializing Rust data structures, allowing you to convert between Rust types and various data formats.
+    version: "v1.0.219"
+  - name: regex-syntax
+    description: A Rust library for parsing regular expressions, providing a way to work with regex patterns and match them against strings.
+    version: "v0.8.5"
