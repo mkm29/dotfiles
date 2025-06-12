@@ -83,18 +83,4 @@ fi
 {{ end -}}
 {{ end -}}
 
-# install cargo packages
-{{ if .cargo_packages -}}
-echo "Installing cargo packages"
-
-{{ range $pkg := .cargo_packages -}}
-if ! cargo install --list | grep -q {{ $pkg.name }}; then
-  echo "Installing cargo package: {{ $pkg.name }}"
-  cargo install {{ $pkg.name }} --version {{ $pkg.version }} || echo "Failed to install cargo package: {{ $pkg.name }}"
-else
-  echo "Cargo package {{ $pkg.name }} is already installed."
-fi
-{{ end -}}
-{{ end -}}
-
 {{- end -}}
