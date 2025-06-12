@@ -1,0 +1,27 @@
+alias h=helm
+alias brewr="arch -x86_64 brew"
+alias intel="arch -x86_64"
+alias k=kubectl
+alias tf=terraform
+alias nerdctl="lima nerdctl"
+alias python=python3
+alias pip=pip3
+alias cat='bat --paging=never'
+alias vim=nvim
+alias vi=nvim
+alias ls=eza
+alias ll='eza --long --header --group-directories-first --git --group --all --color=auto'
+alias tree='tree -C'
+alias lg='lazygit'
+alias pinentry='pinentry-mac'
+alias assume=". assume"
+# Containers
+alias wrk='docker run --interactive --tty --rm skandyla/wrk'
+alias ubuntu='docker run --interactive --tty --rm --volume $(pwd):/host:ro ubuntu:20.04 bash'
+alias docker-ip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'" # append container id
+# Python
+alias pyclean='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rvf'
+alias pip-purge='pip list --format freeze | xargs pip uninstall -y'
+alias pip-install-reqs='ls requirements*.txt | xargs -n 1 pip install -r'
+alias activate='source .venv/bin/activate'
+alias awsume=". awsume"
