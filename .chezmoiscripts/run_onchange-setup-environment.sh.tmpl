@@ -73,9 +73,9 @@ if [[ -z "$(command -v rustup)" ]]; then
   echo "Installing rustup..."
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
   # install zsh completions for rustup
-  if [[ -z "/opt/homebrew/share/zsh/site-functions/_rustup_completions" ]]; then
+  if [[ -z "/opt/homebrew/share/zsh/site-functions/_rustup_completitions" ]]; then
     echo "Adding rustup completions to zsh..."
-    rustup completions zsh rustup /opt/homebrew/share/zsh/site-functions/_rustup_completions
+    rustup completions zsh rustup /opt/homebrew/share/zsh/site-functions/_rustup_completitions
   fi
 else
   echo "rustup is already installed"
