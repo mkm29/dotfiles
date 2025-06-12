@@ -75,11 +75,11 @@ if [[ -z "$(command -v rustup)" ]]; then
   # install zsh completions for rustup
   if [[ -z "/opt/homebrew/share/zsh/site-functions/_rustup_completitions" ]]; then
     echo "Adding rustup completions to zsh..."
-    rustup completions zsh rustup /opt/homebrew/share/zsh/site-functions/_rustup_completitions
+    rustup completions zsh rustup > /opt/homebrew/share/zsh/site-functions/_rustup_completitions
   fi
   if [[ -z "/opt/homebrew/share/zsh/site-functions/_cargo_completitions" ]]; then
     echo "Adding cargo completions to zsh..."
-    rustup completions zsh cargo /opt/homebrew/share/zsh/site-functions/_cargo_completitions
+    rustup completions zsh cargo > /opt/homebrew/share/zsh/site-functions/_cargo_completitions
   fi
 else
   echo "rustup is already installed"
