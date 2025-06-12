@@ -568,8 +568,6 @@ vscode_extensions:
   - ludoloops.ayutokyo
   - mechatroner.rainbow-csv
   - mgmcdermott.vscode-language-babel
-  - ms-azuretools.vscode-containers
-  - ms-kubernetes-tools.vscode-kubernetes-tools
   - ms-python.black-formatter
   - ms-python.debugpy
   - ms-python.isort
