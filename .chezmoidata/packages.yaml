@@ -237,6 +237,8 @@ brews:
       description: Switch between Kubernetes contexts quickly.
     - name: talosctl
       description: Command-line tool for managing Talos Linux clusters.
+    - name: peak/tap/s5cmd
+      description: High-performance S3 and local filesystem object storage CLI.
 
   security_tools:
     - name: age
