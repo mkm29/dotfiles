@@ -17,7 +17,7 @@ To set up this environment on a new machine:
    Start by cloning this repo using chezmoi:
 
    ```bash
-   chezmoi init https://github.com/<USERNAME>/dotfiles
+   chezmoi init https://github.com/mkm29/dotfiles
    ```
 
 3. **Configure personal values**
