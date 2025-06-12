@@ -421,8 +421,6 @@ brews:
       description: Additional guest agents for Lima VMs, enhancing functionality and integration with host systems.
     - name: dnsmasq
       description: Lightweight DNS forwarder and DHCP server, useful for local network setups.
-    - name: chromium
-      description: Open-source web browser developed by Google, known for its speed and security.
 
   network_tools:
     - name: unbound
@@ -539,9 +537,8 @@ casks:
     description: AWS Session Manager plugin for starting sessions with the AWS CLI.
   - name: gitify
     description: GitHub notifications and activity feed for your desktop.
-  # - name: kftray
-  #   note: Use either kftray or kftui, not both.
-  #   description: A system tray application for managing Kubernetes contexts.
+  - name: chromium
+    description: Open-source web browser developed by Google, known for its speed and security. [Source](https://formulae.brew.sh/cask/chromium)
 
 vscode_extensions:
   - 4ops.terraform
