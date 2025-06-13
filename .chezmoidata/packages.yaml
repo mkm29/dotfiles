@@ -374,8 +374,6 @@ brews:
       description: Fast linters runner for Go. [Source](https://formulae.brew.sh/formula/golangci-lint)
     - name: hashicorp/tap/packer
       description: Tool for creating identical machine images for multiple platforms. [Source](https://formulae.brew.sh/formula/packer)
-    - name: hashicorp/tap/terraform
-      description: Tool for building, changing, and versioning infrastructure safely and efficiently. [Source](https://formulae.brew.sh/formula/terraform)
 
   system_utils:
     - name: fastfetch
