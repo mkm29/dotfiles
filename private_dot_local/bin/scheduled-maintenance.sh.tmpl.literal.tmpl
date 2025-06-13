@@ -1,0 +1,62 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+# This script is used to run scheduled maintenance tasks using cron.
+
+# Define the log file
+LOG_FILE="/var/log/scheduled-maintenance.log"
+# Function to log messages
+# Usage: log_message "message"
+# This function logs messages to the specified log file with a timestamp.
+# It appends the message to the log file.
+# It also prints the message to the console.
+log_message() {
+    local message="$1"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $message" | tee -a "$LOG_FILE"
+}
+
+# Function to perform maintenance tasks
+# Usage: perform_maintenance
+# This function performs the actual maintenance tasks.
+# It can be customized to include any maintenance commands.
+# It logs the start and end of the maintenance tasks.
+# It also logs any errors encountered during the tasks.
+# It returns 0 on success and 1 on failure.
+perform_maintenance() {
+    log_message "Starting scheduled maintenance tasks..."
+
+    # Homebrew cleanup
+    if ! brew cleanup; then
+	log_message "Error: Homebrew cleanup failed."
+	return 1
+    fi
+    log_message "Homebrew cleanup completed successfully."
+
+    # Upgrade Homebrew packages
+    if ! brew upgrade; then
+	log_message "Error: Homebrew upgrade failed."
+	return 1
+    fi
+
+    # Rutup updates
+    # This assumes you have Rust and Cargo installed
+    if ! rustup update; then
+        log_message "Error: Rust update failed."
+        return 1
+    fi
+
+    # Cargo updates
+    if ! cargo install-update -a -i; then
+	log_message "Error: Cargo update failed."
+	return 1
+    fi
+
+    if ! cargo sweep -i -r -v; then
+	log_message "Error: Cargo sweep failed."
+	return 1
+    fi
+
+    log_message "Scheduled maintenance tasks completed successfully."
+    return 0
+}
+{{ end -}}
