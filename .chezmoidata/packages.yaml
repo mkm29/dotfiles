@@ -24,8 +24,8 @@ taps:
 #    description: FluxCD official tap for GitOps tools such as `flux` and `source-controller`
 #  - name: grafana/grafana
 #    description: Official Grafana tap for tools like Grafana, Alloy, and Mimir CLI
-#  - name: hashicorp/tap
-#    description: Official HashiCorp tap for tools like Terraform, Vault, Consul, and Boundary
+  - name: hashicorp/tap
+    description: Official HashiCorp tap for tools like Terraform, Vault, Consul, and Boundary
   - name: hcavarsan/kftray
     description: Tap for KFTray, a Keycloak login tray application for macOS
 #  - name: hidetatz/tap
@@ -269,6 +269,8 @@ brews:
       description: CLI tool and library for generating a Software Bill of Materials from container images and filesystems.
     - name: gopass
       description: The slightly more awesome standard UNIX password manager for teams, implemented in Go.
+    - name: hashicorp/tap/vault
+      description: Tool for securely accessing secrets and managing sensitive data.
 
   infra_and_testing:
     - name: docker
@@ -372,6 +374,8 @@ brews:
       description: Fast linters runner for Go. [Source](https://formulae.brew.sh/formula/golangci-lint)
     - name: hashicorp/tap/packer
       description: Tool for creating identical machine images for multiple platforms. [Source](https://formulae.brew.sh/formula/packer)
+    - name: hashicorp/tap/terraform
+      description: Tool for building, changing, and versioning infrastructure safely and efficiently. [Source](https://formulae.brew.sh/formula/terraform)
 
   system_utils:
     - name: fastfetch
