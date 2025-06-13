@@ -271,6 +271,8 @@ brews:
       description: The slightly more awesome standard UNIX password manager for teams, implemented in Go.
     - name: hashicorp/tap/vault
       description: Tool for securely accessing secrets and managing sensitive data.
+    - name: openbao
+      description: Open-source tool for managing secrets and sensitive data in cloud-native environments.
 
   infra_and_testing:
     - name: docker
