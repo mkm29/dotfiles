@@ -424,6 +424,8 @@ brews:
       description: Additional guest agents for Lima VMs, enhancing functionality and integration with host systems.
     - name: dnsmasq
       description: Lightweight DNS forwarder and DHCP server, useful for local network setups.
+    - name: bentobox
+      description: A window manager that boosts productivity by snapping windows into predefined zones, like a Japanese bento box organizing meals.
 
   network_tools:
     - name: unbound
