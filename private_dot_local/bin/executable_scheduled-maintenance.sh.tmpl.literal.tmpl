@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoit.os "darwin" }}
 #!/bin/bash
 
 # This script is used to run scheduled maintenance tasks using cron.
@@ -59,4 +59,6 @@ perform_maintenance() {
     log_message "Scheduled maintenance tasks completed successfully."
     return 0
 }
+
+perform_maintenance
 {{ end -}}
