@@ -428,6 +428,8 @@ brews:
       description: Additional guest agents for Lima VMs, enhancing functionality and integration with host systems.
     - name: dnsmasq
       description: Lightweight DNS forwarder and DHCP server, useful for local network setups.
+    - name: tailscale
+      description: Secure network connectivity tool that creates a mesh VPN between devices.
 
   network_tools:
     - name: unbound
