@@ -99,6 +99,12 @@ fi
 
 # enable oh-my-zsh plugins
 {{ if .oh_my_zsh_plugins -}}
+if command -v omz &> /dev/null; then
+  echo "Oh-my-zsh is installed, proceeding to enable plugins."
+else
+  echo "Oh-my-zsh is not installed. Skipping plugin enabling."
+  exit 0
+fi
 echo "Enabling oh-my-zsh plugins"
 
 {{- range $plugin := .oh_my_zsh_plugins }}
