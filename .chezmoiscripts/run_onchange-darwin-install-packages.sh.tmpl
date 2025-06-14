@@ -98,12 +98,12 @@ fi
 {{ end -}}
 
 # enable oh-my-zsh plugins
-{{ if and (hasKey . "oh_my_zsh_plugins") (not (empty .oh_my_zsh_plugins)) -}}
 # create variable of plugins, separated by new lines
 {{- $oh_my_zsh_plugins := .oh_my_zsh_plugins | join "\n" -}}
 echo "Registering oh-my-zsh plugins in ~/.zshrc"
-# replace ${ZSH_PLUGINS} in .zshrc with the plugins variable
-#sed -i '' "s/^_OH_MY_ZSH_PLUGINS_/${oh_my_zsh_plugins}/g" ~/.zshrc
+sed -i '' "s/^_OH_MY_ZSH_PLUGINS_/${oh_my_zsh_plugins}/g" ~/.zshrc
+{{ else -}}
+echo "Not enabling omz plugins"
 {{ end -}}
 
 {{- end -}}
