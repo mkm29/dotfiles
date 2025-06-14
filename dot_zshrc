@@ -7,7 +7,9 @@ export EDITOR=nvim
 export SUDO_EDITOR=nvim
 
 # Which plugins would you like to load?
-plugins=()
+plugins=(
+$OH_MY_ZSH_PLUGINS
+)
 
 # Load Homebrew completions
 export HOMEBREW_PREFIX=$(/opt/homebrew/bin/brew --prefix)
