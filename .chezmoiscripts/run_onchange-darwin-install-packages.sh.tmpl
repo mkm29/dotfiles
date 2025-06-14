@@ -98,9 +98,6 @@ fi
 {{ end -}}
 
 # enable oh-my-zsh plugins
-{{ if .oh_my_zsh_plugins -}}
-echo "Enabling oh-my-zsh plugins"
-
 {{ if and (hasKey . "oh_my_zsh_plugins") (not (empty .oh_my_zsh_plugins)) -}}
 # create variable of plugins, separated by new lines
 {{- $oh_my_zsh_plugins := .oh_my_zsh_plugins | join "\n" -}}
