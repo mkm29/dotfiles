@@ -102,7 +102,7 @@ fi
 # create variable of plugins, separated by new lines
 {{- $oh_my_zsh_plugins := .oh_my_zsh_plugins | join "\n" -}}
 # replace ${ZSH_PLUGINS} in .zshrc with the plugins variable
-sed -i '' "s/$OH_MY_ZSH_PLUGINS/${oh_my_zsh_plugins}/" ~/.zshrc
+sed -i '' "s/^_OH_MY_ZSH_PLUGINS_/${oh_my_zsh_plugins}/g" ~/.zshrc
 {{ end -}}
 
 {{- end -}}
