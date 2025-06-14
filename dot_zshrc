@@ -8,7 +8,58 @@ export SUDO_EDITOR=nvim
 
 # Which plugins would you like to load?
 plugins=(
-_OH_MY_ZSH_PLUGINS_
+  1password
+  chezmoi
+  fluxcd
+  fzf
+  genpass
+  golang
+  git-extras
+  gitfast
+  history
+  knife
+  node
+  podman
+  python
+  rust
+  starship
+  alias-finder
+  buf
+  direnv
+  docker-compose
+  encode64
+  gh
+  github
+  history-substring-search
+  vault
+  vscode
+  terraform
+  ssh
+  postgres
+  npm
+  multipass
+  helm
+  gcloud
+  eza
+  ansible
+  argocd
+  istioctl
+  nvm
+  sudo
+  tailscale
+  torrent
+  zoxide
+  uv
+  tldr
+  thefuck
+  gnu-utils
+  brew
+  bazel
+  kubectl
+  emoji
+  encode64
+  kube-ps1
+  wd
 )
 
 # Load Homebrew completions
