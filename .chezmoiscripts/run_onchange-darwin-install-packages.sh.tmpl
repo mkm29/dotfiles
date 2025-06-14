@@ -97,4 +97,18 @@ fi
 {{ end -}}
 {{ end -}}
 
+# enable oh-my-zsh plugins
+{{ if .oh_my_zsh_plugins -}}
+echo "Enabling oh-my-zsh plugins"
+
+{{- range $plugin := .oh_my_zsh_plugins }}
+if ! omz plugin list --enabled | grep -q "{{ $plugin }}"; then
+  echo "Enabling oh-my-zsh plugin: {{ $plugin }}"
+  omz plugin enable {{ $plugin }} || echo "Failed to enable oh-my-zsh plugin: {{ $plugin }}"
+else
+  echo "Oh-my-zsh plugin {{ $plugin }} is already enabled."
+fi
+{{- end }}
+{{- end }}
+
 {{- end -}}

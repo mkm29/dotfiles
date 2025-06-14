@@ -748,3 +748,57 @@ cargo_packages:
   - name: nix-sweep
     description: Tool for cleaning up unused Nix packages and dependencies.
     version: "0.5.0"
+
+oh_my_zsh_plugins:
+- 1password
+- chezmoi
+- fluxcd
+- fzf
+- genpass
+- golang
+- git-extras
+- gitfast
+- history
+- knife
+- node
+- podman
+- python
+- rust
+- starship
+- alias-finder
+- buf
+- direnv
+- docker-compose
+- encode64
+- gh
+- github
+- history-substring-search
+- vault
+- vscode
+- terraform
+- ssh
+- postgres
+- npm
+- multipass
+- helm
+- gcloud
+- eza
+- ansible
+- argocd
+- istioctl
+- nvm
+- sudo
+- tailscale
+- torrent
+- zoxide
+- uv
+- tldr
+- thefuck
+- gnu-utils
+- brew
+- bazel
+- kubectl
+- emoji
+- encode64
+- kube-ps1
+- wd
