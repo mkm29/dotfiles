@@ -85,4 +85,12 @@ else
   echo "rustup is already installed"
 fi
 
+# install istioctl
+#if [[ -z "$(command -v istioctl)" ]]; then
+#  echo "Installing istioctl..."
+#  curl -L https://istio.io/downloadIstio | sh - && chmod +x istio-*/bin/istioctl && mv istio-*/bin/istioctl ~/.local/bin/istioctl   
+#else
+#  echo "istioctl is already installed"
+#fi
+
 {{ end -}}

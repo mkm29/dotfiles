@@ -1,5 +1,7 @@
 # Homebrew packages and taps for a comprehensive development environment
 taps:
+  - name: domt4/autoupdate
+    description: Tap for autoupdate, a tool to automatically update Homebrew formulae and casks
   - name: ai-christianson/ra-aid
     description: Provides the RA-AID tool, an LLM-powered assistant for rapid assessments and ATO workflows
 #  - name: anchore/grype
@@ -239,6 +241,8 @@ brews:
       description: Command-line tool for managing Talos Linux clusters.
     - name: s5cmd
       description: High-performance S3 and local filesystem object storage CLI.
+    - name: istioctl
+      description: Command-line tool for managing Istio.
 
   security_tools:
     - name: age
