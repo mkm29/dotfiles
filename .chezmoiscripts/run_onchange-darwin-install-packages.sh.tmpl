@@ -100,6 +100,7 @@ fi
 # enable oh-my-zsh plugins
 # create variable of plugins, separated by new lines
 {{- $oh_my_zsh_plugins := .oh_my_zsh_plugins | join "\n" -}}
+{{ if .oh_my_zsh_plugins -}}
 echo "Registering oh-my-zsh plugins in ~/.zshrc"
 sed -i '' "s/^_OH_MY_ZSH_PLUGINS_/${oh_my_zsh_plugins}/g" ~/.zshrc
 {{ else -}}
