@@ -1,6 +1,6 @@
 {{- $arch := .chezmoi.arch -}}
 {{ if eq .chezmoi.os "darwin" -}}
-#!/bin/bash
+#!/bin/zsh
 
 brew bundle --file=/dev/stdin <<EOF
 {{- range .taps }}
