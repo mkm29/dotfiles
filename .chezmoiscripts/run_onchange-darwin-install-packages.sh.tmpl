@@ -99,19 +99,20 @@ fi
 
 # enable oh-my-zsh plugins
 {{ if .oh_my_zsh_plugins -}}
-source $ZSH/oh-my-zsh.sh
-if command -v omz &> /dev/null; then
-  echo "omz command is installed, proceeding to enable plugins."
-else
-  echo "omz command is not installed. Skipping plugin enabling."
-  exit 0
-fi
 echo "Enabling oh-my-zsh plugins"
 
 {{- range $plugin := .oh_my_zsh_plugins }}
-if ! omz plugin list --enabled | grep -q "{{ $plugin }}"; then
+if ! grep -q "{{ $plugin }}" ~/.zshrc; then
+  # Check if the plugin is already enabled in .zshrc
+  sed -i '' "s/^plugins=(/plugins=(${plugin} /" ~/.zshrc
+  # Add the plugin to the plugins array in .zshrc
+  echo "plugins=(${plugin} \$(plugins))" >> ~/.zshrc
+  # Ensure the plugin is sourced
+  echo "source ~/.oh-my-zsh/plugins/{{ $plugin }}/{{ $plugin }}.plugin.zsh" >> ~/.zshrc
+  # Reload the shell configuration
+  source ~/.zshrc
+  # Print a message indicating the plugin was enabled
   echo "Enabling oh-my-zsh plugin: {{ $plugin }}"
-  omz plugin enable {{ $plugin }} || echo "Failed to enable oh-my-zsh plugin: {{ $plugin }}"
 else
   echo "Oh-my-zsh plugin {{ $plugin }} is already enabled."
 fi
