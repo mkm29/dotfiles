@@ -442,6 +442,8 @@ brews:
       description: A graphical process viewer for the terminal, providing a modern and customizable interface for monitoring system resources.
     - name: tokei
       description: A program that displays statistics about your code, such as the number of lines, files, and comments.
+    - name: just
+      description: A command runner similar to Make, but simpler and more flexible, allowing you to define and run commands in a straightforward way (and written in Rust).
 
   network_tools:
     - name: unbound
