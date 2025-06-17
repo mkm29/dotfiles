@@ -558,10 +558,10 @@ casks:
     description: GUI for managing containers and Kubernetes clusters using Podman.
   - name: session-manager-plugin
     description: AWS Session Manager plugin for starting sessions with the AWS CLI.
-  - name: gitify
-    description: GitHub notifications and activity feed for your desktop.
-  - name: chromium
-    description: Open-source web browser developed by Google, known for its speed and security. [Source](https://formulae.brew.sh/cask/chromium)
+#  - name: gitify
+#    description: GitHub notifications and activity feed for your desktop.
+#  - name: chromium
+#    description: Open-source web browser developed by Google, known for its speed and security. [Source](https://formulae.brew.sh/cask/chromium)
   - name: bentobox
     description: A window manager that boosts productivity by snapping windows into predefined zones, like a Japanese bento box organizing meals.
 
