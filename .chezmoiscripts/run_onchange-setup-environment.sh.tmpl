@@ -93,4 +93,14 @@ fi
 #  echo "istioctl is already installed"
 #fi
 
+# install nelm
+if [[ -z "$(command -v nelm)" ]]; then
+  echo "Installing nelm..."
+  curl -L -o $HOME/.local/bin/nelm https://tuf.nelm.sh/targets/releases/1.6.0/darwin-arm64/bin/nelm
+  chmod +x $HOME/.local/bin/CHANGELOG.md
+  nelm completion zsh > /opt/homebrew/share/zsh/site-functions/_nelm
+else
+  echo "nelm is already installed"
+fi
+
 {{ end -}}
