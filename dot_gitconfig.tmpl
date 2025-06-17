@@ -71,6 +71,19 @@
 	# Display all aliases :)
 	aliases = ! git config --list | awk '/alias/{ print $1 }' | perl -pe 's/alias\\.//g' | perl -pe 's/=.+//g'
 
+	# Display the current branch name
+	branch-name = ! git symbolic-ref --short HEAD || echo "HEAD (detached)"
+	# Display the current branch name and the current commit hash
+	branch-and-hash = ! git branch-name && git rev-parse --short HEAD || echo "HEAD (detached)"
+	# pull all branches from all remotes
+	pa = ! "f() { \
+		for remote in $(git remote); do \
+			git fetch $remote --prune; \
+			git branch -r | grep $remote/ | sed 's/^ *//; s/ *$//' | while read branch; do \
+				git checkout --track $branch || git checkout $branch; \
+			done; \
+		done; \
+	}; f"
 	# Short aliases for simple commands
 	a = add
 	ap = -c color.diff=true add --patch
