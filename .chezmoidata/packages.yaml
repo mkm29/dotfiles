@@ -56,6 +56,8 @@ taps:
     description: Canonical's tap for MicroK8s, a lightweight Kubernetes distribution
   - name: drone/drone
     description: Tap for Drone, a continuous integration and delivery platform
+  - name: vectordotdev/brew
+    description: Tap for Vector, a high-performance observability data pipeline
 brews:
   base_tools:
     - name: act
@@ -311,6 +313,8 @@ brews:
       description: Run LogQL queries against a Loki server
     - name: pyroscope-io/brew/pyroscope
       description: Grafana Pyroscope is a continuous profiling platform designed to surface performance insights from your applications
+    - name: vector
+      description: High-performance observability data pipeline that can collect, transform, and route logs, metrics, and traces
 
   image_video:
     - name: ffmpeg
