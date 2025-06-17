@@ -434,6 +434,14 @@ brews:
       description: Lightweight DNS forwarder and DHCP server, useful for local network setups.
     - name: tailscale
       description: Secure network connectivity tool that creates a mesh VPN between devices.
+    - name: procs
+      description: Modern replacement for `ps`, providing a more user-friendly and colorful output of running processes.
+    - name: dust
+      description: A more intuitive version of `du`, showing disk usage in a human-readable format.
+    - name: bottom
+      description: A graphical process viewer for the terminal, providing a modern and customizable interface for monitoring system resources.
+    - name: tokei
+      description: A program that displays statistics about your code, such as the number of lines, files, and comments.
 
   network_tools:
     - name: unbound
