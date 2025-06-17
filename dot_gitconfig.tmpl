@@ -76,7 +76,7 @@
 	# Display the current branch name and the current commit hash
 	branch-and-hash = ! git branch-name && git rev-parse --short HEAD || echo "HEAD (detached)"
 	# pull all branches from all remotes
-	pa = ! "f() { \
+	pull-all = ! "f() { \
 		for remote in $(git remote); do \
 			git fetch $remote --prune; \
 			git branch -r | grep $remote/ | sed 's/^ *//; s/ *$//' | while read branch; do \
