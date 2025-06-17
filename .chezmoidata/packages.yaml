@@ -766,6 +766,7 @@ oh_my_zsh_plugins:
 - fzf
 - genpass
 - golang
+- git
 - git-extras
 - gitfast
 - history
