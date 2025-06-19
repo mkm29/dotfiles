@@ -795,7 +795,6 @@ oh_my_zsh_plugins:
 - multipass
 - helm
 - gcloud
-- eza
 - ansible
 - argocd
 - istioctl
@@ -803,10 +802,8 @@ oh_my_zsh_plugins:
 - sudo
 - tailscale
 - torrent
-- zoxide
 - uv
 - tldr
-- thefuck
 - gnu-utils
 - brew
 - bazel
