@@ -249,6 +249,8 @@ brews:
       description: Tool for building OCI images using APK packages, designed for Alpine Linux.
     - name: ko
       description: Tool for building and deploying Go applications as OCI images, optimized for Kubernetes.
+    - name: terraformer
+      description: CLI tool to generate Terraform files from existing infrastructure.
 
   security_tools:
     - name: age
