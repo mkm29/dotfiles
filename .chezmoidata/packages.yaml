@@ -243,6 +243,8 @@ brews:
       description: Command-line tool for managing Istio.
     - name: fluxcd/tap/flux
       description: GitOps toolkit for Kubernetes, enabling continuous delivery and automation.
+    - name: docker-credential-helper-ecr
+      description: Credential helper for Docker to authenticate with Amazon ECR (Elastic Container Registry).
 
   security_tools:
     - name: age
