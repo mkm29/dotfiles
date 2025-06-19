@@ -26,3 +26,4 @@ keybind = super+r=reload_config
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 
 window-save-state = always
+quick-terminal-position = bottom
