@@ -10,6 +10,9 @@ export SUDO_EDITOR=nvim
 export HOMEBREW_PREFIX=$(/opt/homebrew/bin/brew --prefix)
 fpath=("$HOMEBREW_PREFIX/share/zsh/site-functions" "$HOME/.docker/completions" $fpath)
 
+# go, brew paths
+export PATH="$HOME/go/bin:$HOMEBREW_PREFIX/bin:$PATH"
+
 # Which plugins would you like to load?
 plugins=(
   1password
@@ -76,9 +79,6 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
-
-# go, brew paths
-export PATH="$HOME/go/bin:$HOMEBREW_PREFIX/bin:$PATH"
 
 # Enable persistent history
 HISTFILE=~/.zsh_history
