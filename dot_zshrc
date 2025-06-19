@@ -6,6 +6,10 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 export SUDO_EDITOR=nvim
 
+# Load Homebrew completions
+export HOMEBREW_PREFIX=$(/opt/homebrew/bin/brew --prefix)
+fpath=("$HOMEBREW_PREFIX/share/zsh/site-functions" "$HOME/.docker/completions" $fpath)
+
 # Which plugins would you like to load?
 plugins=(
   1password
@@ -62,10 +66,6 @@ plugins=(
   kube-ps1
   wd
 )
-
-# Load Homebrew completions
-export HOMEBREW_PREFIX=$(/opt/homebrew/bin/brew --prefix)
-fpath=("$HOMEBREW_PREFIX/share/zsh/site-functions" "$HOME/.docker/completions" $fpath)
 
 # Source oh-my-zsh
 source $ZSH/oh-my-zsh.sh
