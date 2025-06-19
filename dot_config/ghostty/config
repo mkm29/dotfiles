@@ -23,6 +23,6 @@ keybind = ctrl+a>n=next_tab
 keybind = ctrl+a>p=previous_tab
 
 keybind = super+r=reload_config
+keybind = global:cmd+grave_accent=toggle_quick_terminal
 
 window-save-state = always
-
