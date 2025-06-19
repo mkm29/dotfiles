@@ -446,6 +446,8 @@ brews:
       description: A program that displays statistics about your code, such as the number of lines, files, and comments.
     - name: just
       description: A command runner similar to Make, but simpler and more flexible, allowing you to define and run commands in a straightforward way (and written in Rust).
+    - name: mise
+      description: A tool that manages installations of programming language runtimes and other tools for local development
 
   network_tools:
     - name: unbound
@@ -627,6 +629,7 @@ vscode_extensions:
   - waderyan.gitblame
   - yzhang.markdown-all-in-one
   - zhuangtongfa.material-theme
+  - mise-vscode
 
 # Python packages (use pip)
 python_packages:
