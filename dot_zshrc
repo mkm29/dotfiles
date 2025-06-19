@@ -190,3 +190,6 @@ eval "$(starship init zsh)"
 if [ -f "$HOME/.cargo/env" ]; then
   source "$HOME/.cargo/env"
 fi
+
+# autoupdate homebrew once a day
+export HOMEBREW_AUTO_UPDATE_SECS=86400
