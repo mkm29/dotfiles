@@ -22,8 +22,6 @@ taps:
     description: Homebrew formulas for macOS status bar customization and productivity tools like SketchyBar
 #  - name: flux-subsystem-argo/tap
 #    description: Flux Subsystem for Argo project plugins and controllers
-#  - name: fluxcd/tap
-#    description: FluxCD official tap for GitOps tools such as `flux` and `source-controller`
 #  - name: grafana/grafana
 #    description: Official Grafana tap for tools like Grafana, Alloy, and Mimir CLI
   - name: hashicorp/tap
@@ -213,8 +211,6 @@ brews:
       description: Ultralight, security-first service mesh for Kubernetes.
     - name: velero
       description: Backup and migrate Kubernetes resources and persistent volumes.
-    - name: flux
-      description: Continuous delivery solution for Kubernetes.
     - name: eksctl
       description: CLI tool for creating clusters on EKS.
     - name: localstack-cli
@@ -245,6 +241,8 @@ brews:
       description: High-performance S3 and local filesystem object storage CLI.
     - name: istioctl
       description: Command-line tool for managing Istio.
+    - name: fluxcd/tap/flux
+      description: GitOps toolkit for Kubernetes, enabling continuous delivery and automation.
 
   security_tools:
     - name: age
