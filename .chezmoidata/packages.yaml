@@ -247,6 +247,8 @@ brews:
       description: Credential helper for Docker to authenticate with Amazon ECR (Elastic Container Registry).
     - name: apko
       description: Tool for building OCI images using APK packages, designed for Alpine Linux.
+    - name: ko
+      description: Tool for building and deploying Go applications as OCI images, optimized for Kubernetes.
 
   security_tools:
     - name: age
