@@ -245,6 +245,8 @@ brews:
       description: GitOps toolkit for Kubernetes, enabling continuous delivery and automation.
     - name: docker-credential-helper-ecr
       description: Credential helper for Docker to authenticate with Amazon ECR (Elastic Container Registry).
+    - name: apko
+      description: Tool for building OCI images using APK packages, designed for Alpine Linux.
 
   security_tools:
     - name: age
@@ -631,7 +633,6 @@ vscode_extensions:
   - waderyan.gitblame
   - yzhang.markdown-all-in-one
   - zhuangtongfa.material-theme
-  - mise-vscode
 
 # Python packages (use pip)
 python_packages:
