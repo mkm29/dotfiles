@@ -776,7 +776,6 @@ cargo_packages:
 oh_my_zsh_plugins:
 - 1password
 - chezmoi
-- fluxcd
 - fzf
 - genpass
 - golang

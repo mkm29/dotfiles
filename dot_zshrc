@@ -17,7 +17,6 @@ export PATH="$HOME/go/bin:$HOMEBREW_PREFIX/bin:$PATH"
 plugins=(
   1password
   chezmoi
-  fluxcd
   fzf
   genpass
   golang
