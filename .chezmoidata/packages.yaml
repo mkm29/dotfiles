@@ -287,6 +287,8 @@ brews:
       description: Tool for securely accessing secrets and managing sensitive data.
     - name: openbao
       description: Open-source tool for managing secrets and sensitive data in cloud-native environments.
+    - name: bitwarden
+      description: Command-line interface for Bitwarden, a secure password manager.
 
   infra_and_testing:
     - name: docker
@@ -701,6 +703,9 @@ go_tools:
     version: "latest"
   - name: golang.org/x/tools/cmd/gorename
     description: Tool for renaming variables, functions, and types in Go code.
+    version: "latest"
+  - name: github.com/hashicorp/go-getter/cmd/go-getter
+    description: Tool for downloading files and directories from various sources, such as HTTP, S3, and Git.
     version: "latest"
 
 node_packages:
