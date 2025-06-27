@@ -255,6 +255,8 @@ brews:
       description: Tool for pushing Docker images to remote servers using SSH.
     - name: copa
       description: A CLI tool written in Go and based on buildkit that can be used to directly patch container images given the vulnerability scanning results from popular tools like Trivy
+    - name: cyphernetes
+      description: Cyphernetes is a Cypher-inspired query language for Kubernetes.
 
   security_tools:
     - name: age
