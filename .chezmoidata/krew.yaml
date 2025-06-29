@@ -73,3 +73,5 @@ krew_plugins:
     architectures: [amd64, arm64]
   - name: tap
     architectures: [amd64]
+  - name: oidc-login
+    architectures: [amd64, arm64]
