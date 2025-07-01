@@ -1,294 +1,363 @@
-# 🛠️ Dotfiles Managed by chezmoi
+# Grafana MCP server
 
-This repository contains my personal dotfiles, managed using [chezmoi](https://www.chezmoi.io/) to ensure a consistent and secure developer environment across machines. It includes configurations for tools like Neovim, Ghostty, and Starship, along with automated setup scripts for a complete cloud/DevOps-focused development environment.
+A [Model Context Protocol][mcp] (MCP) server for Grafana.
 
-## 🚀 Getting Started
+This provides access to your Grafana instance and the surrounding ecosystem.
 
-To set up this environment on a new machine:
+## Features
 
-1. **Install chezmoi**
+_The following features are currently available in MCP server. This list is for informational purposes only and does not represent a roadmap or commitment to future features._
 
-   ```bash
-   brew install chezmoi
+### Dashboards
+- **Search for dashboards:** Find dashboards by title or other metadata
+- **Get dashboard by UID:** Retrieve full dashboard details using its unique identifier
+- **Update or create a dashboard:** Modify existing dashboards or create new ones. _Note: Use with caution due to context window limitations; see [issue #101](https://github.com/grafana/mcp-grafana/issues/101)_
+- **Get panel queries and datasource info:** Get the title, query string, and datasource information (including UID and type, if available) from every panel in a dashboard
+
+### Datasources
+- **List and fetch datasource information:** View all configured datasources and retrieve detailed information about each.
+    - _Supported datasource types: Prometheus, Loki._
+
+### Prometheus Querying
+- **Query Prometheus:** Execute PromQL queries (supports both instant and range metric queries) against Prometheus datasources.
+- **Query Prometheus metadata:** Retrieve metric metadata, metric names, label names, and label values from Prometheus datasources.
+
+### Loki Querying
+- **Query Loki logs and metrics:** Run both log queries and metric queries using LogQL against Loki datasources.
+- **Query Loki metadata:** Retrieve label names, label values, and stream statistics from Loki datasources.
+
+### Incidents
+- **Search, create, update, and close incidents:** Manage incidents in Grafana Incident, including searching, creating, updating, and resolving incidents.
+
+### Sift Investigations
+- **Create Sift investigations:** Start a new Sift investigation for analyzing logs or traces.
+- **List Sift investigations:** Retrieve a list of Sift investigations, with support for a limit parameter.
+- **Get Sift investigation:** Retrieve details of a specific Sift investigation by its UUID.
+- **Get Sift analyses:** Retrieve a specific analysis from a Sift investigation.
+- **Find error patterns in logs:** Detect elevated error patterns in Loki logs using Sift.
+- **Find slow requests:** Detect slow requests using Sift (Tempo).
+
+### Alerting
+- **List and fetch alert rule information:** View alert rules and their statuses (firing/normal/error/etc.) in Grafana.
+- **List contact points:** View configured notification contact points in Grafana.
+
+### Grafana OnCall
+- **List and manage schedules:** View and manage on-call schedules in Grafana OnCall.
+- **Get shift details:** Retrieve detailed information about specific on-call shifts.
+- **Get current on-call users:** See which users are currently on call for a schedule.
+- **List teams and users:** View all OnCall teams and users.
+
+### Admin
+- **List teams:** View all configured teams in Grafana.
+
+The list of tools is configurable, so you can choose which tools you want to make available to the MCP client.
+This is useful if you don't use certain functionality or if you don't want to take up too much of the context window.
+To disable a category of tools, use the `--disable-<category>` flag when starting the server. For example, to disable
+the OnCall tools, use `--disable-oncall`.
+
+### Tools
+
+| Tool                              | Category    | Description                                                        |
+| --------------------------------- | ----------- | ------------------------------------------------------------------ |
+| `list_teams`                      | Admin       | List all teams                                                     |
+| `search_dashboards`               | Search      | Search for dashboards                                              |
+| `get_dashboard_by_uid`            | Dashboard   | Get a dashboard by uid                                             |
+| `update_dashboard`                | Dashboard   | Update or create a new dashboard                                   |
+| `get_dashboard_panel_queries`     | Dashboard   | Get panel title, queries, datasource UID and type from a dashboard |
+| `list_datasources`                | Datasources | List datasources                                                   |
+| `get_datasource_by_uid`           | Datasources | Get a datasource by uid                                            |
+| `get_datasource_by_name`          | Datasources | Get a datasource by name                                           |
+| `query_prometheus`                | Prometheus  | Execute a query against a Prometheus datasource                    |
+| `list_prometheus_metric_metadata` | Prometheus  | List metric metadata                                               |
+| `list_prometheus_metric_names`    | Prometheus  | List available metric names                                        |
+| `list_prometheus_label_names`     | Prometheus  | List label names matching a selector                               |
+| `list_prometheus_label_values`    | Prometheus  | List values for a specific label                                   |
+| `list_incidents`                  | Incident    | List incidents in Grafana Incident                                 |
+| `create_incident`                 | Incident    | Create an incident in Grafana Incident                             |
+| `add_activity_to_incident`        | Incident    | Add an activity item to an incident in Grafana Incident            |
+| `resolve_incident`                | Incident    | Resolve an incident in Grafana Incident                            |
+| `query_loki_logs`                 | Loki        | Query and retrieve logs using LogQL (either log or metric queries) |
+| `list_loki_label_names`           | Loki        | List all available label names in logs                             |
+| `list_loki_label_values`          | Loki        | List values for a specific log label                               |
+| `query_loki_stats`                | Loki        | Get statistics about log streams                                   |
+| `list_alert_rules`                | Alerting    | List alert rules                                                   |
+| `get_alert_rule_by_uid`           | Alerting    | Get alert rule by UID                                              |
+| `list_oncall_schedules`           | OnCall      | List schedules from Grafana OnCall                                 |
+| `get_oncall_shift`                | OnCall      | Get details for a specific OnCall shift                            |
+| `get_current_oncall_users`        | OnCall      | Get users currently on-call for a specific schedule                |
+| `list_oncall_teams`               | OnCall      | List teams from Grafana OnCall                                     |
+| `list_oncall_users`               | OnCall      | List users from Grafana OnCall                                     |
+| `get_investigation`               | Sift        | Retrieve an existing Sift investigation by its UUID                |
+| `get_analysis`                    | Sift        | Retrieve a specific analysis from a Sift investigation             |
+| `list_investigations`             | Sift        | Retrieve a list of Sift investigations with an optional limit      |
+| `find_error_pattern_logs`         | Sift        | Finds elevated error patterns in Loki logs.                        |
+| `find_slow_requests`              | Sift        | Finds slow requests from the relevant tempo datasources.           |
+| `list_pyroscope_label_names`      | Pyroscope   | List label names matching a selector                               |
+| `list_pyroscope_label_values`     | Pyroscope   | List label values matching a selector for a label name             |
+| `list_pyroscope_profile_types`    | Pyroscope   | List available profile types                                       |
+| `fetch_pyroscope_profile`         | Pyroscope   | Fetches a profile in DOT format for analysis                       |
+
+## Usage
+
+1. Create a service account in Grafana with enough permissions to use the tools you want to use,
+   generate a service account token, and copy it to the clipboard for use in the configuration file.
+   Follow the [Grafana documentation][service-account] for details.
+
+2. You have several options to install `mcp-grafana`:
+
+   - **Docker image**: Use the pre-built Docker image from Docker Hub.
+
+     **Important**: The Docker image's entrypoint is configured to run the MCP server in SSE mode by default, but most users will want to use STDIO mode for direct integration with AI assistants like Claude Desktop:
+
+     1. **STDIO Mode**: For stdio mode you must explicitly override the default with `-t stdio` and include the `-i` flag to keep stdin open:
+
+     ```bash
+     docker pull mcp/grafana
+     docker run --rm -i -e GRAFANA_URL=http://localhost:3000 -e GRAFANA_API_KEY=<your service account token> mcp/grafana -t stdio
+     ```
+
+     2. **SSE Mode**: In this mode, the server runs as an HTTP server that clients connect to. You must expose port 8000 using the `-p` flag:
+
+     ```bash
+     docker pull mcp/grafana
+     docker run --rm -p 8000:8000 -e GRAFANA_URL=http://localhost:3000 -e GRAFANA_API_KEY=<your service account token> mcp/grafana
+     ```
+     
+     3. **Streamable HTTP Mode**: In this mode, the server operates as an independent process that can handle multiple client connections. You must expose port 8000 using the `-p` flag: For this mode you must explicitly override the default with `-t streamable-http`
+
+     ```bash
+     docker pull mcp/grafana
+     docker run --rm -p 8000:8000 -e GRAFANA_URL=http://localhost:3000 -e GRAFANA_API_KEY=<your service account token> mcp/grafana -t streamable-http
+     ```
+
+   - **Download binary**: Download the latest release of `mcp-grafana` from the [releases page](https://github.com/grafana/mcp-grafana/releases) and place it in your `$PATH`.
+
+   - **Build from source**: If you have a Go toolchain installed you can also build and install it from source, using the `GOBIN` environment variable
+     to specify the directory where the binary should be installed. This should also be in your `PATH`.
+
+     ```bash
+     GOBIN="$HOME/go/bin" go install github.com/grafana/mcp-grafana/cmd/mcp-grafana@latest
+     ```
+
+3. Add the server configuration to your client configuration file. For example, for Claude Desktop:
+
+   **If using the binary:**
+
+   ```json
+   {
+     "mcpServers": {
+       "grafana": {
+         "command": "mcp-grafana",
+         "args": [],
+         "env": {
+           "GRAFANA_URL": "http://localhost:3000",
+           "GRAFANA_API_KEY": "<your service account token>"
+         }
+       }
+     }
+   }
    ```
 
-2. **Initialize chezmoi**
+> Note: if you see `Error: spawn mcp-grafana ENOENT` in Claude Desktop, you need to specify the full path to `mcp-grafana`.
 
-   Start by cloning this repo using chezmoi:
+   **If using Docker:**
 
-   ```bash
-   chezmoi init https://github.com/mkm29/dotfiles
+   ```json
+   {
+     "mcpServers": {
+       "grafana": {
+         "command": "docker",
+         "args": [
+           "run",
+           "--rm",
+           "-i",
+           "-e",
+           "GRAFANA_URL",
+           "-e",
+           "GRAFANA_API_KEY",
+           "mcp/grafana",
+           "-t",
+           "stdio"
+         ],
+         "env": {
+           "GRAFANA_URL": "http://localhost:3000",
+           "GRAFANA_API_KEY": "<your service account token>"
+         }
+       }
+     }
+   }
    ```
 
-3. **Configure personal values**
+   > Note: The `-t stdio` argument is essential here because it overrides the default SSE mode in the Docker image.
 
-   Edit the config file:
+**Using VSCode with remote MCP server**
 
-   ```bash
-   chezmoi edit-config
-   ```
+If you're using VSCode and running the MCP server in SSE mode (which is the default when using the Docker image without overriding the transport), make sure your `.vscode/settings.json` includes the following:
 
-   Below is the structure (YAML) of the configuration, these fields are required:
-
-   ```yaml
-   data:
-      type: personal # set to either `work` or `personal` to tailor the installation
-      hostname: my-hostname
-      git: # Used for ~/.gitconfig
-         users: # Support for multiple Git users
-            - email: <name@email.com>
-              name: <First Last>
-              signingKey: 1234ABC567DEF
-            - email: <work@company.com>
-              name: <Work Name>
-              signingKey: 5678DEF901ABC
-   ```
-
-   You can also configure default behaviors (edit, Git, etc.) as so:
-
-   ```yaml
-   edit:
-      command: nvim
-
-   git:
-      autoCommit: true
-      autoPush: true
-   ```
-
-   For more information please see the official [Chezmoi docs](https://www.chezmoi.io/reference/).
-
-4. **Apply the configuration and initialize shell environment**
-
-   ```bash
-   chezmoi apply
-   ```
-
-   > 🔧 The `chezmoi apply` command applies all the dotfiles from the repository, runs automated setup scripts from `.chezmoiscripts/`, installs packages defined in `.chezmoidata/`, sets up your shell environment, and configures system defaults. It's the one-stop bootstrap script for your setup.
-
-## 🏗️ Architecture & Workflows
-
-### Chezmoi Workflow
-```mermaid
-graph LR
-    A[Source State<br/>~/.local/share/chezmoi] -->|chezmoi apply| B[Target State<br/>Home Directory]
-    C[Remote Repository<br/>GitHub] -->|chezmoi update| A
-    A -->|chezmoi cd + git| C
-    B -->|chezmoi add| A
-    
-    style A fill:#2e7d32,stroke:#1b5e20,color:#fff
-    style B fill:#1976d2,stroke:#0d47a1,color:#fff
-    style C fill:#7b1fa2,stroke:#4a148c,color:#fff
+```json
+"mcp": {
+  "servers": {
+    "grafana": {
+      "type": "sse",
+      "url": "http://localhost:8000/sse"
+    }
+  }
+}
 ```
 
-### Package Installation Flow
-```mermaid
-graph TD
-    A[chezmoi apply] --> B{OS Check}
-    B -->|macOS| C[run_onchange-darwin-install-packages.sh]
-    B -->|Linux| D[run_once-install-nix.sh]
-    
-    C --> E[Read .chezmoidata/packages.yaml]
-    E --> F[Install Homebrew Packages]
-    E --> G[Install Krew Plugins]
-    E --> H[Install Python Packages<br/>via pipx]
-    E --> I[Install Go Tools<br/>via go install]
-    E --> M[Install Node.js Packages<br/>via npm install -g]
-    
-    C --> J[Read .chezmoidata/krew.yaml]
-    J --> G
-    
-    C --> K[Read .chezmoidata/helm.yaml]
-    K --> L[Configure Helm Repos & Plugins]
-    
-    style A fill:#d32f2f,stroke:#b71c1c,color:#fff
-    style B fill:#1976d2,stroke:#0d47a1,color:#fff
-    style C fill:#388e3c,stroke:#1b5e20,color:#fff
-    style D fill:#388e3c,stroke:#1b5e20,color:#fff
-    style E fill:#7b1fa2,stroke:#4a148c,color:#fff
-    style J fill:#7b1fa2,stroke:#4a148c,color:#fff
-    style K fill:#7b1fa2,stroke:#4a148c,color:#fff
-    style F fill:#0288d1,stroke:#01579b,color:#fff
-    style G fill:#0288d1,stroke:#01579b,color:#fff
-    style H fill:#0288d1,stroke:#01579b,color:#fff
-    style I fill:#0288d1,stroke:#01579b,color:#fff
-    style M fill:#0288d1,stroke:#01579b,color:#fff
-    style L fill:#0288d1,stroke:#01579b,color:#fff
+### Debug Mode
+
+You can enable debug mode for the Grafana transport by adding the `-debug` flag to the command. This will provide detailed logging of HTTP requests and responses between the MCP server and the Grafana API, which can be helpful for troubleshooting.
+
+To use debug mode with the Claude Desktop configuration, update your config as follows:
+
+**If using the binary:**
+
+```json
+{
+  "mcpServers": {
+    "grafana": {
+      "command": "mcp-grafana",
+      "args": ["-debug"],
+      "env": {
+        "GRAFANA_URL": "http://localhost:3000",
+        "GRAFANA_API_KEY": "<your service account token>"
+      }
+    }
+  }
+}
 ```
 
-### Configuration Management Lifecycle
-```mermaid
-sequenceDiagram
-    participant User
-    participant Chezmoi
-    participant SourceDir as Source Directory
-    participant HomeDir as Home Directory
-    participant Git as Git Repository
-    
-    User->>Chezmoi: chezmoi edit <file>
-    Chezmoi->>SourceDir: Open file in editor
-    User->>SourceDir: Make changes
-    User->>Chezmoi: Save & close editor
-    
-    User->>Chezmoi: chezmoi diff
-    Chezmoi->>User: Show pending changes
-    
-    User->>Chezmoi: chezmoi apply
-    Chezmoi->>SourceDir: Read templates & files
-    Chezmoi->>Chezmoi: Process templates
-    Chezmoi->>HomeDir: Write processed files
-    Chezmoi->>Chezmoi: Run .chezmoiscripts
-    
-    User->>Chezmoi: chezmoi cd
-    User->>Git: git add -A && git commit
-    User->>Git: git push
+**If using Docker:**
+
+```json
+{
+  "mcpServers": {
+    "grafana": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "-e",
+        "GRAFANA_URL",
+        "-e",
+        "GRAFANA_API_KEY",
+        "mcp/grafana",
+        "-t",
+        "stdio",
+        "-debug"
+      ],
+      "env": {
+        "GRAFANA_URL": "http://localhost:3000",
+        "GRAFANA_API_KEY": "<your service account token>"
+      }
+    }
+  }
+}
 ```
 
-### File Processing Pipeline
-```mermaid
-graph TD
-    A[Source File<br/>dot_config/nvim/init.lua] --> B{Has .tmpl suffix?}
-    B -->|Yes| C[Process Go Template]
-    B -->|No| D[Copy As-Is]
-    
-    C --> E[Replace Variables<br/>email, name, etc.]
-    E --> F[Apply Prefix Rules]
-    D --> F
-    
-    F --> G{File Prefix}
-    G -->|dot_| H[Replace with .]
-    G -->|private_| I[Set 0600 permissions]
-    G -->|executable_| J[Set executable bit]
-    G -->|empty_| K[Create empty file]
-    
-    H --> L[Write to ~/.config/nvim/init.lua]
-    I --> L
-    J --> L
-    K --> L
-    
-    style A fill:#6a1b9a,stroke:#4a148c,color:#fff
-    style B fill:#1976d2,stroke:#0d47a1,color:#fff
-    style C fill:#388e3c,stroke:#1b5e20,color:#fff
-    style D fill:#388e3c,stroke:#1b5e20,color:#fff
-    style E fill:#2e7d32,stroke:#1b5e20,color:#fff
-    style F fill:#1565c0,stroke:#0d47a1,color:#fff
-    style G fill:#1976d2,stroke:#0d47a1,color:#fff
-    style H fill:#00838f,stroke:#006064,color:#fff
-    style I fill:#00838f,stroke:#006064,color:#fff
-    style J fill:#00838f,stroke:#006064,color:#fff
-    style K fill:#00838f,stroke:#006064,color:#fff
-    style L fill:#d32f2f,stroke:#b71c1c,color:#fff
+> Note: As with the standard configuration, the `-t stdio` argument is required to override the default SSE mode in the Docker image.
+
+## Development
+
+Contributions are welcome! Please open an issue or submit a pull request if you have any suggestions or improvements.
+
+This project is written in Go. Install Go following the instructions for your platform.
+
+To run the server locally in STDIO mode (which is the default for local development), use:
+
+```bash
+make run
 ```
 
-## 📁 Repository Structure
+To run the server locally in SSE mode, use:
 
-- **`dot_config/`**: Application configurations (Neovim, Ghostty, Starship, etc.)
-- **`.chezmoiscripts/`**: Automated setup scripts that run during `chezmoi apply`
-  - Package installation (Homebrew, Krew, pipx, Go tools)
-  - System defaults configuration
-  - Development environment setup (oh-my-zsh, k3d, atuin, etc.)
-- **`.chezmoidata/`**: Configuration data files (YAML format)
-  - `packages.yaml`: Package management configuration
-    - `taps`: Homebrew third-party repositories
-    - `brews`: Categorized Homebrew packages (base_tools, dev_languages, k8s_and_cloud, etc.)
-    - `casks`: GUI applications and fonts
-    - `vscode_extensions`: VS Code extension IDs
-    - `python_packages`: Python tools with versions and optional extras
-    - `go_tools`: Go packages with import paths and versions
-    - `node_packages`: Node.js packages with names and versions
-    - File structure:
-  
-      ```yaml
-      taps:
-        - name: <TAP_NAME>
-          description: <TAP_DESCRIPTION>
-      brews:
-        group:
-          - name: <BREW_NAME>
-            description: <BREW_DESCRIPTION>
-      casks:
-        - name: <CASK_NAME>
-          description: <CASK_DESCRIPTION>
-      vscode_extensions:
-        - <EXTENSION_NAME>
-      python_packages:
-        - name: <PACKAGE_NAME>
-          version: <PACKAGE_VERSION>
-          description: <PACKAGE_DESCRIPTION>
-          extras:
-            - <OPTIONAL_EXTRA>
-      go_tools:
-        - name: <TOOL_NAME>
-          version: <TOOL_VERSION>
-          description: <TOOL_DESCRIPTION>
-      node_packages:
-        - name: <PACKAGE_NAME>
-          version: <PACKAGE_VERSION>
-          description: <PACKAGE_DESCRIPTION>
-      ```
+```bash
+go run ./cmd/mcp-grafana --transport sse
+```
 
-  - `krew.yaml`: kubectl plugins
-    - Lists plugins with supported architectures (amd64, arm64)
-  - `helm.yaml`: Helm configuration
-    - `repositories`: Chart repository URLs
-    - `plugins`: Helm plugins with versions
-- **`private_dot_*`**: Files with restricted permissions (GPG, SSH keys, API keys, login credentials, etc.)
+You can also run the server using the SSE transport inside a custom built Docker image. Just like the published Docker image, this custom image's entrypoint defaults to SSE mode. To build the image, use:
 
-## 🔐 Sensitive Configs & Password Manager Integration
+```
+make build-image
+```
 
-Certain files, such as `.aws/config`, are managed via 1Password or Bitwarden and templated using chezmoi's template functions. These secrets are not stored in plaintext or committed to this repo. Ensure that you have the appropriate CLI (`op` for 1Password or `bw` for Bitwarden) installed and authenticated before running `chezmoi apply`.
+And to run the image in SSE mode (the default), use:
 
-## 🧼 Environment Classes
+```
+docker run -it --rm -p 8000:8000 mcp-grafana:latest
+```
 
-You can toggle between `work` and `personal` setups by updating the `type` value in your chezmoi config. This influences:
+If you need to run it in STDIO mode instead, override the transport setting:
 
-- Which tools are installed (e.g., `defenseunicorns/tap` for work)
-- Git signing keys and credential managers
-- Cloud and infra tools included
+```
+docker run -it --rm mcp-grafana:latest -t stdio
+```
 
-## 🛠️ Included Tools & Configurations
+### Testing
 
-### Development Environment
-- **Shell**: Zsh with Oh-My-Zsh, Starship prompt, zoxide, fzf
-- **Editor**: Neovim (Kickstart.nvim with LSP, treesitter, debugging)
-- **Terminals**: Ghostty with custom configuration
-- **Version Control**: Git with GPG signing, delta for diffs, support for multiple user identities
-- **Programming Languages**: 
-  - Go with development tools (gopls, goimports, godoc, gorename)
-  - Python with pipx for isolated package installations
-  - Node.js for JavaScript/TypeScript development
+There are three types of tests available:
 
-### Cloud & DevOps Tools
-- **Cloud Providers**: AWS CLI, Azure CLI, Google Cloud SDK
-- **Kubernetes**: kubectl, k9s, k3d, kind, krew plugins, Helm
-- **Infrastructure**: Terraform, Ansible, Packer
-- **Containers**: Docker, Podman, Tilt
-- **Security**: SOPS, Cosign, Grype
+1. Unit Tests (no external dependencies required):
 
-### Modern CLI Replacements
-- `bat` → `cat` (with syntax highlighting)
-- `eza` → `ls` (with icons and git integration)
-- `ripgrep` → `grep` (faster search)
-- `fd` → `find` (user-friendly find)
-- `zoxide` → `cd` (smarter directory navigation)
+```bash
+make test-unit
+```
 
----
+You can also run unit tests with:
 
-## 📎 Tips
+```bash
+make test
+```
 
-- **Password Manager Integration**:
-  - **1Password**: Ensure `op` CLI is installed and run `eval $(op signin)`
-  - **Bitwarden**: Install the [Bitwarden CLI](https://bitwarden.com/help/cli/)
-    - `bw login`
-    - `bw unlock`
-    - `export BW_SESSION=...`
-- **Update configs**: Use `chezmoi diff` to preview, `chezmoi edit` to modify, and `chezmoi apply` to apply changes
-- **Add new files**: Use `chezmoi add <file>` to start managing a file with chezmoi
-- **Debugging**: Run scripts manually from `.chezmoiscripts/` to troubleshoot issues
-- **Multiple Git identities**: Configure multiple Git users in `chezmoi.yaml` under `data.git.users` array
-- **Adding packages**: Edit the appropriate file in `.chezmoidata/`:
-  - **Homebrew packages**: Add to `packages.yaml` under the appropriate `brews` category
-  - **Go tools**: Add to `packages.yaml` under `go_tools` with full import path and version
-  - **Python packages**: Add to `packages.yaml` under `python_packages` with name, version, and optional extras
-  - **Node.js packages**: Add to `packages.yaml` under `node_packages` with name and version
-  - **kubectl plugins**: Add to `krew.yaml` with name and supported architectures
-  - **Helm repos/plugins**: Add to `helm.yaml` under repositories or plugins
+2. Integration Tests (requires docker containers to be up and running):
+
+```bash
+make test-integration
+```
+
+3. Cloud Tests (requires cloud Grafana instance and credentials):
+
+```bash
+make test-cloud
+```
+
+> Note: Cloud tests are automatically configured in CI. For local development, you'll need to set up your own Grafana Cloud instance and credentials.
+
+More comprehensive integration tests will require a Grafana instance to be running locally on port 3000; you can start one with Docker Compose:
+
+```bash
+docker-compose up -d
+```
+
+The integration tests can be run with:
+
+```bash
+make test-all
+```
+
+If you're adding more tools, please add integration tests for them. The existing tests should be a good starting point.
+
+### Linting
+
+To lint the code, run:
+
+```bash
+make lint
+```
+
+This includes a custom linter that checks for unescaped commas in `jsonschema` struct tags. The commas in `description` fields must be escaped with `\\,` to prevent silent truncation. You can run just this linter with:
+
+```bash
+make lint-jsonschema
+```
+
+See the [JSONSchema Linter documentation](internal/linter/jsonschema/README.md) for more details.
+
+## License
+
+This project is licensed under the [Apache License, Version 2.0](LICENSE).
+
+[mcp]: https://modelcontextprotocol.io/
+[service-account]: https://grafana.com/docs/grafana/latest/administration/service-accounts/
