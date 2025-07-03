@@ -291,7 +291,7 @@ brews:
       description: Tool for securely accessing secrets and managing sensitive data.
     - name: openbao
       description: Open-source tool for managing secrets and sensitive data in cloud-native environments.
-    - name: bitwarden
+    - name: bitwarden-cli
       description: Command-line interface for Bitwarden, a secure password manager.
 
   infra_and_testing:
