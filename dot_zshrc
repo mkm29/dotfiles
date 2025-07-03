@@ -96,6 +96,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Load UDS aliases
+if [ -f ~/.uds_aliases ]; then
+    . ~/.uds_aliases
+fi
+
 # NVM configuration
   export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
