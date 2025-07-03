@@ -586,6 +586,8 @@ casks:
 #    description: Open-source web browser developed by Google, known for its speed and security. [Source](https://formulae.brew.sh/cask/chromium)
   - name: bentobox
     description: A window manager that boosts productivity by snapping windows into predefined zones, like a Japanese bento box organizing meals.
+  - name: bitwarden
+    description: Open-source password manager that securely stores and manages your passwords and sensitive information.
 
 vscode_extensions:
   - 4ops.terraform
