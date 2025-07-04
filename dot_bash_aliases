@@ -6,7 +6,7 @@ alias tf=terraform
 alias nerdctl="lima nerdctl"
 alias python=python3
 alias pip=pip3
-alias cat='bat --paging=never'
+alias cat='bat --config-file ~/.config/bat/config'
 alias vim=nvim
 alias vi=nvim
 alias ls=eza
