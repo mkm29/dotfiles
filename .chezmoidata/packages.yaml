@@ -756,6 +756,9 @@ node_packages:
   - name: yarn
     description: Fast, reliable, and secure dependency management tool for JavaScript projects.
     version: "1.22.22"
+  - name: "@google/gemini-cli"
+    description: Command-line interface for Google Gemini, enabling interaction with the Gemini AI model.
+    version: "0.1.9"
 
 cargo_packages:
   - name: cargo-auditable
