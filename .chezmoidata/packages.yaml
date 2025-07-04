@@ -466,6 +466,8 @@ brews:
       description: A tool that manages installations of programming language runtimes and other tools for local development
     - name: adr-tools
       description: Tools for managing Architecture Decision Records (ADRs), which are documents that capture important architectural decisions made during a project.
+    - name: bat-extras
+      description: Additional syntax highlighting and language support for the `bat` command, enhancing its capabilities for displaying code snippets.
 
   network_tools:
     - name: unbound
