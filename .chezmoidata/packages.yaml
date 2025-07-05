@@ -468,6 +468,8 @@ brews:
       description: Tools for managing Architecture Decision Records (ADRs), which are documents that capture important architectural decisions made during a project.
     - name: bat-extras
       description: Additional syntax highlighting and language support for the `bat` command, enhancing its capabilities for displaying code snippets.
+    - name: chafa
+      description: Converts images to ASCII/ANSI art, allowing you to display images in the terminal using characters.
 
   network_tools:
     - name: unbound
