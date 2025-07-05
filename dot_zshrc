@@ -197,3 +197,5 @@ fi
 
 # autoupdate homebrew once a day
 export HOMEBREW_AUTO_UPDATE_SECS=86400
+
+source <(command fx --init)

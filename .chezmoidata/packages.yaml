@@ -790,6 +790,9 @@ cargo_packages:
   - name: nix-sweep
     description: Tool for cleaning up unused Nix packages and dependencies.
     version: "0.5.0"
+  - name: felix
+    description: tui file manager with vim-like key mappings, designed for efficient file navigation and management.
+    version: "2.16.1"
 
 oh_my_zsh_plugins:
 - 1password
