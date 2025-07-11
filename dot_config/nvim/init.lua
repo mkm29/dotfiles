@@ -1031,7 +1031,16 @@ require("lazy").setup({
 			"NoahTheDuke/vim-just",
 			ft = { "just" },
 		},
-		-- There are additional nvim-treesitter modules that you can use to interact
+		{
+			"nvimdev/dashboard-nvim",
+			event = "VimEnter",
+			config = function()
+				require("dashboard").setup({
+					-- config
+				})
+			end,
+			dependencies = { { "nvim-tree/nvim-web-devicons" } },
+		},
 		-- with nvim-treesitter. You should go explore a few and see what interests you:
 		--
 		--    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
