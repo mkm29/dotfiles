@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Check if Yubikey is present (adjust the grep pattern for your specific Yubikey)
+if gpg --card-status 2>/dev/null | grep -q "Application ID"; then
+    # Yubikey is present - use Yubikey signing key
+    SIGNING_KEY="YOUR_YUBIKEY_KEY_ID"
+else
+    # Yubikey not present - use local key
+    SIGNING_KEY="YOUR_LOCAL_KEY_ID"
+fi
+
+# Set the signing key temporarily and commit
+git -c user.signingkey="$SIGNING_KEY" commit -S "$@"
