@@ -1,0 +1,8 @@
+[user]
+    signingkey = ~/.ssh/ed25519-sk
+[gpg]
+    format = ssh
+[gpg "ssh"]
+    allowedsignersfile = ~/.ssh/allowed_signers
+[commit]
+    gpgsign = true
