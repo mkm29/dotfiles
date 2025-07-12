@@ -46,12 +46,6 @@
 #     autosquash = true
 #     autoStash = true
 #     stat = true
-{{ range $user := .git.users }}
-[user]
-    email = {{ $user.email }}
-    name = {{ $user.name }}
-    signingkey = {{ $user.signingKey }}
-{{ end }}
 [filter "lfs"]
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
@@ -65,11 +59,6 @@
 	guiPrompt = false
 	# helper = osxkeychain
 	helper = /usr/local/share/gcm-core/git-credential-manager
-[gpg]
-	program = gpg
-	format = ssh
-	[ssh]
-		allowedsignersfile = ~/.ssh/allowed_signers
 [alias]
 	# Display all aliases :)
 	aliases = ! git config --list | awk '/alias/{ print $1 }' | perl -pe 's/alias\\.//g' | perl -pe 's/=.+//g'
@@ -229,3 +218,11 @@
 	whitespace = red reverse
 [diff "sopsdiffer"]
 	textconv = sops -d
+
+{{- if (output "sh" "-c" "gpg --card-status 2>/dev/null | grep -q 'Application ID' && echo 'yubikey' || echo 'local'") | eq "yubikey" }}
+[include]
+    path = ~/.gitconfig-yubikey
+{{- else }}
+[include]
+    path = ~/.gitconfig-local
+{{- end }}
