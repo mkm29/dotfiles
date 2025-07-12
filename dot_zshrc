@@ -221,3 +221,7 @@ autoload -Uz _zinit
 zinit ice wait'1' lucid
 zinit light mellbourn/zabb
 eval "$(mcfly init zsh)"
+
+if [[ "$(defaults read -g AppleInterfaceStyle 2&>/dev/null)" != "Dark" ]]; then
+    export MCFLY_LIGHT=TRUE
+fi
