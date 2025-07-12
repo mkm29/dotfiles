@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Detect Yubikey and create appropriate symlink
+if gpg --card-status 2>/dev/null | grep -q "Application ID"; then
+    ln -sf ~/.gitconfig-yubikey ~/.gitconfig-signing
+else
+    ln -sf ~/.gitconfig-local ~/.gitconfig-signing
+fi
