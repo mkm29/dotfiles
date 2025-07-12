@@ -1,0 +1,8 @@
+{{ range $user := .git.users }}
+[user]
+    signingkey = {{ .signingKey.gpg }}
+[gpg]
+    format = openpgp
+[commit]
+    gpgsign = true
+{{ end }}
