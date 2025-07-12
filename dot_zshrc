@@ -220,3 +220,4 @@ autoload -Uz _zinit
 
 zinit ice wait'1' lucid
 zinit light mellbourn/zabb
+eval "$(mcfly init zsh)"

@@ -126,6 +126,8 @@ brews:
       description: Simple terminal UI for git commands, making it easier to manage repositories.
     - name: lazydocker
       description: Simple terminal UI for Docker, providing an easy way to manage containers and images.
+    - name: mcfly
+      description: A command-line tool that remembers your previous commands and allows you to search through them interactively.
 
 
   dev_languages:
