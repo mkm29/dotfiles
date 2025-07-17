@@ -56,6 +56,8 @@ taps:
     description: Tap for Drone, a continuous integration and delivery platform
   - name: vectordotdev/brew
     description: Tap for Vector, a high-performance observability data pipeline
+  - name: carvel-dev/carvel
+    description: Tap for Carvel, a suite of tools for building, deploying, and managing applications on Kubernetes
 brews:
   base_tools:
     - name: act
@@ -261,6 +263,20 @@ brews:
       description: Cyphernetes is a Cypher-inspired query language for Kubernetes.
     - name: yoke
       description: A tool for managing Kubernetes resources and configurations, providing a simple and intuitive interface.
+    - name: ytt
+      description: YAML Templating Tool, part of the Carvel suite, for templating and transforming YAML files.
+    - name: kbld
+      description: Tool for building and managing OCI images, also part of the Carvel suite.
+    - name: kapp
+      description: Tool for deploying and managing Kubernetes resources, also part of the Carvel suite.
+    - name: kwt
+      description: Kubernetes Workload Tool, a CLI for managing Kubernetes workloads and resources.
+    - name: imgpkg
+      description: Tool for building and managing OCI images, providing a simple interface for image creation and management.
+    - name: vendir
+      description: Tool for managing external dependencies in Kubernetes configurations, allowing you to fetch and manage resources from various sources.
+    - name: kctrl
+      description: Kubernetes controller CLI for managing and interacting with Kubernetes controllers and resources.
 
   security_tools:
     - name: age
@@ -550,6 +566,7 @@ brews:
       description: A simple CLI that provides an overview of resource requests, limits, and utilization in a Kubernetes cluster.
     - name: pinentry-touchid
       description: A pinentry program that allows GPG to use Touch ID on macOS.
+
 
 casks:
   - name: google-cloud-sdk

@@ -1057,6 +1057,7 @@ require("lazy").setup({
 			end,
 			dependencies = { { "nvim-tree/nvim-web-devicons" } },
 		},
+
 		-- with nvim-treesitter. You should go explore a few and see what interests you:
 		--
 		--    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
