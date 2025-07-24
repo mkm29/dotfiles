@@ -31,6 +31,9 @@ export CLAUDE_MCP_PAT={{ (bitwarden "item" "CLAUDE_MCP_PAT").notes }}
 export KAGI_API_KEY={{ (bitwarden "item" "KAGI_API_KEY").notes }}
 export CLINE_CLAUDE_API_KEY={{ (bitwarden "item" "CLINE_CLAUDE_API_KEY").notes }}
 export FIRECRAWL_API_KEY={{ (bitwarden "item" "FIRECRAWL_API_KEY").notes }}
+export UDS_USERNAME={{ (bitwarden "item" "uds-registry-prod").login.username }}
+export UDS_PASSWORD={{ (bitwarden "item" "uds-registry-prod").login.password }}
+export UDS_URL={{ (bitwarden "item" "uds-registry-prod").login.uris.0.uri }}
 {{ end -}}
 export GITHUB_TOKEN={{ (bitwarden "item" "GITHUB_TOKEN").notes }}
 export CR_PAT={{ (bitwarden "item" "CR_PAT").notes }}
