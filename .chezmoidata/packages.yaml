@@ -195,6 +195,8 @@ brews:
       description: Kubernetes package manager.
     - name: helmfile
       description: Deploy Kubernetes Helm charts declaratively.
+    - name: holos-run/tap/holos
+      description: Holos is a tool for doing CUE stuff.
     - name: terraform-docs
       description: Generate documentation from Terraform modules.
     - name: tfenv
