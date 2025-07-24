@@ -33,7 +33,8 @@ export CLINE_CLAUDE_API_KEY={{ (bitwarden "item" "CLINE_CLAUDE_API_KEY").notes }
 export FIRECRAWL_API_KEY={{ (bitwarden "item" "FIRECRAWL_API_KEY").notes }}
 export UDS_USERNAME={{ (bitwarden "item" "uds-registry-prod").login.username }}
 export UDS_PASSWORD={{ (bitwarden "item" "uds-registry-prod").login.password }}
-export UDS_URL={{ (bitwarden "item" "uds-registry-prod").login.uris[0].uri }}
+#export UDS_URL={{ (bitwarden "item" "uds-registry-prod").login.uris[0].uri }}
+export UDS_URL=registry.defenseunicorns.com
 {{ end -}}
 export GITHUB_TOKEN={{ (bitwarden "item" "GITHUB_TOKEN").notes }}
 export CR_PAT={{ (bitwarden "item" "CR_PAT").notes }}
