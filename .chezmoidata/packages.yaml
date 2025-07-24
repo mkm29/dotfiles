@@ -197,6 +197,8 @@ brews:
       description: Deploy Kubernetes Helm charts declaratively.
     - name: holos-run/tap/holos
       description: Holos is a tool for doing CUE stuff.
+    - name: stefanprodan/tap/timoni
+      description: Timoni is a tool for managing Helm charts and Kubernetes resources.
     - name: terraform-docs
       description: Generate documentation from Terraform modules.
     - name: tfenv
