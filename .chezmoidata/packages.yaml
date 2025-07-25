@@ -452,6 +452,8 @@ brews:
       description: Shell script static analysis tool that helps catch common mistakes and improve script quality.
     - name: hadolint
       description: Dockerfile linter that helps you build best practice Docker images.
+    - name: dockerfmt
+      description: Tool for formatting Dockerfiles to a consistent style.
     - name: tree-sitter
       description: Parser generator tool and an incremental parsing library.
     - name: podman-compose
