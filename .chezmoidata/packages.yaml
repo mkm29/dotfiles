@@ -261,6 +261,8 @@ brews:
       description: CLI tool to generate Terraform files from existing infrastructure.
     - name: psviderski/tap/docker-pussh
       description: Tool for pushing Docker images to remote servers using SSH.
+    - name: chainguard-dev/tap/dfc
+      description: DFC (Dockerfile Converter) is a tool for porting Dockerfiles to use Chainguard containers
     - name: copa
       description: A CLI tool written in Go and based on buildkit that can be used to directly patch container images given the vulnerability scanning results from popular tools like Trivy
     - name: cyphernetes
