@@ -1031,6 +1031,8 @@ require("lazy").setup({
 			"NoahTheDuke/vim-just",
 			ft = { "just" },
 		},
+    {
+      "preservim/vim-markdown",
 		{
 			"nvimdev/dashboard-nvim",
 			event = "VimEnter",
