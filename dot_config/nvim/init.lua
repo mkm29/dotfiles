@@ -1033,6 +1033,7 @@ require("lazy").setup({
 		},
     {
       "preservim/vim-markdown",
+    },
 		{
 			"nvimdev/dashboard-nvim",
 			event = "VimEnter",
