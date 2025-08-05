@@ -407,6 +407,8 @@ brews:
       description: Linter for YAML files.
     - name: yaml-language-server
       description: Language server for YAML files, with built-in Kubernetes and Kustomize support.
+    - name: markdownlint-cli
+      description: Linter for Markdown files, ensuring consistent formatting and style.
 
   ai_tools:
     - name: ollama
