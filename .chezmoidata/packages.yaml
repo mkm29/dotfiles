@@ -415,6 +415,8 @@ brews:
       description: Create, run, and share large language models (LLMs). [Source](https://formulae.brew.sh/formula/ollama)
     - name: ra-aid
       description: A tool for assisting with reverse engineering tasks.
+    - name: tgpt
+      description: A terminal-based interface for interacting with AI/GPT models.
 #    - name: amazon-q
 #      description: Amazon Q CLI brings IDE-style autocomplete and agentic capabilities to your terminal.
 
