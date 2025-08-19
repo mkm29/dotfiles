@@ -1,0 +1,29 @@
+recon() { echo "[*] Running Recon..."; uname -a; whoami; id; ifconfig; }
+
+# useful for long-running processes
+# example: `notify nmap -sS -p- 10.10.10.10`
+notify() { "$@"; notify-send "Command '$*' finished." & }
+
+# auto-extract archives
+extract () {
+  if [ -f "$1" ]; then
+    case "$1" in
+      *.tar.bz2) tar xjf "$1" ;;
+      *.tar.gz)  tar xzf "$1" ;;
+      *.tar.zst) tar --zstd -xf "$1" ;;
+      *.bz2)     bunzip2 "$1" ;;
+      *.rar)     unrar x "$1" ;;
+      *.gz)      gunzip "$1" ;;
+      *.tar)     tar xf "$1" ;;
+      *.tbz2)    tar xjf "$1" ;;
+      *.tgz)     tar xzf "$1" ;;
+      *.zip)     unzip "$1" ;;
+      *.Z)       uncompress "$1" ;;
+      *.7z)      7z x "$1" ;;
+      *.zst)     zstd -d "$1" ;;
+      *)         echo "Unknown format: $1" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
