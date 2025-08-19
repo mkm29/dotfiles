@@ -228,23 +228,4 @@ fi
 
 . <(flux completion zsh)
 
-function login_registry() {
-  # fail if not enough arguments
-  if [[ $# -ne 3 ]]; then
-    echo "Usage: login_registry <registry> <username> <password>"
-    return 1
-  fi
-  local registry=$1
-  local username=$2
-  local password=$3
-  echo "Logging in to $registry with:"
-  echo "  Username: $username"
-  echo "  Password: [hidden]"
-  echo $password | zarf tools registry login $registry -u $username --password-stdin 2>&1 > /dev/null
-  if [[ $? -ne 0 ]]; then
-    echo "Login to $registry failed. Please check your credentials."
-    return 1
-  fi
-  echo "Login to $registry successful!"
-  return 0
-}
+unalias grep egrep fgrep 2>/dev/null
