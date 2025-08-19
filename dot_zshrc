@@ -67,6 +67,7 @@ plugins=(
   encode64
   kube-ps1
   wd
+  ripgrep
 )
 
 # Source oh-my-zsh
