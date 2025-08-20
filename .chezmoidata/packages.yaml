@@ -625,6 +625,9 @@ casks:
     description: A window manager that boosts productivity by snapping windows into predefined zones, like a Japanese bento box organizing meals.
   - name: bitwarden
     description: Open-source password manager that securely stores and manages your passwords and sensitive information.
+  - name: outrigdev/outrig/outrig
+    description: The Observability Monitor for Local Go Development
+
 
 vscode_extensions:
   - 4ops.terraform
