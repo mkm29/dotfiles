@@ -283,6 +283,8 @@ brews:
       description: Tool for managing external dependencies in Kubernetes configurations, allowing you to fetch and manage resources from various sources.
     - name: kctrl
       description: Kubernetes controller CLI for managing and interacting with Kubernetes controllers and resources.
+    - name: dagger/tap/dagger
+      description: Dagger is a programmable CI/CD engine that runs in a container.
 
   security_tools:
     - name: age
