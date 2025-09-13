@@ -506,8 +506,8 @@ brews:
       description: Converts images to ASCII/ANSI art, allowing you to display images in the terminal using characters.
     - name: xh
       description: A friendly and fast tool for making HTTP requests, similar to `curl` but with a more user-friendly interface and additional features.
-    - name: jaq
-      description: A tool for querying and manipulating JSON data, similar to `jq` but with a more user-friendly syntax and additional features.
+    - name: glow
+      description: A terminal-based markdown reader designed for viewing markdown files in the terminal with syntax highlighting and other features.
 
   network_tools:
     - name: unbound
