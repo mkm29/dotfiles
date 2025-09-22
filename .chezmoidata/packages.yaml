@@ -466,6 +466,8 @@ brews:
       description: Parser generator tool and an incremental parsing library.
     - name: podman-compose
       description: Docker Compose implementation for Podman, allowing you to define and run multi-container applications.
+    - name: Adembc/homebrew-tap/lazyssh
+      description: A simple and fast SSH client with a focus on usability and performance.
 #    - name: ghostty
 #      description: A fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.
     - name: universal-ctags
