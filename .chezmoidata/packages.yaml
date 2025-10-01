@@ -273,6 +273,10 @@ brews:
       description: A tool for managing Kubernetes resources and configurations, providing a simple and intuitive interface.
     - name: ytt
       description: YAML Templating Tool, part of the Carvel suite, for templating and transforming YAML files.
+    - name: jsonnet
+      description: Data templating language for app and tool developers, providing a way to generate JSON and YAML configurations.
+    - name: jsonnet-bundler
+      description: Package manager for Jsonnet, allowing you to manage and install Jsonnet libraries and dependencies.
     - name: kbld
       description: Tool for building and managing OCI images, also part of the Carvel suite.
     - name: kapp
