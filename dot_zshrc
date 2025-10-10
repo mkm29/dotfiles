@@ -73,6 +73,9 @@ plugins=(
 # Source oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+# rbenv initialization
+eval "$(rbenv init - zsh)"
+
 # autocomplete
 if type brew &>/dev/null; then
   FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
@@ -227,5 +230,5 @@ if [[ "$(defaults read -g AppleInterfaceStyle 2&>/dev/null)" != "Dark" ]]; then
 fi
 
 . <(flux completion zsh)
-
+eval "$(rbenv init - --no-rehash zsh)"
 unalias grep egrep fgrep 2>/dev/null
