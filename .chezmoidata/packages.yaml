@@ -229,8 +229,6 @@ brews:
       description: Lightweight Kubernetes for workstations and appliances.
     - name: talosctl
       description: CLI for managing Talos Linux clusters.
-    - name: hauler
-      description: Tool for packaging and distributing OCI artifacts.
     - name: epinio
       description: Platform for deploying applications to Kubernetes.
     - name: cmctl
