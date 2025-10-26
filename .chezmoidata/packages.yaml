@@ -60,6 +60,8 @@ taps:
     description: Tap for Vector, a high-performance observability data pipeline
   - name: carvel-dev/carvel
     description: Tap for Carvel, a suite of tools for building, deploying, and managing applications on Kubernetes
+  - name: steipete/tap
+    description: Tap for steipete's personal Homebrew formulas and casks (e.g., peekaboo, agent-rules)
 brews:
   base_tools:
     - name: act
@@ -429,6 +431,8 @@ brews:
       description: AI Agent for Cloud Troubleshooting and Alert Investigation
     - name: k8sgpt
       description: AI assistant for Kubernetes, providing insights and recommendations for cluster management.
+    - name: peekaboo
+      description: Lightning-fast macOS Screenshots & GUI Automation MCP server
 #    - name: amazon-q
 #      description: Amazon Q CLI brings IDE-style autocomplete and agentic capabilities to your terminal.
 
