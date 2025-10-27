@@ -81,9 +81,9 @@
 	ap = -c color.diff=true add --patch
 	b = branch
 	ba = branch -a
-	c = commit -v
-	car = commit --amend --no-edit
-	cmsg = commit -m
+	c = commit -v -s
+	car = commit -s --amend --no-edit
+	cmsg = commit -m -s
 	co = checkout
 	dc = diff --word-diff-regex=.
 	dca = diff --cached
@@ -223,6 +223,10 @@
 [include]
     path = ~/.gitconfig-yubikey
 {{- else }}
-[include]
-    path = ~/.gitconfig-local
+[includeIf "gitdir:~/Developer/github.com/"]
+    path = ~/.gitconfig-personal
+[includeIf "gitdir:~/Developer/github.com/defenseunicorns/"]
+    path = ~/.gitconfig-work
+[includeIf "gitdir:~/Developer/github.com/uds-packages/"]
+    path = ~/.gitconfig-work
 {{- end }}
