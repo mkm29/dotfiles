@@ -1,0 +1,10 @@
+
+[user]
+    signingkey = 5E7E2643A29C7001620DCDA003429FC2A7DD9EDA
+    name = Mitch Murphy
+    email = mitch.murphy@gmail.com
+[gpg]
+    format = openpgp
+[commit]
+    gpgsign = true
+
