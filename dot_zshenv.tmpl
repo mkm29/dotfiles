@@ -49,3 +49,6 @@ export ARTIFACTHUB_API_KEY_SECRET={{ (bitwarden "item" "artifacthub-api-key").lo
 export QUAY_IO_USERNAME={{ (bitwarden "item" "quay-robot").login.username }}
 export QUAY_IO_PASSWORD={{ (bitwarden "item" "quay-robot").login.password }}
 export ANTHROPIC_API_KEY={{ (bitwarden "item" "anthropic-api-key").notes }}
+export XDG_CONFIG_HOME=$HOME/.config
+export SOPS_AGE_KEY_FILE=$HOME/.config/sops/age/keys.txt
+export NVD_API_KEY={{ (bitwarden "item" "NVD_API_KEY").notes }}

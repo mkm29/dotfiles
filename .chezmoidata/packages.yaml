@@ -293,6 +293,8 @@ brews:
       description: Kubernetes controller CLI for managing and interacting with Kubernetes controllers and resources.
     - name: dagger/tap/dagger
       description: Dagger is a programmable CI/CD engine that runs in a container.
+    - name: stern
+      description: Tail multiple pods and containers on Kubernetes.
 
   security_tools:
     - name: age
